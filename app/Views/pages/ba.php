@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Form Input ANJING</h1>
+            <h1>INPUTAN</h1>
         </div>
     </div>
 </div>
