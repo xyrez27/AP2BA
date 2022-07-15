@@ -10,9 +10,10 @@
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
-                        Berita Acara
+                        <b>Berita Acara</b>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/pages/ba">BA</a>
                         <a class="dropdown-item" href="#">Surat Pemeriksaan</a>
                         <a class="dropdown-item" href="#">Surat Permohonan Pembayaran</a>
                         <a class="dropdown-item" href="#">Formulir</a>
