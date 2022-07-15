@@ -12,13 +12,4 @@ class Pages extends BaseController
 
         return view('pages/dashboard', $data);
     }
-
-    public function ba()
-    {
-        $data = [
-            'title' => 'Berita Acara'
-        ];
-
-        return view('pages/ba', $data);
-    }
 }
