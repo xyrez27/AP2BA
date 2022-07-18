@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class beritaAcara extends BaseController
+class Ba extends BaseController
 {
     public function index()
     {

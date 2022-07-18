@@ -4,9 +4,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class baModel extends Model
+class BaModel extends Model
 {
-    protected $table = 'beritaAcara';
+    protected $table = 'TX_BERITA_ACARA';
     protected $useTimestamps = true;
     protected $allowedFields = ['nama', 'gender', 'alamat', 'pesawat'];
 
