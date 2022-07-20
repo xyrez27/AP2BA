@@ -10,7 +10,7 @@
                 <div class="row mb-3">
                     <label for="nama" class="col-sm-2 col-form-label" autofocus>Judul BA</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nama" name="nama" autofocus value="">
+                        <input type="text" class="form-control" id="nama" name="nama" value="" autofocus required>
                         <div id="validationServer04Feedback" class="invalid-feedback">
                         </div>
                     </div>
@@ -34,8 +34,8 @@
                     <div class="col-3">
                         <select id="inputState" class="form-control">
                             <option selected disabled>Pilih...</option>
-                            <option>Eksploitasi</option>
-                            <option>Investasi</option>
+                            <option value="eksploitasi">Eksploitasi</option>
+                            <option value="investasi">Investasi</option>
                         </select>
                     </div>
                 </div>
@@ -55,6 +55,7 @@
                         </div>
                     </div>
                 </div>
+                <h2>Nama Karyawan</h2>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
