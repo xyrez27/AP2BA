@@ -6,7 +6,7 @@
         <div class="col-8">
             <form action="/beritaacara/save" method="POST" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
-                <h2>BERITA ACARA SEWA PC</h2>
+                <h2>BERITA ACARA SEWA PRINTER</h2>
                 <div class="row mb-3">
                     <label for="nama" class="col-sm-2 col-form-label" autofocus>Judul BA</label>
                     <div class="col-sm-10">

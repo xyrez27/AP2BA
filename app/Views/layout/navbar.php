@@ -3,30 +3,30 @@
         <a class="navbar-brand" href="/">
             <img src="/img/ap2.jpg" alt="" class="logo-ap2">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link" href="/ba/index">Berita Acara</a>
+        <!-- <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                Berita Acara
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="ba/index">SEWA PC</a>
+                <a class="dropdown-item" href="#">SEWA PRINTER</a>
+                <a class="dropdown-item" href="#">TAGIHAN LISTRIK</a>
             </div>
+        </div> -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                        Berita Acara
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/ba/sewa-pc">SEWA PC</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/ba/sewa-printer">SEWA PRINTER</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/ba/tagihan-listrik">TAGIHAN LISTRIK</a>
+                    </div>
+                </li>
         </div>
     </div>
 </nav>
-
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand" href="/" alt="Angkasa Pura II">Angkasa Pura II</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link active" href="/">Home</a>
-                <a class="nav-link" href="/pages/about">About us</a>
-                <a class="nav-link" href="/pages/contact">Contact</a>
-                <a class="nav-link" href="/passengers">Passengers</a>
-            </div>
-        </div>
-    </div>
-</nav> -->
