@@ -125,38 +125,34 @@
                                                 <div class="col-3">
                                                     <select id="karyawan_ap2" class="form-control">
                                                         <option selected disabled>Pilih...</option>
-                                                        <option value="Suharyana">Suharyana</option>
-                                                        <option value="Rizky Andromedha">Rizky Andromedha</option>
-                                                        <option value="Dimas Wahyudin">Dimas Wahyudin</option>
+                                                        <option value="Andy Ihza Mahendra">Andy Ihza Mahendra</option>
+                                                        <option value="Toni Rinaldy">Toni Rinaldy</option>
                                                     </select>
                                                 </div>
                                                 <label for="karyawan_aps" class="col-sm-2 col-form-label">Jabatan 1</label>
                                                 <div class="col">
                                                     <select id="karyawan_aps" class="form-control">
                                                         <option selected disabled>Pilih...</option>
-                                                        <option value="Manager of Data Network & IT Non Public Service;">Manager of Data Network & IT Non Public Service;</option>
-                                                        <option value="Assistant Manager of IT Non Public Service;">Assistant Manager of IT Non Public Service;</option>
-                                                        <option value="Back Office System Support Engineer.">Back Office System Support Engineer.</option>
+                                                        <option value="EVP of APS Facility Services;">EVP of APS Facility Services;</option>
+                                                        <option value="Staf Administrasi.">Staf Administrasi.</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
-                                                <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 2</label>
+                                                <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 1</label>
                                                 <div class="col-3">
                                                     <select id="karyawan_ap2" class="form-control">
                                                         <option selected disabled>Pilih...</option>
-                                                        <option value="Suharyana">Suharyana</option>
-                                                        <option value="Rizky Andromedha">Rizky Andromedha</option>
-                                                        <option value="Dimas Wahyudin">Dimas Wahyudin</option>
+                                                        <option value="Andy Ihza Mahendra">Andy Ihza Mahendra</option>
+                                                        <option value="Toni Rinaldy">Toni Rinaldy</option>
                                                     </select>
                                                 </div>
-                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Jabatan 2</label>
+                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Jabatan 1</label>
                                                 <div class="col">
                                                     <select id="karyawan_aps" class="form-control">
                                                         <option selected disabled>Pilih...</option>
-                                                        <option value="Manager of Data Network & IT Non Public Service;">Manager of Data Network & IT Non Public Service;</option>
-                                                        <option value="Assistant Manager of IT Non Public Service;">Assistant Manager of IT Non Public Service;</option>
-                                                        <option value="Back Office System Support Engineer.">Back Office System Support Engineer.</option>
+                                                        <option value="EVP of APS Facility Services;">EVP of APS Facility Services;</option>
+                                                        <option value="Staf Administrasi.">Staf Administrasi.</option>
                                                     </select>
                                                 </div>
                                             </div>
