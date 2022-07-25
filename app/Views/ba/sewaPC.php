@@ -32,9 +32,9 @@
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
-                                                <label for="inputState" class="col-sm-2 col-form-label">M.A No</label>
+                                                <label for="no_ma" class="col-sm-2 col-form-label">M.A No</label>
                                                 <div class="col-3">
-                                                    <select id="inputState" class="form-control">
+                                                    <select id="no_ma" class="form-control">
                                                         <option selected disabled>Pilih...</option>
                                                         <option value="eksploitasi">Eksploitasi</option>
                                                         <option value="investasi">Investasi</option>
@@ -58,44 +58,106 @@
                                                 </div>
                                             </div>
                                             <h2>Nama Karyawan</h2>
+                                            <h4 class="col-2"><b>AP II</b></h4>
                                             <div class="row mb-3">
-                                                <label for="nama" class="col-sm-2 col-form-label" autofocus>Karyawan 1</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="nama" name="nama" value="" placeholder="Masukkan Karyawan 1..." autofocus required>
-                                                    <div id="validationServer04Feedback" class="invalid-feedback">
-                                                    </div>
+                                                <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 1</label>
+                                                <div class="col-3">
+                                                    <select id="karyawan_ap2" class="form-control">
+                                                        <option selected disabled>Pilih...</option>
+                                                        <option value="Suharyana">Suharyana</option>
+                                                        <option value="Rizky Andromedha">Rizky Andromedha</option>
+                                                        <option value="Dimas Wahyudin">Dimas Wahyudin</option>
+                                                    </select>
+                                                </div>
+                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Jabatan 1</label>
+                                                <div class="col">
+                                                    <select id="karyawan_aps" class="form-control">
+                                                        <option selected disabled>Pilih...</option>
+                                                        <option value="Manager of Data Network & IT Non Public Service;">Manager of Data Network & IT Non Public Service;</option>
+                                                        <option value="Assistant Manager of IT Non Public Service;">Assistant Manager of IT Non Public Service;</option>
+                                                        <option value="Back Office System Support Engineer.">Back Office System Support Engineer.</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
-                                                <label for="nama" class="col-sm-2 col-form-label" autofocus>Karyawan 2</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="nama" name="nama" value="" placeholder="Masukkan Karyawan 2..." autofocus required>
-                                                    <div id="validationServer04Feedback" class="invalid-feedback">
-                                                    </div>
+                                                <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 2</label>
+                                                <div class="col-3">
+                                                    <select id="karyawan_ap2" class="form-control">
+                                                        <option selected disabled>Pilih...</option>
+                                                        <option value="Suharyana">Suharyana</option>
+                                                        <option value="Rizky Andromedha">Rizky Andromedha</option>
+                                                        <option value="Dimas Wahyudin">Dimas Wahyudin</option>
+                                                    </select>
+                                                </div>
+                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Jabatan 2</label>
+                                                <div class="col">
+                                                    <select id="karyawan_aps" class="form-control">
+                                                        <option selected disabled>Pilih...</option>
+                                                        <option value="Manager of Data Network & IT Non Public Service;">Manager of Data Network & IT Non Public Service;</option>
+                                                        <option value="Assistant Manager of IT Non Public Service;">Assistant Manager of IT Non Public Service;</option>
+                                                        <option value="Back Office System Support Engineer.">Back Office System Support Engineer.</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
-                                                <label for="nama" class="col-sm-2 col-form-label" autofocus>Karyawan 3</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="nama" name="nama" value="" placeholder="Masukkan Karyawan 3..." autofocus required>
-                                                    <div id="validationServer04Feedback" class="invalid-feedback">
-                                                    </div>
+                                                <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 3</label>
+                                                <div class="col-3">
+                                                    <select id="karyawan_ap2" class="form-control">
+                                                        <option selected disabled>Pilih...</option>
+                                                        <option value="Suharyana">Suharyana</option>
+                                                        <option value="Rizky Andromedha">Rizky Andromedha</option>
+                                                        <option value="Dimas Wahyudin">Dimas Wahyudin</option>
+                                                    </select>
+                                                </div>
+                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Jabatan 3</label>
+                                                <div class="col">
+                                                    <select id="karyawan_aps" class="form-control">
+                                                        <option selected disabled>Pilih...</option>
+                                                        <option value="Manager of Data Network & IT Non Public Service;">Manager of Data Network & IT Non Public Service;</option>
+                                                        <option value="Assistant Manager of IT Non Public Service;">Assistant Manager of IT Non Public Service;</option>
+                                                        <option value="Back Office System Support Engineer.">Back Office System Support Engineer.</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <h4 class="col-2"><b>APS</b></h4>
+                                            <div class="row mb-3">
+                                                <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 1</label>
+                                                <div class="col-3">
+                                                    <select id="karyawan_ap2" class="form-control">
+                                                        <option selected disabled>Pilih...</option>
+                                                        <option value="Suharyana">Suharyana</option>
+                                                        <option value="Rizky Andromedha">Rizky Andromedha</option>
+                                                        <option value="Dimas Wahyudin">Dimas Wahyudin</option>
+                                                    </select>
+                                                </div>
+                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Jabatan 1</label>
+                                                <div class="col">
+                                                    <select id="karyawan_aps" class="form-control">
+                                                        <option selected disabled>Pilih...</option>
+                                                        <option value="Manager of Data Network & IT Non Public Service;">Manager of Data Network & IT Non Public Service;</option>
+                                                        <option value="Assistant Manager of IT Non Public Service;">Assistant Manager of IT Non Public Service;</option>
+                                                        <option value="Back Office System Support Engineer.">Back Office System Support Engineer.</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
-                                                <label for="nama" class="col-sm-2 col-form-label" autofocus>Karyawan 4</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="nama" name="nama" value="" placeholder="Masukkan Karyawan 4..." autofocus required>
-                                                    <div id="validationServer04Feedback" class="invalid-feedback">
-                                                    </div>
+                                                <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 2</label>
+                                                <div class="col-3">
+                                                    <select id="karyawan_ap2" class="form-control">
+                                                        <option selected disabled>Pilih...</option>
+                                                        <option value="Suharyana">Suharyana</option>
+                                                        <option value="Rizky Andromedha">Rizky Andromedha</option>
+                                                        <option value="Dimas Wahyudin">Dimas Wahyudin</option>
+                                                    </select>
                                                 </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <label for="nama" class="col-sm-2 col-form-label" autofocus>Karyawan 5</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="nama" name="nama" value="" placeholder="Masukkan Karyawan 5..." autofocus required>
-                                                    <div id="validationServer04Feedback" class="invalid-feedback">
-                                                    </div>
+                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Jabatan 2</label>
+                                                <div class="col">
+                                                    <select id="karyawan_aps" class="form-control">
+                                                        <option selected disabled>Pilih...</option>
+                                                        <option value="Manager of Data Network & IT Non Public Service;">Manager of Data Network & IT Non Public Service;</option>
+                                                        <option value="Assistant Manager of IT Non Public Service;">Assistant Manager of IT Non Public Service;</option>
+                                                        <option value="Back Office System Support Engineer.">Back Office System Support Engineer.</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary">Submit</button>
