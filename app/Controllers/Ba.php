@@ -2,8 +2,17 @@
 
 namespace App\Controllers;
 
+use App\Models\BaModel;
+
 class Ba extends BaseController
 {
+    protected $BaModel;
+
+    public function __construct()
+    {
+        $this->BaModel = new BaModel();
+    }
+
     public function index()
     {
         $data = [

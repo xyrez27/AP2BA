@@ -12,4 +12,13 @@ class Pages extends BaseController
 
         return view('pages/dashboard', $data);
     }
+
+    public function login()
+    {
+        $data = [
+            'title' => 'Login | BA Angkasa Pura II'
+        ];
+
+        return view('pages/login', $data);
+    }
 }

@@ -21,9 +21,7 @@
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/ba/sewa-pc">SEWA PC</a>
-                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/ba/sewa-printer">SEWA PRINTER</a>
-                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/ba/tagihan-listrik">TAGIHAN LISTRIK</a>
                     </div>
                 </li>

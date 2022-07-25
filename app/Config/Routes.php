@@ -39,6 +39,7 @@ $routes->get('/', 'Pages::dashboard');
 $routes->get('/ba/sewa-pc', 'Ba::sewaPC');
 $routes->get('/ba/sewa-printer', 'Ba::sewaPrinter');
 $routes->get('/ba/tagihan-listrik', 'Ba::tagihanListrik');
+$routes->get('/login', 'Pages::login');
 
 
 /*
