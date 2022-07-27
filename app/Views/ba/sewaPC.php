@@ -32,6 +32,14 @@
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
+                                                <label for="nama" class="col-sm-2 col-form-label">No BA Pemeriksaan</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" id="nobapem" name="nobapem" placeholder="Masukkan Nomer BA Pemeriksaan..." value="">
+                                                    <div id="validationServer04Feedback" class="invalid-feedback">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
                                                 <label for="no_ma" class="col-sm-2 col-form-label">M.A No</label>
                                                 <div class="col-3">
                                                     <select id="no_ma" class="form-control">
@@ -139,7 +147,7 @@
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
-                                                <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 1</label>
+                                                <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 2</label>
                                                 <div class="col-3">
                                                     <select id="karyawan_ap2" class="form-control">
                                                         <option selected disabled>Pilih...</option>
@@ -147,7 +155,7 @@
                                                         <option value="Toni Rinaldy">Toni Rinaldy</option>
                                                     </select>
                                                 </div>
-                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Jabatan 1</label>
+                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Jabatan 2</label>
                                                 <div class="col">
                                                     <select id="karyawan_aps" class="form-control">
                                                         <option selected disabled>Pilih...</option>
