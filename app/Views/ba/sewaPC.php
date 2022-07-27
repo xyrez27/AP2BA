@@ -1,7 +1,7 @@
 <?= $this->extend('layout/template'); ?>
 <?= $this->section('content'); ?>
 
-<div class="bg-gradient-primary">
+<div class="bg-template">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-10 col-lg-12 col-md-9">
@@ -35,9 +35,9 @@
                                                 <label for="no_ma" class="col-sm-2 col-form-label">M.A No</label>
                                                 <div class="col-3">
                                                     <select id="no_ma" class="form-control">
-                                                        <option selected disabled>Pilih...</option>
+                                                        <!-- <option selected disabled>Pilih...</option> -->
                                                         <option value="eksploitasi">Eksploitasi</option>
-                                                        <option value="investasi">Investasi</option>
+                                                        <option selected value="investasi">Investasi</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -57,25 +57,25 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <h2>Nama Karyawan</h2>
+                                            <h2>Nama Karyawan</h2> <!-- KARYAWAN AP2 -->
                                             <h4 class="col-2"><b>AP II</b></h4>
                                             <div class="row mb-3">
                                                 <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 1</label>
                                                 <div class="col-3">
                                                     <select id="karyawan_ap2" class="form-control">
                                                         <option selected disabled>Pilih...</option>
-                                                        <option value="Suharyana">Suharyana</option>
-                                                        <option value="Rizky Andromedha">Rizky Andromedha</option>
-                                                        <option value="Dimas Wahyudin">Dimas Wahyudin</option>
+                                                        <?php foreach ($karyawan_ap2 as $ap2) : ?>
+                                                            <option value="<?= $ap2['nama_karyawan']; ?>"><?= $ap2['nama_karyawan']; ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
-                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Jabatan 1</label>
+                                                <label for="jabatan_ap2" class="col-sm-2 col-form-label">Jabatan 1</label>
                                                 <div class="col">
-                                                    <select id="karyawan_aps" class="form-control">
+                                                    <select id="jabatan_ap2" class="form-control">
                                                         <option selected disabled>Pilih...</option>
-                                                        <option value="Manager of Data Network & IT Non Public Service;">Manager of Data Network & IT Non Public Service;</option>
-                                                        <option value="Assistant Manager of IT Non Public Service;">Assistant Manager of IT Non Public Service;</option>
-                                                        <option value="Back Office System Support Engineer.">Back Office System Support Engineer.</option>
+                                                        <?php foreach ($jabatan_ap2 as $ap2) : ?>
+                                                            <option value="<?= $ap2['nama_jabatan']; ?>"><?= $ap2['nama_jabatan']; ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -84,18 +84,18 @@
                                                 <div class="col-3">
                                                     <select id="karyawan_ap2" class="form-control">
                                                         <option selected disabled>Pilih...</option>
-                                                        <option value="Suharyana">Suharyana</option>
-                                                        <option value="Rizky Andromedha">Rizky Andromedha</option>
-                                                        <option value="Dimas Wahyudin">Dimas Wahyudin</option>
+                                                        <?php foreach ($karyawan_ap2 as $ap2) : ?>
+                                                            <option value="<?= $ap2['nama_karyawan']; ?>"><?= $ap2['nama_karyawan']; ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
-                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Jabatan 2</label>
+                                                <label for="jabatan_ap2" class="col-sm-2 col-form-label">Jabatan 2</label>
                                                 <div class="col">
-                                                    <select id="karyawan_aps" class="form-control">
+                                                    <select id="jabatan_ap2" class="form-control">
                                                         <option selected disabled>Pilih...</option>
-                                                        <option value="Manager of Data Network & IT Non Public Service;">Manager of Data Network & IT Non Public Service;</option>
-                                                        <option value="Assistant Manager of IT Non Public Service;">Assistant Manager of IT Non Public Service;</option>
-                                                        <option value="Back Office System Support Engineer.">Back Office System Support Engineer.</option>
+                                                        <?php foreach ($jabatan_ap2 as $ap2) : ?>
+                                                            <option value="<?= $ap2['nama_jabatan']; ?>"><?= $ap2['nama_jabatan']; ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -104,55 +104,59 @@
                                                 <div class="col-3">
                                                     <select id="karyawan_ap2" class="form-control">
                                                         <option selected disabled>Pilih...</option>
-                                                        <option value="Suharyana">Suharyana</option>
-                                                        <option value="Rizky Andromedha">Rizky Andromedha</option>
-                                                        <option value="Dimas Wahyudin">Dimas Wahyudin</option>
+                                                        <?php foreach ($karyawan_ap2 as $ap2) : ?>
+                                                            <option value="<?= $ap2['nama_karyawan']; ?>"><?= $ap2['nama_karyawan']; ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
-                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Jabatan 3</label>
+                                                <label for="jabatan_ap2" class="col-sm-2 col-form-label">Jabatan 3</label>
                                                 <div class="col">
-                                                    <select id="karyawan_aps" class="form-control">
+                                                    <select id="jabatan_ap2" class="form-control">
                                                         <option selected disabled>Pilih...</option>
-                                                        <option value="Manager of Data Network & IT Non Public Service;">Manager of Data Network & IT Non Public Service;</option>
-                                                        <option value="Assistant Manager of IT Non Public Service;">Assistant Manager of IT Non Public Service;</option>
-                                                        <option value="Back Office System Support Engineer.">Back Office System Support Engineer.</option>
+                                                        <?php foreach ($jabatan_ap2 as $ap2) : ?>
+                                                            <option value="<?= $ap2['nama_jabatan']; ?>"><?= $ap2['nama_jabatan']; ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <h4 class="col-2"><b>APS</b></h4>
+                                            <h4 class="col-2"><b>APS</b></h4> <!-- KARYAWAN APS -->
                                             <div class="row mb-3">
-                                                <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 1</label>
+                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Karyawan 1</label>
                                                 <div class="col-3">
-                                                    <select id="karyawan_ap2" class="form-control">
-                                                        <option selected disabled>Pilih...</option>
-                                                        <option value="Andy Ihza Mahendra">Andy Ihza Mahendra</option>
-                                                        <option value="Toni Rinaldy">Toni Rinaldy</option>
-                                                    </select>
-                                                </div>
-                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Jabatan 1</label>
-                                                <div class="col">
                                                     <select id="karyawan_aps" class="form-control">
                                                         <option selected disabled>Pilih...</option>
-                                                        <option value="EVP of APS Facility Services;">EVP of APS Facility Services;</option>
-                                                        <option value="Staf Administrasi.">Staf Administrasi.</option>
+                                                        <?php foreach ($karyawan_aps as $aps) : ?>
+                                                            <option value="<?= $aps['nama_karyawan']; ?>"><?= $aps['nama_karyawan']; ?></option>
+                                                        <?php endforeach; ?>
+                                                    </select>
+                                                </div>
+                                                <label for="jabatan_aps" class="col-sm-2 col-form-label">Jabatan 1</label>
+                                                <div class="col">
+                                                    <select id="jabatan_aps" class="form-control">
+                                                        <option selected disabled>Pilih...</option>
+                                                        <?php foreach ($jabatan_aps as $aps) : ?>
+                                                            <option value="<?= $aps['nama_jabatan']; ?>"><?= $aps['nama_jabatan']; ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
-                                                <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 1</label>
+                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Karyawan 2</label>
                                                 <div class="col-3">
-                                                    <select id="karyawan_ap2" class="form-control">
-                                                        <option selected disabled>Pilih...</option>
-                                                        <option value="Andy Ihza Mahendra">Andy Ihza Mahendra</option>
-                                                        <option value="Toni Rinaldy">Toni Rinaldy</option>
-                                                    </select>
-                                                </div>
-                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Jabatan 1</label>
-                                                <div class="col">
                                                     <select id="karyawan_aps" class="form-control">
                                                         <option selected disabled>Pilih...</option>
-                                                        <option value="EVP of APS Facility Services;">EVP of APS Facility Services;</option>
-                                                        <option value="Staf Administrasi.">Staf Administrasi.</option>
+                                                        <?php foreach ($karyawan_aps as $aps) : ?>
+                                                            <option value="<?= $aps['nama_karyawan']; ?>"><?= $aps['nama_karyawan']; ?></option>
+                                                        <?php endforeach; ?>
+                                                    </select>
+                                                </div>
+                                                <label for="jabatan_aps" class="col-sm-2 col-form-label">Jabatan 2</label>
+                                                <div class="col">
+                                                    <select id="jabatan_aps" class="form-control">
+                                                        <option selected disabled>Pilih...</option>
+                                                        <?php foreach ($jabatan_aps as $aps) : ?>
+                                                            <option value="<?= $aps['nama_jabatan']; ?>"><?= $aps['nama_jabatan']; ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>

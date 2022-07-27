@@ -2,15 +2,21 @@
 
 namespace App\Controllers;
 
-use App\Models\BaModel;
+use App\Models\KaryawanAP2Model;
+use App\Models\KaryawanAPSModel;
+use App\Models\JabatanAP2Model;
+use App\Models\JabatanAPSModel;
 
 class Ba extends BaseController
 {
-    protected $BaModel;
+    protected $KaryawanAP2Model;
 
     public function __construct()
     {
-        $this->BaModel = new BaModel();
+        $this->KaryawanAP2Model = new KaryawanAP2Model();
+        $this->KaryawanAPSModel = new KaryawanAPSModel();
+        $this->JabatanAP2Model = new JabatanAP2Model();
+        $this->JabatanAPSModel = new JabatanAPSModel();
     }
 
     public function index()
@@ -25,7 +31,11 @@ class Ba extends BaseController
     public function sewaPC()
     {
         $data = [
-            'title' => 'Sewa PC | BA Angkasa Pura II'
+            'title' => 'Sewa PC | BA Angkasa Pura II',
+            'karyawan_ap2' => $this->KaryawanAP2Model->getKaryawanAP2(),
+            'karyawan_aps' => $this->KaryawanAPSModel->getKaryawanAPS(),
+            'jabatan_ap2' => $this->JabatanAP2Model->getJabatanAP2(),
+            'jabatan_aps' => $this->JabatanAPSModel->getJabatanAPS()
         ];
 
         return view('ba/sewaPC', $data);
