@@ -10,6 +10,7 @@
     <meta name="author" content="">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <!-- My CSS -->
@@ -37,7 +38,6 @@
         </div>
     </div>
 
-
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -59,6 +59,44 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
+    <!-- My Script -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".add_item_btn").click(function(e) {
+                e.preventDefault();
+                $("#show_karyawan").prepend(`<div class="row mb-3">
+                                                    <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 1</label>
+                                                    <div class="col-3">
+                                                        <select id="karyawan_ap2" class="form-control">
+                                                            <option selected disabled>Pilih...</option>
+                                                            <?php foreach ($karyawan_ap2 as $ap2) : ?>
+                                                                <option value="<?= $ap2['nama_karyawan']; ?>"><?= $ap2['nama_karyawan']; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
+                                                    <label for="jabatan_ap2" class="col-sm-2 col-form-label">Jabatan 1</label>
+                                                    <div class="col-4">
+                                                        <select id="jabatan_ap2" class="form-control">
+                                                            <option selected disabled>Pilih...</option>
+                                                            <?php foreach ($jabatan_ap2 as $ap2) : ?>
+                                                                <option value="<?= $ap2['nama_jabatan']; ?>"><?= $ap2['nama_jabatan']; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col text-right">
+                                                        <button class="btn btn-danger remove_item_btn"><i class="fa fa-close"></i></button>
+                                                    </div>
+                                                </div>`);
+            });
+            $(document).on('click', '.remove_item_btn', function(e) {
+                e.preventDefault();
+                let row_item = $(this).parent().parent();
+                $(row_item).remove();
+            });
+        });
+    </script>
 </body>
 
 </html>

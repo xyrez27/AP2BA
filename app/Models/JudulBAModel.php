@@ -4,18 +4,18 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class JabatanAP2Model extends Model
+class JudulBAModel extends Model
 {
-    protected $table = 'ms_jabatan_ap2';
+    protected $table = 'ms_judul_ba';
     protected $useTimestamps = true;
-    protected $allowedFields = ['id_jabatan', 'nama_jabatan'];
+    protected $allowedFields = ['id_judul_ba', 'nama_judul_ba'];
 
-    public function getJabatanAP2($nama_jabatan = false)
+    public function getJudulBA($nama_judul_ba = false)
     {
-        if ($nama_jabatan == false) {
+        if ($nama_judul_ba == false) {
             return $this->findAll();
         }
 
-        return $this->where(['nama_jabatan' => $nama_jabatan])->first();
+        return $this->where(['nama_judul_ba' => $nama_judul_ba])->first();
     }
 }
