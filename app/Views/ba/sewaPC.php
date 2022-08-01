@@ -1,7 +1,7 @@
 <?= $this->extend('layout/template'); ?>
 <?= $this->section('content'); ?>
 
-<div class="bg-gradient-primary">
+<div class="bg-template">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-10 col-lg-12 col-md-9">
@@ -16,9 +16,20 @@
                                             <?= csrf_field(); ?>
                                             <h2>BERITA ACARA SEWA PC</h2>
                                             <div class="row mb-3">
-                                                <label for="nama" class="col-sm-2 col-form-label" autofocus>Judul BA</label>
+                                                <label for="judul_ba" class="col-sm-2 col-form-label" autofocus>Judul BA</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="nama" name="nama" value="" placeholder="Masukkan Judul BA..." autofocus required>
+                                                    <input type="text" class="form-control" id="judulBA" name="judulBA" placeholder="Masukkan Judul BA" list="judul_ba">
+                                                    <datalist id="judul_ba">
+                                                        <?php foreach ($judul_ba as $jba) : ?>
+                                                            <option value="<?= $jba['nama_judul_ba']; ?>"><?= $jba['nama_judul_ba']; ?></option>
+                                                        <?php endforeach; ?>
+                                                    </datalist>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label for="nobapem" class="col-sm-2 col-form-label">No Pemeriksaan</label>
+                                                <div class="col">
+                                                    <input type="text" class="form-control" id="nobapem" name="nobapem" placeholder="Masukkan Nomer BA Pemeriksaan..." value="">
                                                     <div id="validationServer04Feedback" class="invalid-feedback">
                                                     </div>
                                                 </div>
@@ -43,9 +54,8 @@
                                                 <label for="no_ma" class="col-sm-2 col-form-label">M.A No</label>
                                                 <div class="col-3">
                                                     <select id="no_ma" class="form-control">
-                                                        <option selected disabled>Pilih...</option>
                                                         <option value="eksploitasi">Eksploitasi</option>
-                                                        <option value="investasi">Investasi</option>
+                                                        <option selected value="investasi">Investasi</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -65,85 +75,31 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <h2>Nama Karyawan</h2>
+                                            <h2>Nama Karyawan</h2> <!-- KARYAWAN AP2 -->
                                             <h4 class="col-2"><b>AP II</b></h4>
-                                            <div class="row mb-3">
-                                                <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 1</label>
-                                                <div class="col-3">
-                                                    <select id="karyawan_ap2" class="form-control">
-                                                        <option selected disabled>Pilih...</option>
-                                                        <option value="Suharyana">Suharyana</option>
-                                                        <option value="Rizky Andromedha">Rizky Andromedha</option>
-                                                        <option value="Dimas Wahyudin">Dimas Wahyudin</option>
-                                                    </select>
-                                                </div>
-                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Jabatan 1</label>
-                                                <div class="col">
-                                                    <select id="karyawan_aps" class="form-control">
-                                                        <option selected disabled>Pilih...</option>
-                                                        <option value="Manager of Data Network & IT Non Public Service;">Manager of Data Network & IT Non Public Service;</option>
-                                                        <option value="Assistant Manager of IT Non Public Service;">Assistant Manager of IT Non Public Service;</option>
-                                                        <option value="Back Office System Support Engineer.">Back Office System Support Engineer.</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 2</label>
-                                                <div class="col-3">
-                                                    <select id="karyawan_ap2" class="form-control">
-                                                        <option selected disabled>Pilih...</option>
-                                                        <option value="Suharyana">Suharyana</option>
-                                                        <option value="Rizky Andromedha">Rizky Andromedha</option>
-                                                        <option value="Dimas Wahyudin">Dimas Wahyudin</option>
-                                                    </select>
-                                                </div>
-                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Jabatan 2</label>
-                                                <div class="col">
-                                                    <select id="karyawan_aps" class="form-control">
-                                                        <option selected disabled>Pilih...</option>
-                                                        <option value="Manager of Data Network & IT Non Public Service;">Manager of Data Network & IT Non Public Service;</option>
-                                                        <option value="Assistant Manager of IT Non Public Service;">Assistant Manager of IT Non Public Service;</option>
-                                                        <option value="Back Office System Support Engineer.">Back Office System Support Engineer.</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 3</label>
-                                                <div class="col-3">
-                                                    <select id="karyawan_ap2" class="form-control">
-                                                        <option selected disabled>Pilih...</option>
-                                                        <option value="Suharyana">Suharyana</option>
-                                                        <option value="Rizky Andromedha">Rizky Andromedha</option>
-                                                        <option value="Dimas Wahyudin">Dimas Wahyudin</option>
-                                                    </select>
-                                                </div>
-                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Jabatan 3</label>
-                                                <div class="col">
-                                                    <select id="karyawan_aps" class="form-control">
-                                                        <option selected disabled>Pilih...</option>
-                                                        <option value="Manager of Data Network & IT Non Public Service;">Manager of Data Network & IT Non Public Service;</option>
-                                                        <option value="Assistant Manager of IT Non Public Service;">Assistant Manager of IT Non Public Service;</option>
-                                                        <option value="Back Office System Support Engineer.">Back Office System Support Engineer.</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <h4 class="col-2"><b>APS</b></h4>
-                                            <div class="row mb-3">
-                                                <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 1</label>
-                                                <div class="col-3">
-                                                    <select id="karyawan_ap2" class="form-control">
-                                                        <option selected disabled>Pilih...</option>
-                                                        <option value="Andy Ihza Mahendra">Andy Ihza Mahendra</option>
-                                                        <option value="Toni Rinaldy">Toni Rinaldy</option>
-                                                    </select>
-                                                </div>
-                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Jabatan 1</label>
-                                                <div class="col">
-                                                    <select id="karyawan_aps" class="form-control">
-                                                        <option selected disabled>Pilih...</option>
-                                                        <option value="EVP of APS Facility Services;">EVP of APS Facility Services;</option>
-                                                        <option value="Staf Administrasi.">Staf Administrasi.</option>
-                                                    </select>
+                                            <div id="show_karyawan_ap2">
+                                                <div class="row mb-3">
+                                                    <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 1</label>
+                                                    <div class="col-3">
+                                                        <select id="karyawan_ap2" class="form-control">
+                                                            <option selected disabled>Pilih...</option>
+                                                            <?php foreach ($karyawan_ap2 as $ap2) : ?>
+                                                                <option value="<?= $ap2['nama_karyawan']; ?>"><?= $ap2['nama_karyawan']; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
+                                                    <label for="jabatan_ap2" class="col-sm-2 col-form-label">Jabatan 1</label>
+                                                    <div class="col-4">
+                                                        <select id="jabatan_ap2" class="form-control">
+                                                            <option selected disabled>Pilih...</option>
+                                                            <?php foreach ($jabatan_ap2 as $ap2) : ?>
+                                                                <option value="<?= $ap2['nama_jabatan']; ?>"><?= $ap2['nama_jabatan']; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col text-right">
+                                                        <button class="btn btn-success add_item_btn_ap2"><i class="fa fa-plus"></i></button>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
