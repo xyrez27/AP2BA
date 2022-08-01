@@ -63,9 +63,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
+            var i = 1;
             $(".add_item_btn_ap2").click(function(e) {
+                i++;
                 e.preventDefault();
-                $("#show_karyawan_ap2").prepend(`<div class="row mb-3">
+                $("#show_karyawan_ap2").append(`<div class="row mb-3">
                                                     <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 1</label>
                                                     <div class="col-3">
                                                         <select id="karyawan_ap2" class="form-control">
@@ -100,7 +102,7 @@
         $(document).ready(function() {
             $(".add_item_btn_aps").click(function(j) {
                 j.preventDefault();
-                $("#show_karyawan_aps").prepend(`<div class="row mb-3">
+                $("#show_karyawan_aps").append(`<div class="row mb-3">
                                                     <label for="karyawan_aps" class="col-sm-2 col-form-label">Karyawan 1</label>
                                                     <div class="col-3">
                                                         <select id="karyawan_aps" class="form-control">
