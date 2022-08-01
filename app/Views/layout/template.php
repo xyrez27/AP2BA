@@ -60,13 +60,12 @@
     <script src="js/sb-admin-2.min.js"></script>
 
     <!-- My Script -->
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
-            $(".add_item_btn").click(function(e) {
+            $(".add_item_btn_ap2").click(function(e) {
                 e.preventDefault();
-                $("#show_karyawan").prepend(`<div class="row mb-3">
+                $("#show_karyawan_ap2").prepend(`<div class="row mb-3">
                                                     <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 1</label>
                                                     <div class="col-3">
                                                         <select id="karyawan_ap2" class="form-control">
@@ -86,12 +85,47 @@
                                                         </select>
                                                     </div>
                                                     <div class="col text-right">
-                                                        <button class="btn btn-danger remove_item_btn"><i class="fa fa-close"></i></button>
+                                                        <button class="btn btn-danger remove_item_btn_ap2"><i class="fa fa-close"></i></button>
                                                     </div>
                                                 </div>`);
             });
-            $(document).on('click', '.remove_item_btn', function(e) {
+            $(document).on('click', '.remove_item_btn_ap2', function(e) {
                 e.preventDefault();
+                let row_item = $(this).parent().parent();
+                $(row_item).remove();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(".add_item_btn_aps").click(function(j) {
+                j.preventDefault();
+                $("#show_karyawan_aps").prepend(`<div class="row mb-3">
+                                                    <label for="karyawan_aps" class="col-sm-2 col-form-label">Karyawan 1</label>
+                                                    <div class="col-3">
+                                                        <select id="karyawan_aps" class="form-control">
+                                                            <option selected disabled>Pilih...</option>
+                                                            <?php foreach ($karyawan_aps as $aps) : ?>
+                                                                <option value="<?= $aps['nama_karyawan']; ?>"><?= $aps['nama_karyawan']; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
+                                                    <label for="jabatan_aps" class="col-sm-2 col-form-label">Jabatan 1</label>
+                                                    <div class="col-4">
+                                                        <select id="jabatan_aps" class="form-control">
+                                                            <option selected disabled>Pilih...</option>
+                                                            <?php foreach ($jabatan_aps as $aps) : ?>
+                                                                <option value="<?= $aps['nama_jabatan']; ?>"><?= $aps['nama_jabatan']; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col text-right">
+                                                        <button class="btn btn-danger remove_item_btn_aps"><i class="fa fa-close"></i></button>
+                                                    </div>
+                                                </div>`);
+            });
+            $(document).on('click', '.remove_item_btn_aps', function(j) {
+                j.preventDefault();
                 let row_item = $(this).parent().parent();
                 $(row_item).remove();
             });

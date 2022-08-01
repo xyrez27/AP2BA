@@ -18,12 +18,12 @@
                                             <div class="row mb-3">
                                                 <label for="judul_ba" class="col-sm-2 col-form-label" autofocus>Judul BA</label>
                                                 <div class="col-sm-10">
-                                                    <select id="judul_ba" class="form-control">
-                                                        <option selected disabled>Pilih...</option>
+                                                    <input type="text" class="form-control" id="judulBA" name="judulBA" placeholder="Masukkan Judul BA" list="judul_ba">
+                                                    <datalist id="judul_ba">
                                                         <?php foreach ($judul_ba as $jba) : ?>
                                                             <option value="<?= $jba['nama_judul_ba']; ?>"><?= $jba['nama_judul_ba']; ?></option>
                                                         <?php endforeach; ?>
-                                                    </select>
+                                                    </datalist>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
@@ -46,7 +46,6 @@
                                                 <label for="no_ma" class="col-sm-2 col-form-label">M.A No</label>
                                                 <div class="col-3">
                                                     <select id="no_ma" class="form-control">
-                                                        <!-- <option selected disabled>Pilih...</option> -->
                                                         <option value="eksploitasi">Eksploitasi</option>
                                                         <option selected value="investasi">Investasi</option>
                                                     </select>
@@ -70,7 +69,7 @@
                                             </div>
                                             <h2>Nama Karyawan</h2> <!-- KARYAWAN AP2 -->
                                             <h4 class="col-2"><b>AP II</b></h4>
-                                            <div id="show_karyawan">
+                                            <div id="show_karyawan_ap2">
                                                 <div class="row mb-3">
                                                     <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 1</label>
                                                     <div class="col-3">
@@ -91,49 +90,34 @@
                                                         </select>
                                                     </div>
                                                     <div class="col text-right">
-                                                        <button class="btn btn-success add_item_btn">Add</button>
+                                                        <button class="btn btn-success add_item_btn_ap2"><i class="fa fa-plus"></i></button>
                                                     </div>
                                                 </div>
                                             </div>
                                             <h4 class="col-2"><b>APS</b></h4> <!-- KARYAWAN APS -->
-                                            <div class="row mb-3">
-                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Karyawan 1</label>
-                                                <div class="col-3">
-                                                    <select id="karyawan_aps" class="form-control">
-                                                        <option selected disabled>Pilih...</option>
-                                                        <?php foreach ($karyawan_aps as $aps) : ?>
-                                                            <option value="<?= $aps['nama_karyawan']; ?>"><?= $aps['nama_karyawan']; ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>
-                                                </div>
-                                                <label for="jabatan_aps" class="col-sm-2 col-form-label">Jabatan 1</label>
-                                                <div class="col">
-                                                    <select id="jabatan_aps" class="form-control">
-                                                        <option selected disabled>Pilih...</option>
-                                                        <?php foreach ($jabatan_aps as $aps) : ?>
-                                                            <option value="<?= $aps['nama_jabatan']; ?>"><?= $aps['nama_jabatan']; ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <label for="karyawan_aps" class="col-sm-2 col-form-label">Karyawan 2</label>
-                                                <div class="col-3">
-                                                    <select id="karyawan_aps" class="form-control">
-                                                        <option selected disabled>Pilih...</option>
-                                                        <?php foreach ($karyawan_aps as $aps) : ?>
-                                                            <option value="<?= $aps['nama_karyawan']; ?>"><?= $aps['nama_karyawan']; ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>
-                                                </div>
-                                                <label for="jabatan_aps" class="col-sm-2 col-form-label">Jabatan 2</label>
-                                                <div class="col">
-                                                    <select id="jabatan_aps" class="form-control">
-                                                        <option selected disabled>Pilih...</option>
-                                                        <?php foreach ($jabatan_aps as $aps) : ?>
-                                                            <option value="<?= $aps['nama_jabatan']; ?>"><?= $aps['nama_jabatan']; ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>
+                                            <div class="show_karyawan_aps">
+                                                <div class="row mb-3">
+                                                    <label for="karyawan_aps" class="col-sm-2 col-form-label">Karyawan 1</label>
+                                                    <div class="col-3">
+                                                        <select id="karyawan_aps" class="form-control">
+                                                            <option selected disabled>Pilih...</option>
+                                                            <?php foreach ($karyawan_aps as $aps) : ?>
+                                                                <option value="<?= $aps['nama_karyawan']; ?>"><?= $aps['nama_karyawan']; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
+                                                    <label for="jabatan_aps" class="col-sm-2 col-form-label">Jabatan 1</label>
+                                                    <div class="col-4">
+                                                        <select id="jabatan_aps" class="form-control">
+                                                            <option selected disabled>Pilih...</option>
+                                                            <?php foreach ($jabatan_aps as $aps) : ?>
+                                                                <option value="<?= $aps['nama_jabatan']; ?>"><?= $aps['nama_jabatan']; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col text-right">
+                                                        <button class="btn btn-success add_item_btn_aps"><i class="fa fa-plus"></i></button>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary">Submit</button>
