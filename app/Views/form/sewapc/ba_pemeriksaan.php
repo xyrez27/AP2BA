@@ -11,7 +11,7 @@
                                     <div class="text-center">
                                         <form action="/beritaacara/save" method="POST" enctype="multipart/form-data">
                                             <?= csrf_field(); ?>
-                                            <h2>BERITA ACARA SEWA PC</h2>
+                                            <h2>BERITA ACARA PEMERIKSAAN</h2>
                                             <div class="row mb-3">
                                                 <label for="judul_ba" class="col-sm-2 col-form-label" autofocus>Judul BA</label>
                                                 <div class="col-sm-10">
