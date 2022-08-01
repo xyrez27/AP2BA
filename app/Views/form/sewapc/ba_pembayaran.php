@@ -11,11 +11,11 @@
                                     <div class="text-center">
                                         <form action="/beritaacara/save" method="POST" enctype="multipart/form-data">
                                             <?= csrf_field(); ?>
-                                            <h2>BERITA ACARA PEMERIKSAAN</h2>
+                                            <h2>BERITA ACARA PEMBAYARAN</h2>
                                             <div class="row mb-3">
-                                                <label for="judul_ba" class="col-sm-2 col-form-label" autofocus>Judul BA</label>
+                                                <label for="pekerjaan" class="col-sm-2 col-form-label" autofocus>Pekerjaan</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="judulBA" name="judulBA" placeholder="Masukkan Judul BA" list="judul_ba">
+                                                    <input type="text" class="form-control" id="pekerjaan" name="pekerjaan" placeholder="Masukkan Judul BA" list="judul_ba">
                                                     <datalist id="judul_ba">
                                                         <?php foreach ($judul_ba as $jba) : ?>
                                                             <option value="<?= $jba['nama_judul_ba']; ?>"><?= $jba['nama_judul_ba']; ?></option>

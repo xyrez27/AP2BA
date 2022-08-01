@@ -1,5 +1,5 @@
-<?= $this->extend('layout/template'); ?>
-<?= $this->section('content'); ?>
+<?= $this->extend('layout/default'); ?>
+<?= $this->section('default'); ?>
 
 <div class="bg-template">
     <div class="container">
