@@ -92,7 +92,7 @@
                                                 </div>
                                             </div>
                                             <h4 class="col-2"><b>APS</b></h4> <!-- KARYAWAN APS -->
-                                            <div class="show_karyawan_aps">
+                                            <div id="show_karyawan_aps">
                                                 <div class="row mb-3">
                                                     <label for="karyawan_aps" class="col-sm-2 col-form-label">Karyawan 1</label>
                                                     <div class="col-3">

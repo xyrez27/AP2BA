@@ -63,12 +63,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
-            var i = 1;
+            var x = 1,
+                y = 1;
             $(".add_item_btn_ap2").click(function(e) {
-                i++;
+                x++;
                 e.preventDefault();
                 $("#show_karyawan_ap2").append(`<div class="row mb-3">
-                                                    <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 1</label>
+                                                    <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan ` + x + `</label>
                                                     <div class="col-3">
                                                         <select id="karyawan_ap2" class="form-control">
                                                             <option selected disabled>Pilih...</option>
@@ -91,19 +92,11 @@
                                                     </div>
                                                 </div>`);
             });
-            $(document).on('click', '.remove_item_btn_ap2', function(e) {
-                e.preventDefault();
-                let row_item = $(this).parent().parent();
-                $(row_item).remove();
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
             $(".add_item_btn_aps").click(function(j) {
+                y++;
                 j.preventDefault();
                 $("#show_karyawan_aps").append(`<div class="row mb-3">
-                                                    <label for="karyawan_aps" class="col-sm-2 col-form-label">Karyawan 1</label>
+                                                    <label for="karyawan_aps" class="col-sm-2 col-form-label">Karyawan ` + y + `</label>
                                                     <div class="col-3">
                                                         <select id="karyawan_aps" class="form-control">
                                                             <option selected disabled>Pilih...</option>
@@ -126,7 +119,14 @@
                                                     </div>
                                                 </div>`);
             });
+            $(document).on('click', '.remove_item_btn_ap2', function(e) {
+                x--;
+                e.preventDefault();
+                let row_item = $(this).parent().parent();
+                $(row_item).remove();
+            });
             $(document).on('click', '.remove_item_btn_aps', function(j) {
+                y--;
                 j.preventDefault();
                 let row_item = $(this).parent().parent();
                 $(row_item).remove();
