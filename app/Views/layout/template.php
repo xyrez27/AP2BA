@@ -61,6 +61,8 @@
 
     <!-- My Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
         $(document).ready(function() {
             var x = 1,
@@ -78,7 +80,7 @@
                                                             <?php endforeach; ?>
                                                         </select>
                                                     </div>
-                                                    <label for="jabatan_ap2" class="col-sm-2 col-form-label">Jabatan 1</label>
+                                                    <label for="jabatan_ap2" class="col-sm-2 col-form-label">Jabatan ` + x + `</label>
                                                     <div class="col-4">
                                                         <select id="jabatan_ap2" class="form-control">
                                                             <option selected disabled>Pilih...</option>
@@ -105,7 +107,7 @@
                                                             <?php endforeach; ?>
                                                         </select>
                                                     </div>
-                                                    <label for="jabatan_aps" class="col-sm-2 col-form-label">Jabatan 1</label>
+                                                    <label for="jabatan_aps" class="col-sm-2 col-form-label">Jabatan ` + y + `</label>
                                                     <div class="col-4">
                                                         <select id="jabatan_aps" class="form-control">
                                                             <option selected disabled>Pilih...</option>
@@ -132,6 +134,15 @@
                 $(row_item).remove();
             });
         });
+    </script>
+    <script>
+        $("input").on("change", function() {
+            this.setAttribute(
+                "data-date",
+                moment(this.value, "YYYY-MM-DD")
+                .format(this.getAttribute("data-date-format"))
+            )
+        }).trigger("change")
     </script>
 </body>
 

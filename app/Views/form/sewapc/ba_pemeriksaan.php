@@ -11,11 +11,11 @@
                                     <div class="text-center">
                                         <form action="/beritaacara/save" method="POST" enctype="multipart/form-data">
                                             <?= csrf_field(); ?>
-                                            <h2>BERITA ACARA PEMERIKSAAN</h2>
+                                            <h2>BERITA ACARA PEMERIKSAAN</h2><br>
                                             <div class="row mb-3">
                                                 <label for="judul_ba" class="col-sm-2 col-form-label" autofocus>Judul BA</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="judulBA" name="judulBA" placeholder="Masukkan Judul BA" list="judul_ba">
+                                                    <input type="text" class="form-control" id="judul_ba" name="judul_ba" placeholder="Masukkan Judul BA" list="judul_ba">
                                                     <datalist id="judul_ba">
                                                         <?php foreach ($judul_ba as $jba) : ?>
                                                             <option value="<?= $jba['nama_judul_ba']; ?>"><?= $jba['nama_judul_ba']; ?></option>
@@ -32,10 +32,10 @@
                                                 </div>
                                             </div>
                                             <div class="row form-group">
-                                                <label for="date" class="col-2 col-form-label">Tanggal</label>
+                                                <label for="tanggal_ba" class="col-2 col-form-label">Tanggal</label>
                                                 <div class="col">
                                                     <div class="input-group date" id="datepicker">
-                                                        <input type="date" id="tanggal" name="tanggal">
+                                                        <input type="date" id="tanggal_ba" name="tanggal_ba">
                                                     </div>
                                                 </div>
                                             </div>
@@ -49,21 +49,22 @@
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
-                                                <label for="nama" class="col-sm-2 col-form-label">RKA Tahun</label>
+                                                <label for="rka_tahun" class="col-sm-2 col-form-label">RKA Tahun</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="RKA" name="RKA" placeholder="Masukkan RKA Tahun..." value="">
+                                                    <input type="text" class="form-control" id="rka_tahun" name="rka_tahun" placeholder="Masukkan RKA Tahun..." value="">
                                                     <div id="validationServer04Feedback" class="invalid-feedback">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
-                                                <label for="nama" class="col-sm-2 col-form-label">Lampiran</label>
+                                                <label for="lampiran" class="col-sm-2 col-form-label">Lampiran</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="lampiran" name="lampiran" placeholder="Masukkan Jumlah Lampiran..." value="">
                                                     <div id="validationServer04Feedback" class="invalid-feedback">
                                                     </div>
                                                 </div>
                                             </div>
+                                            <br>
                                             <h2>Nama Karyawan</h2> <!-- KARYAWAN AP2 -->
                                             <h4 class="col-2"><b>AP II</b></h4>
                                             <div id="show_karyawan_ap2">
@@ -116,8 +117,54 @@
                                                         <button class="btn btn-success add_item_btn_aps"><i class="fa fa-plus"></i></button>
                                                     </div>
                                                 </div>
+                                            </div><br><br>
+                                            <h6 class="col-2 text-left">Berdasarkan</h6> <!-- KARYAWAN APS -->
+                                            <div id="show_berdasarkan">
+                                                <div class="row mb-3">
+                                                    <label for="PSM" class="col-sm-2 col-form-label">1. PSM NO.</label>
+                                                    <div class="col-3">
+                                                        <input type="text" class="form-control" id="PSM" name="PSM" placeholder="Masukkan no PJJ.." value="">
+                                                        <div id="validationServer04Feedback" class="invalid-feedback">
+                                                        </div>
+                                                    </div>
+                                                    <label for="PSM_DATE" class="col-sm-2 col-form-label">Tanggal</label>
+                                                    <div class="col">
+                                                        <div class="input-group date" id="datepicker">
+                                                            <input type="date" id="tanggal" name="tanggal">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <label for="BAO" class="col-sm-2 col-form-label">2. BAO NO.</label>
+                                                    <div class="col-3">
+                                                        <input type="text" class="form-control" id="BAO" name="BAO" placeholder="Masukkan no BAC.." value="">
+                                                        <div id="validationServer04Feedback" class="invalid-feedback">
+                                                        </div>
+                                                    </div>
+                                                    <label for="BAO_DATE" class="col-sm-2 col-form-label">Tanggal</label>
+                                                    <div class="col">
+                                                        <div class="input-group date" id="datepicker">
+                                                            <input type="date" id="tanggal" name="tanggal">
+                                                        </div>
+                                                    </div>
+                                                </div><br>
+                                                <h6 class="col text-left">Periode Pemakaian</h6>
+                                                <div class="row mb-3">
+                                                    <label for="periode" class="col-sm-2 col-form-label">Dari</label>
+                                                    <div class="col-3">
+                                                        <div class="input-group date" id="datepicker">
+                                                            <input type="date" id="tanggal" name="tanggal" />
+                                                        </div>
+                                                    </div>
+                                                    <label for="periode" class="col-sm-2 col-form-label">Sampai</label>
+                                                    <div class="col">
+                                                        <div class="input-group date" id="datepicker">
+                                                            <input type="date" id="tanggal" name="tanggal" />
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                            <button type="submit" class="btn btn-primary">Next</button>
                                         </form>
                                     </div>
                                 </div>
@@ -129,3 +176,6 @@
         </div>
     </div>
 </div>
+<script>
+    alert("Welcome to Halaman Berita Acara Pemeriksaan");
+</script>
