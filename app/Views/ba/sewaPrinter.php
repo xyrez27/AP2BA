@@ -20,12 +20,6 @@
                     <div class="col">
                         <div class="input-group date" id="datepicker">
                             <input type="date" id="tanggal" name="tanggal">
-                            <!-- <input type="text" class="form-control">
-                            <span class="input-group-append">
-                                <span class="input-group-text bg-white">
-                                    <i class="fa fa-calendar"></i>
-                                </span>
-                            </span> -->
                         </div>
                     </div>
                 </div>

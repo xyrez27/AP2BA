@@ -7,6 +7,7 @@ use App\Models\KaryawanAPSModel;
 use App\Models\JabatanAP2Model;
 use App\Models\JabatanAPSModel;
 use App\Models\JudulBAModel;
+use App\Models\JenisKomputerModel;
 
 class Ba extends BaseController
 {
@@ -19,6 +20,7 @@ class Ba extends BaseController
         $this->JabatanAP2Model = new JabatanAP2Model();
         $this->JabatanAPSModel = new JabatanAPSModel();
         $this->JudulBAModel = new JudulBAModel();
+        $this->JenisKomputerModel = new JenisKomputerModel();
     }
 
     public function index()

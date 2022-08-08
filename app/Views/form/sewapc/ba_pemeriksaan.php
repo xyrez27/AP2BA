@@ -15,8 +15,8 @@
                                             <div class="row mb-3">
                                                 <label for="judul_ba" class="col-sm-2 col-form-label" autofocus>Judul BA</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="judul_ba" name="judul_ba" placeholder="Masukkan Judul BA" list="judul_ba">
-                                                    <datalist id="judul_ba">
+                                                    <input type="text" class="form-control" id="judul_ba" name="judul_ba" placeholder="Masukkan Judul BA" list="listJudul">
+                                                    <datalist id="listJudul">
                                                         <?php foreach ($judul_ba as $jba) : ?>
                                                             <option value="<?= $jba['nama_judul_ba']; ?>"><?= $jba['nama_judul_ba']; ?></option>
                                                         <?php endforeach; ?>
