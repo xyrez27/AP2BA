@@ -40,7 +40,8 @@ class Ba extends BaseController
             'karyawan_aps' => $this->KaryawanAPSModel->getKaryawanAPS(),
             'jabatan_ap2' => $this->JabatanAP2Model->getJabatanAP2(),
             'jabatan_aps' => $this->JabatanAPSModel->getJabatanAPS(),
-            'judul_ba' => $this->JudulBAModel->getJudulBA()
+            'judul_ba' => $this->JudulBAModel->getJudulBA(),
+            'jenis_komputer' => $this->JenisKomputerModel->getJenisKomputer()
         ];
 
         return view('ba/sewaPC', $data);

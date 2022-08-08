@@ -118,7 +118,7 @@
                                                     </div>
                                                 </div>
                                             </div><br><br>
-                                            <h6 class="col-2 text-left">Berdasarkan</h6> <!-- KARYAWAN APS -->
+                                            <h6 class="col-2 text-left">Berdasarkan</h6> <!-- Berdasarkan -->
                                             <div id="show_berdasarkan">
                                                 <div class="row mb-3">
                                                     <label for="PSM" class="col-sm-2 col-form-label">1. PSM NO.</label>
@@ -161,6 +161,32 @@
                                                         <div class="input-group date" id="datepicker">
                                                             <input type="date" id="tanggal" name="tanggal" />
                                                         </div>
+                                                    </div>
+                                                </div>
+                                            </div><br>
+                                            <h4 class="col text-center">Rincian Perangkat</h4><br>
+                                            <div id="show_jenis_komputer">
+                                                <div class="row mb-3">
+                                                    <label for="jenis_komputer" class="col-sm-2 col-form-label">Jenis Komputer 1</label>
+                                                    <div class="col-3">
+                                                        <select id="jenis_komputer" class="form-control">
+                                                            <option selected disabled>Pilih...</option>
+                                                            <?php foreach ($jenis_komputer as $pc) : ?>
+                                                                <option value="<?= $pc['nama_jenis_komputer']; ?>"><?= $pc['nama_jenis_komputer']; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
+                                                    <label for="unit_komputer" class="col-sm-2 col-form-label">Unit</label>
+                                                    <div class="col-4">
+                                                        <input type="text" class="form-control" id="jenis_komputer" name="jenis_komputer" placeholder="Masukkan Jumlah Unit" list="listJenis">
+                                                        <datalist id="listJenis">
+                                                            <?php foreach ($jenis_komputer as $unit) : ?>
+                                                                <option value="<?= $unit['jumlah_jenis_komputer']; ?>"><?= $unit['jumlah_jenis_komputer']; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </datalist>
+                                                    </div>
+                                                    <div class="col text-right">
+                                                        <button class="btn btn-success add_item_btn_jk"><i class="fa fa-plus"></i></button>
                                                     </div>
                                                 </div>
                                             </div>

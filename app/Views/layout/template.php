@@ -66,7 +66,8 @@
     <script>
         $(document).ready(function() {
             var x = 1,
-                y = 1;
+                y = 1,
+                z = 1;
             $(".add_item_btn_ap2").click(function(e) {
                 x++;
                 e.preventDefault();
@@ -121,6 +122,33 @@
                                                     </div>
                                                 </div>`);
             });
+            $(".add_item_btn_jk").click(function(k) {
+                z++;
+                k.preventDefault();
+                $("#show_jenis_komputer").append(`<div class="row mb-3">
+                                                    <label for="jenis_komputer" class="col-sm-2 col-form-label">Jenis Komputer ` + z + `</label>
+                                                    <div class="col-3">
+                                                        <select id="jenis_komputer" class="form-control">
+                                                            <option selected disabled>Pilih...</option>
+                                                            <?php foreach ($jenis_komputer as $pc) : ?>
+                                                                <option value="<?= $pc['nama_jenis_komputer']; ?>"><?= $pc['nama_jenis_komputer']; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
+                                                    <label for="unit_komputer" class="col-sm-2 col-form-label">Unit</label>
+                                                    <div class="col-4">
+                                                        <input type="text" class="form-control" id="jenis_komputer" name="jenis_komputer" placeholder="Masukkan Jumlah Unit" list="listJenis">
+                                                        <datalist id="listJenis">
+                                                            <?php foreach ($jenis_komputer as $unit) : ?>
+                                                                <option value="<?= $unit['jumlah_jenis_komputer']; ?>"><?= $unit['jumlah_jenis_komputer']; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </datalist>
+                                                    </div>
+                                                    <div class="col text-right">
+                                                        <button class="btn btn-danger remove_item_btn_jk"><i class="fa fa-close"></i></button>
+                                                    </div>
+                                                </div>`);
+            });
             $(document).on('click', '.remove_item_btn_ap2', function(e) {
                 x--;
                 e.preventDefault();
@@ -130,6 +158,12 @@
             $(document).on('click', '.remove_item_btn_aps', function(j) {
                 y--;
                 j.preventDefault();
+                let row_item = $(this).parent().parent();
+                $(row_item).remove();
+            });
+            $(document).on('click', '.remove_item_btn_jk', function(k) {
+                z--;
+                k.preventDefault();
                 let row_item = $(this).parent().parent();
                 $(row_item).remove();
             });
