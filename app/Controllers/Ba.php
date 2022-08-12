@@ -64,4 +64,15 @@ class Ba extends BaseController
 
         return view('ba/tagihanListrik', $data);
     }
+
+    public function save()
+    {
+        $data = [
+            'title' => 'Save'
+        ];
+
+        dd($this->request->getVar());
+
+        return view('form/sewapc/ba_pembayaran', $data);
+    }
 }
