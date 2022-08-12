@@ -1,3 +1,5 @@
+<?= $this->extend('layout/template'); ?>
+<?= $this->section('content'); ?>
 <div class="bg-template">
     <div class="container">
         <div class="row justify-content-center">
@@ -9,7 +11,12 @@
                             <div class="col">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <form action="/beritaacara/save" method="POST" enctype="multipart/form-data">
+                                        <?php if (session()->getFlashdata('pesan')) : ?>
+                                            <div class="alert alert-success" role="alert">
+                                                <?= session()->getFlashdata('pesan'); ?>
+                                            </div>
+                                        <?php endif; ?>
+                                        <form action="" method="POST" enctype="multipart/form-data">
                                             <?= csrf_field(); ?>
                                             <h2>BERITA ACARA PEMBAYARAN</h2>
                                             <div class="row mb-3">
@@ -129,3 +136,4 @@
         </div>
     </div>
 </div>
+<?= $this->endSection(); ?>
