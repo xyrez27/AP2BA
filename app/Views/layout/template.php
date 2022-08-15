@@ -137,7 +137,7 @@
                                                     </div>
                                                     <label for="unit_komputer" class="col-sm-2 col-form-label">Unit</label>
                                                     <div class="col-4">
-                                                        <input type="text" class="form-control" id="unit_komputer" name="unit_komputer` + z + `" placeholder="Masukkan Jumlah Unit" list="listJenis">
+                                                        <input type="number" class="form-control" id="unit_komputer" name="unit_komputer` + z + `" placeholder="Masukkan Jumlah Unit" list="listJenis">
                                                         <datalist id="listJenis">
                                                             <?php foreach ($jenis_komputer as $unit) : ?>
                                                                 <option value="<?= $unit['jumlah_jenis_komputer']; ?>"><?= $unit['jumlah_jenis_komputer']; ?></option>

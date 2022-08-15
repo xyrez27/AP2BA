@@ -112,6 +112,7 @@ class Ba extends BaseController
         ]);
 
         session()->setFlashdata('pesan', 'Data BA Pemeriksaan berhasil disimpan.');
+        // dd($this->request->getVar());
 
         return view('form/sewapc/ba_pembayaran', $data);
     }
