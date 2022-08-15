@@ -18,11 +18,11 @@
                                         <?php endif; ?>
                                         <form action="/ba/save" method="POST" enctype="multipart/form-data">
                                             <?= csrf_field(); ?>
-                                            <h2>BERITA ACARA PEMERIKSAAN</h2><br>
+                                            <h2>BERITA ACARA PEMBAYARAN</h2><br>
                                             <div class="row mb-3">
                                                 <label for="judul_ba" class="col-sm-2 col-form-label" autofocus>Judul BA</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="judul_ba" name="judul_ba" placeholder="Masukkan Judul BA" list="listJudul">
+                                                    <input type="text" class="form-control" id="judul_ba" name="judul_ba" placeholder="Masukkan Judul BA" list="listJudul" aria-required="true">
                                                     <datalist id="listJudul">
                                                         <?php foreach ($judul_ba as $jba) : ?>
                                                             <option value="<?= $jba['nama_judul_ba']; ?>"><?= $jba['nama_judul_ba']; ?></option>
@@ -33,7 +33,7 @@
                                             <div class="row mb-3">
                                                 <label for="no_pemeriksaan" class="col-sm-2 col-form-label">No Pemeriksaan</label>
                                                 <div class="col">
-                                                    <input type="text" class="form-control" id="no_pemeriksaan" name="no_pemeriksaan" placeholder="Masukkan Nomer BA Pemeriksaan..." value="">
+                                                    <input type="text" class="form-control" id="no_pemeriksaan" name="no_pemeriksaan" placeholder="Masukkan Nomer BA Pemeriksaan..." value="" required>
                                                     <div id="validationServer04Feedback" class="invalid-feedback">
                                                     </div>
                                                 </div>
@@ -42,14 +42,14 @@
                                                 <label for="tanggal_ba" class="col-2 col-form-label">Tanggal</label>
                                                 <div class="col">
                                                     <div class="input-group date" id="datepicker">
-                                                        <input type="date" id="tanggal_ba" name="tanggal_ba">
+                                                        <input type="date" id="tanggal_ba" name="tanggal_ba" required>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label for="no_ma" class="col-sm-2 col-form-label">M.A No</label>
                                                 <div class="col-3">
-                                                    <select id="no_ma" name="no_ma" class="form-control">
+                                                    <select id="no_ma" name="no_ma" class="form-control" required>
                                                         <option value="eksploitasi">Eksploitasi</option>
                                                         <option selected value="investasi">Investasi</option>
                                                     </select>
@@ -58,7 +58,7 @@
                                             <div class="row mb-3">
                                                 <label for="rka_tahun" class="col-sm-2 col-form-label">RKA Tahun</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="rka_tahun" name="rka_tahun" placeholder="Masukkan RKA Tahun..." value="">
+                                                    <input type="text" class="form-control" id="rka_tahun" name="rka_tahun" placeholder="Masukkan RKA Tahun..." value="" required>
                                                     <div id="validationServer04Feedback" class="invalid-feedback">
                                                     </div>
                                                 </div>
@@ -66,7 +66,7 @@
                                             <div class="row mb-3">
                                                 <label for="lampiran" class="col-sm-2 col-form-label">Lampiran</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="lampiran" name="lampiran" placeholder="Masukkan Jumlah Lampiran..." value="">
+                                                    <input type="text" class="form-control" id="lampiran" name="lampiran" placeholder="Masukkan Jumlah Lampiran..." value="" required>
                                                     <div id="validationServer04Feedback" class="invalid-feedback">
                                                     </div>
                                                 </div>
@@ -78,7 +78,7 @@
                                                 <div class="row mb-3">
                                                     <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan 1</label>
                                                     <div class="col-3">
-                                                        <select id="karyawan_ap2" name="karyawanap2_1" class="form-control">
+                                                        <select id="karyawan_ap2" name="karyawanap2_1" class="form-control" required>
                                                             <option selected disabled>Pilih...</option>
                                                             <?php foreach ($karyawan_ap2 as $ap2) : ?>
                                                                 <option value="<?= $ap2['id_karyawan']; ?>"><?= $ap2['nama_karyawan']; ?></option>
@@ -87,7 +87,7 @@
                                                     </div>
                                                     <label for="jabatan_ap2" class="col-sm-2 col-form-label">Jabatan 1</label>
                                                     <div class="col-4">
-                                                        <select id="jabatan_ap2" name="jabatanap2_1" class="form-control">
+                                                        <select id="jabatan_ap2" name="jabatanap2_1" class="form-control" required>
                                                             <option selected disabled>Pilih...</option>
                                                             <?php foreach ($jabatan_ap2 as $ap2) : ?>
                                                                 <option value="<?= $ap2['id_jabatan']; ?>"><?= $ap2['nama_jabatan']; ?></option>
@@ -104,7 +104,7 @@
                                                 <div class="row mb-3">
                                                     <label for="karyawan_aps" class="col-sm-2 col-form-label">Karyawan 1</label>
                                                     <div class="col-3">
-                                                        <select id="karyawan_aps" name="karyawanaps_1" class="form-control">
+                                                        <select id="karyawan_aps" name="karyawanaps_1" class="form-control" required>
                                                             <option selected disabled>Pilih...</option>
                                                             <?php foreach ($karyawan_aps as $aps) : ?>
                                                                 <option value="<?= $aps['id_karyawan']; ?>"><?= $aps['nama_karyawan']; ?></option>
@@ -113,7 +113,7 @@
                                                     </div>
                                                     <label for="jabatan_aps" class="col-sm-2 col-form-label">Jabatan 1</label>
                                                     <div class="col-4">
-                                                        <select id="jabatan_aps" name="jabatanaps_1" class="form-control">
+                                                        <select id="jabatan_aps" name="jabatanaps_1" class="form-control" required>
                                                             <option selected disabled>Pilih...</option>
                                                             <?php foreach ($jabatan_aps as $aps) : ?>
                                                                 <option value="<?= $aps['id_jabatan']; ?>"><?= $aps['nama_jabatan']; ?></option>
@@ -130,28 +130,28 @@
                                                 <div class="row mb-3">
                                                     <label for="no_psm" class="col-sm-2 col-form-label">1. PSM NO.</label>
                                                     <div class="col-3">
-                                                        <input type="text" class="form-control" id="no_psm" name="no_psm" placeholder="Masukkan no PJJ.." value="">
+                                                        <input type="text" class="form-control" id="no_psm" name="no_psm" placeholder="Masukkan no PJJ.." value="" required>
                                                         <div id="validationServer04Feedback" class="invalid-feedback">
                                                         </div>
                                                     </div>
                                                     <label for="tanggal_psm" class="col-sm-2 col-form-label">Tanggal</label>
                                                     <div class="col">
                                                         <div class="input-group date" id="datepicker">
-                                                            <input type="date" id="tanggal_psm" name="tanggal_psm">
+                                                            <input type="date" id="tanggal_psm" name="tanggal_psm" required>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row mb-3">
                                                     <label for="no_bao" class="col-sm-2 col-form-label">2. BAO NO.</label>
                                                     <div class="col-3">
-                                                        <input type="text" class="form-control" id="no_bao" name="no_bao" placeholder="Masukkan no BAC.." value="">
+                                                        <input type="text" class="form-control" id="no_bao" name="no_bao" placeholder="Masukkan no BAC.." value="" required>
                                                         <div id="validationServer04Feedback" class="invalid-feedback">
                                                         </div>
                                                     </div>
                                                     <label for="tanggal_bao" class="col-sm-2 col-form-label">Tanggal</label>
                                                     <div class="col">
                                                         <div class="input-group date" id="datepicker">
-                                                            <input type="date" id="tanggal_bao" name="tanggal_bao">
+                                                            <input type="date" id="tanggal_bao" name="tanggal_bao" required>
                                                         </div>
                                                     </div>
                                                 </div><br>
@@ -160,13 +160,13 @@
                                                     <label for="tanggal_pp_from" class="col-sm-2 col-form-label">Dari</label>
                                                     <div class="col-3">
                                                         <div class="input-group date" id="datepicker">
-                                                            <input type="date" id="tanggal_pp_from" name="tanggal_pp_from" />
+                                                            <input type="date" id="tanggal_pp_from" name="tanggal_pp_from" required>
                                                         </div>
                                                     </div>
                                                     <label for="tanggal_pp_to" class="col-sm-2 col-form-label">Sampai</label>
                                                     <div class="col">
                                                         <div class="input-group date" id="datepicker">
-                                                            <input type="date" id="tanggal_pp_to" name="tanggal_pp_to" />
+                                                            <input type="date" id="tanggal_pp_to" name="tanggal_pp_to" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -176,7 +176,7 @@
                                                 <div class="row mb-3">
                                                     <label for="jenis_komputer" class="col-sm-2 col-form-label">Jenis Komputer 1</label>
                                                     <div class="col-3">
-                                                        <select id="jenis_komputer" name="jenis_komputer1" class="form-control">
+                                                        <select id="jenis_komputer" name="jenis_komputer1" class="form-control" required>
                                                             <option selected disabled>Pilih...</option>
                                                             <?php foreach ($jenis_komputer as $pc) : ?>
                                                                 <option value="<?= $pc['id_jenis_komputer']; ?>"><?= $pc['nama_jenis_komputer']; ?></option>
@@ -185,7 +185,7 @@
                                                     </div>
                                                     <label for="unit_komputer" class="col-sm-2 col-form-label">Unit</label>
                                                     <div class="col-4">
-                                                        <input type="text" class="form-control" id="unit_komputer" name="unit_komputer1" placeholder="Masukkan Jumlah Unit" list="listJenis">
+                                                        <input type="text" class="form-control" id="unit_komputer" name="unit_komputer1" placeholder="Masukkan Jumlah Unit" list="listJenis" required>
                                                         <datalist id="listJenis">
                                                             <?php foreach ($jenis_komputer as $unit) : ?>
                                                                 <option value="<?= $unit['jumlah_jenis_komputer']; ?>"><?= $unit['jumlah_jenis_komputer']; ?></option>

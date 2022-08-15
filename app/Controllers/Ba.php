@@ -116,4 +116,19 @@ class Ba extends BaseController
 
         return view('form/sewapc/ba_pembayaran', $data);
     }
+
+    public function BaPembayaran()
+    {
+        $data = [
+            'title' => 'BA Pembayaran | BA Angkasa Pura II',
+            'karyawan_ap2' => $this->KaryawanAP2Model->getKaryawanAP2(),
+            'karyawan_aps' => $this->KaryawanAPSModel->getKaryawanAPS(),
+            'jabatan_ap2' => $this->JabatanAP2Model->getJabatanAP2(),
+            'jabatan_aps' => $this->JabatanAPSModel->getJabatanAPS(),
+            'judul_ba' => $this->JudulBAModel->getJudulBA(),
+            'jenis_komputer' => $this->JenisKomputerModel->getJenisKomputer()
+        ];
+
+        return view('form/sewapc/ba_pembayaran', $data);
+    }
 }

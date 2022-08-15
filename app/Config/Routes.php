@@ -42,6 +42,8 @@ $routes->get('/ba/sewa-printer', 'Ba::sewaPrinter');
 $routes->get('/ba/tagihan-listrik', 'Ba::tagihanListrik');
 $routes->get('/login', 'Pages::login');
 
+$routes->get('/ba/ba-pembayaran', 'Ba::BaPembayaran');
+
 
 /*
  * --------------------------------------------------------------------
