@@ -67,7 +67,8 @@
         $(document).ready(function() {
             var x = 1,
                 y = 1,
-                z = 1;
+                z = 1,
+                i = 1;
             $(".add_item_btn_ap2").click(function(e) {
                 x++;
                 e.preventDefault();
@@ -149,6 +150,21 @@
                                                     </div>
                                                 </div>`);
             });
+            $(".add_item_btn_harga").click(function(k) {
+                i++;
+                k.preventDefault();
+                $("#show_harga_satuan").append(`<div class="row mb-3">
+                                                        <label for="harga_satuan" class="col-sm-2 col-form-label">` + i + `. Harga Satuan</label>
+                                                        <div class="col">
+                                                            <input type="text" class="form-control" id="harga_satuan" name="harga_satuan" value="" required>
+                                                            <div id="validationServer04Feedback" class="invalid-feedback">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col text-left">
+                                                            <button class="btn btn-danger remove_item_btn_harga"><i class="fa fa-close"></i></button>
+                                                        </div>
+                                                    </div>`);
+            });
             $(document).on('click', '.remove_item_btn_ap2', function(e) {
                 x--;
                 e.preventDefault();
@@ -163,6 +179,12 @@
             });
             $(document).on('click', '.remove_item_btn_jk', function(k) {
                 z--;
+                k.preventDefault();
+                let row_item = $(this).parent().parent();
+                $(row_item).remove();
+            });
+            $(document).on('click', '.remove_item_btn_harga', function(k) {
+                i--;
                 k.preventDefault();
                 let row_item = $(this).parent().parent();
                 $(row_item).remove();
