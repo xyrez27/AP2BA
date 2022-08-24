@@ -163,7 +163,7 @@ class Ba extends BaseController
         ]);
 
         session()->setFlashdata('pesan', 'Data BA Pemeriksaan berhasil disimpan.');
-        dd($this->request->getVar());
+        // dd($this->request->getVar());
 
         return view('form/sewapc/ba_pembayaran', $data);
     }
@@ -179,39 +179,21 @@ class Ba extends BaseController
             'jenis_komputer' => $this->JenisKomputerModel->getJenisKomputer()
         ];
 
-        // $this->BaPembayaranModel->save([
-        //     'judul_ba' => $this->request->getVar('judul_ba'),
-        //     'no_pemeriksaan' => $this->request->getVar('no_pemeriksaan'),
-        //     'tanggal_ba' => $this->request->getVar('tanggal_ba'),
-        //     'no_ma' => $this->request->getVar('no_ma'),
-        //     'rka_tahun' => $this->request->getVar('rka_tahun'),
-        //     'lampiran' => $this->request->getVar('lampiran'),
-        //     'karyawanap2_1' => $this->request->getVar('karyawanap2_1'),
-        //     'jabatanap2_1' => $this->request->getVar('jabatanap2_1'),
-        //     'karyawanap2_2' => $this->request->getVar('karyawanap2_2'),
-        //     'jabatanap2_2' => $this->request->getVar('jabatanap2_2'),
-        //     'karyawanap2_3' => $this->request->getVar('karyawanap2_3'),
-        //     'jabatanap2_3' => $this->request->getVar('jabatanap2_3'),
-        //     'karyawanaps_1' => $this->request->getVar('karyawanaps_1'),
-        //     'jabatanaps_1' => $this->request->getVar('jabatanaps_1'),
-        //     'karyawanaps_2' => $this->request->getVar('karyawanaps_2'),
-        //     'jabatanaps_2' => $this->request->getVar('jabatanaps_2'),
-        //     'no_psm' => $this->request->getVar('no_psm'),
-        //     'tanggal_psm' => $this->request->getVar('tanggal_psm'),
-        //     'no_bao' => $this->request->getVar('no_bao'),
-        //     'tanggal_bao' => $this->request->getVar('tanggal_bao'),
-        //     'tanggal_pp_from' => $this->request->getVar('tanggal_pp_from'),
-        //     'tanggal_pp_to' => $this->request->getVar('tanggal_pp_to'),
-        //     'jenis_komputer1' => $this->request->getVar('jenis_komputer1'),
-        //     'unit_komputer1' => $this->request->getVar('unit_komputer1'),
-        //     'jenis_komputer2' => $this->request->getVar('jenis_komputer2'),
-        //     'unit_komputer2' => $this->request->getVar('unit_komputer2'),
-        //     'jenis_komputer3' => $this->request->getVar('jenis_komputer3'),
-        //     'unit_komputer3' => $this->request->getVar('unit_komputer3')
-        // ]);
+        $this->BaPembayaranModel->save([
+            'karyawanap2_1' => $this->request->getVar('karyawanap2_1'),
+            'jabatanap2_1' => $this->request->getVar('jabatanap2_1'),
+            'karyawanaps_1' => $this->request->getVar('karyawanaps_1'),
+            'jabatanaps_1' => $this->request->getVar('jabatanaps_1'),
+            'no_ppn' => $this->request->getVar('no_ppn'),
+            'tanggal_ppn' => $this->request->getVar('tanggal_ppn'),
+            'harga_satuan1' => $this->request->getVar('harga_satuan1'),
+            'harga_satuan2' => $this->request->getVar('harga_satuan2'),
+            'harga_satuan3' => $this->request->getVar('harga_satuan3'),
+            'tahap_ke' => $this->request->getVar('tahap_ke'),
+        ]);
 
-        session()->setFlashdata('pesan', 'Data BA Pemeriksaan berhasil disimpan.');
-        dd($this->request->getVar());
+        session()->setFlashdata('pesan', 'Data BA Pembayaran berhasil disimpan.');
+        // dd($this->request->getVar());
 
         return view('form/sewapc/ba_pembayaran', $data);
     }

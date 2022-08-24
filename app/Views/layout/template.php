@@ -150,21 +150,6 @@
                                                     </div>
                                                 </div>`);
             });
-            $(".add_item_btn_harga").click(function(k) {
-                i++;
-                k.preventDefault();
-                $("#show_harga_satuan").append(`<div class="row mb-3">
-                                                        <label for="harga_satuan` + i + ` " class="col-sm-2 col-form-label">` + i + `. Harga Satuan</label>
-                                                        <div class="col">
-                                                            <input type="text" class="form-control" id="harga_satuan` + i + ` "name="harga_satuan` + i + ` " value="" required>
-                                                            <div id="validationServer04Feedback" class="invalid-feedback">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col text-left">
-                                                            <button class="btn btn-danger remove_item_btn_harga"><i class="fa fa-close"></i></button>
-                                                        </div>
-                                                    </div>`);
-            });
             $(document).on('click', '.remove_item_btn_ap2', function(e) {
                 x--;
                 e.preventDefault();
@@ -183,6 +168,26 @@
                 let row_item = $(this).parent().parent();
                 $(row_item).remove();
             });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            var i = 1;
+            $(".add_item_btn_harga").click(function(k) {
+                i++;
+                k.preventDefault();
+                $("#show_harga_satuan").append(`<div class="row mb-3">
+                                                        <label for="harga_satuan` + i + `" class="col-sm-2 col-form-label">` + i + `. Harga Satuan</label>
+                                                        <div class="col">
+                                                            <input type="text" class="form-control" id="harga_satuan` + i + `" name="harga_satuan` + i + `" value="" required>
+                                                            <div id="validationServer04Feedback" class="invalid-feedback">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col text-left">
+                                                            <button class="btn btn-danger remove_item_btn_harga"><i class="fa fa-close"></i></button>
+                                                        </div>
+                                                    </div>`);
+            });
             $(document).on('click', '.remove_item_btn_harga', function(k) {
                 i--;
                 k.preventDefault();
@@ -190,15 +195,6 @@
                 $(row_item).remove();
             });
         });
-    </script>
-    <script>
-        $("input").on("change", function() {
-            this.setAttribute(
-                "data-date",
-                moment(this.value, "YYYY-MM-DD")
-                .format(this.getAttribute("data-date-format"))
-            )
-        }).trigger("change")
     </script>
 </body>
 
