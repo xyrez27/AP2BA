@@ -16,7 +16,7 @@
                                                 <?= session()->getFlashdata('pesan'); ?>
                                             </div>
                                         <?php endif; ?>
-                                        <form action="/ba/save" method="POST" enctype="multipart/form-data">
+                                        <form action="/ba/save2" method="POST" enctype="multipart/form-data">
                                             <?= csrf_field(); ?>
                                             <h2>BERITA ACARA PEMBAYARAN</h2><br>
                                             <h2>Nama Karyawan</h2> <!-- KARYAWAN AP2 -->
@@ -91,9 +91,9 @@
                                                 <h6 class="col text-left">Harga Satuan Jenis Komputer</h6>
                                                 <div id="show_harga_satuan">
                                                     <div class="row mb-3">
-                                                        <label for="harga_satuan" class="col-sm-2 col-form-label">1. Harga Satuan</label>
+                                                        <label for="harga_satuan1" class="col-sm-2 col-form-label">1. Harga Satuan</label>
                                                         <div class="col">
-                                                            <input type="text" class="form-control" id="harga_satuan" name="harga_satuan" placeholder="Masukkan Harga" value="" required>
+                                                            <input type="text" class="form-control" id="harga_satuan1" name="harga_satuan1" placeholder="Masukkan Harga" value="" required>
                                                             <div id="validationServer04Feedback" class="invalid-feedback">
                                                             </div>
                                                         </div>
