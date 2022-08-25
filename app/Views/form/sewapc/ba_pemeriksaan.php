@@ -74,7 +74,7 @@
                                                         <select id="karyawan_ap2" name="karyawanap2_1" class="form-control">
                                                             <option selected disabled>Pilih...</option>
                                                             <?php foreach ($karyawan_ap2 as $ap2) : ?>
-                                                                <option value="<?= $ap2['id_karyawan']; ?>"><?= $ap2['nama_karyawan']; ?></option>
+                                                                <option value="<?= $ap2['nama_karyawan']; ?>"><?= $ap2['nama_karyawan']; ?></option>
                                                             <?php endforeach; ?>
                                                         </select>
                                                     </div>
@@ -83,7 +83,7 @@
                                                         <select id="jabatan_ap2" name="jabatanap2_1" class="form-control">
                                                             <option selected disabled>Pilih...</option>
                                                             <?php foreach ($jabatan_ap2 as $ap2) : ?>
-                                                                <option value="<?= $ap2['id_jabatan']; ?>"><?= $ap2['nama_jabatan']; ?></option>
+                                                                <option value="<?= $ap2['nama_jabatan']; ?>"><?= $ap2['nama_jabatan']; ?></option>
                                                             <?php endforeach; ?>
                                                         </select>
                                                     </div>
@@ -100,7 +100,7 @@
                                                         <select id="karyawan_aps" name="karyawanaps_1" class="form-control">
                                                             <option selected disabled>Pilih...</option>
                                                             <?php foreach ($karyawan_aps as $aps) : ?>
-                                                                <option value="<?= $aps['id_karyawan']; ?>"><?= $aps['nama_karyawan']; ?></option>
+                                                                <option value="<?= $aps['nama_karyawan']; ?>"><?= $aps['nama_karyawan']; ?></option>
                                                             <?php endforeach; ?>
                                                         </select>
                                                     </div>
@@ -109,7 +109,7 @@
                                                         <select id="jabatan_aps" name="jabatanaps_1" class="form-control">
                                                             <option selected disabled>Pilih...</option>
                                                             <?php foreach ($jabatan_aps as $aps) : ?>
-                                                                <option value="<?= $aps['id_jabatan']; ?>"><?= $aps['nama_jabatan']; ?></option>
+                                                                <option value="<?= $aps['nama_jabatan']; ?>"><?= $aps['nama_jabatan']; ?></option>
                                                             <?php endforeach; ?>
                                                         </select>
                                                     </div>
