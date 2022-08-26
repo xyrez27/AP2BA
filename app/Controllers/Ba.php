@@ -119,7 +119,7 @@ class Ba extends BaseController
     }
 
 
-    public function save()
+    public function save_form_pemeriksaan()
     {
         $data = [
             'title' => 'Save | BA Angkasa Pura II',
@@ -162,7 +162,7 @@ class Ba extends BaseController
         //     'unit_komputer3' => $this->request->getVar('unit_komputer3')
         // ]);
 
-        $karyawan = [$this->request->getVar];
+        $karyawan = [$this->request->getVar()];
         dd($karyawan);
 
 
@@ -172,7 +172,7 @@ class Ba extends BaseController
         return view('form/sewapc/ba_pembayaran', $data);
     }
 
-    public function save2()
+    public function save_form_pembayaran()
     {
         $data = [
             'title' => 'Save | BA Angkasa Pura II',

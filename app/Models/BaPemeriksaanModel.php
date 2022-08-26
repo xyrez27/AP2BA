@@ -17,12 +17,12 @@ class BaPemeriksaanModel extends Model
         'jenis_komputer2', 'unit_komputer2', 'jenis_komputer3', 'unit_komputer3'
     ];
 
-    public function getBaPemeriksaan($judul_ba = false)
+    public function getBaPemeriksaan($id_ba = false)
     {
-        if ($judul_ba == false) {
+        if ($id_ba == false) {
             return $this->findAll();
         }
 
-        return $this->where(['judul_ba' => $judul_ba])->first();
+        return $this->where(['id_ba' => $id_ba])->first();
     }
 }

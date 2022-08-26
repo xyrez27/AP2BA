@@ -76,16 +76,16 @@
                                                     <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan ` + x + `</label>
                                                     <div class="col-3">
                                                         <select id="karyawan_ap2" name="karyawanap2_` + x + `" class="form-control">
-                                                            <option selected disabled>Pilih...</option>
+                                                            <option selected disabled value="">Pilih...</option>
                                                             <?php foreach ($karyawan_ap2 as $ap2) : ?>
                                                                 <option value="<?= $ap2['nama_karyawan']; ?>"><?= $ap2['nama_karyawan']; ?></option>
                                                             <?php endforeach; ?>
                                                         </select>
                                                     </div>
-                                                    <label for="jabatan_ap2" class="col-sm-2 col-form-label">Jabatan ` + x + `</label>
+                                                    <label for="jabatan_ap2" class="col-sm-2 col-form-label text-center">Jabatan ` + x + `</label>
                                                     <div class="col-4">
                                                         <select id="jabatan_ap2" name="jabatanap2_` + x + `" class="form-control">
-                                                            <option selected disabled>Pilih...</option>
+                                                            <option selected disabled value="">Pilih...</option>
                                                             <?php foreach ($jabatan_ap2 as $ap2) : ?>
                                                                 <option value="<?= $ap2['nama_jabatan']; ?>"><?= $ap2['nama_jabatan']; ?></option>
                                                             <?php endforeach; ?>
@@ -103,16 +103,16 @@
                                                     <label for="karyawan_aps" class="col-sm-2 col-form-label">Karyawan ` + y + `</label>
                                                     <div class="col-3">
                                                         <select id="karyawan_aps" name="karyawanaps_` + y + `" class="form-control">
-                                                            <option selected disabled>Pilih...</option>
+                                                            <option selected disabled value="">Pilih...</option>
                                                             <?php foreach ($karyawan_aps as $aps) : ?>
                                                                 <option value="<?= $aps['nama_karyawan']; ?>"><?= $aps['nama_karyawan']; ?></option>
                                                             <?php endforeach; ?>
                                                         </select>
                                                     </div>
-                                                    <label for="jabatan_aps" class="col-sm-2 col-form-label">Jabatan ` + y + `</label>
+                                                    <label for="jabatan_aps" class="col-sm-2 col-form-label text-center">Jabatan ` + y + `</label>
                                                     <div class="col-4">
                                                         <select id="jabatan_aps" name="jabatanaps_` + y + `" class="form-control">
-                                                            <option selected disabled>Pilih...</option>
+                                                            <option selected disabled value="">Pilih...</option>
                                                             <?php foreach ($jabatan_aps as $aps) : ?>
                                                                 <option value="<?= $aps['nama_jabatan']; ?>"><?= $aps['nama_jabatan']; ?></option>
                                                             <?php endforeach; ?>
@@ -130,13 +130,13 @@
                                                     <label for="jenis_komputer" class="col-sm-2 col-form-label">Jenis Komputer ` + z + `</label>
                                                     <div class="col-3">
                                                         <select id="jenis_komputer" name="jenis_komputer` + z + `" class="form-control">
-                                                            <option selected disabled>Pilih...</option>
+                                                            <option selected disabled value="">Pilih...</option>
                                                             <?php foreach ($jenis_komputer as $pc) : ?>
                                                                 <option value="<?= $pc['nama_jenis_komputer']; ?>"><?= $pc['nama_jenis_komputer']; ?></option>
                                                             <?php endforeach; ?>
                                                         </select>
                                                     </div>
-                                                    <label for="unit_komputer" class="col-sm-2 col-form-label">Unit</label>
+                                                    <label for="unit_komputer" class="col-sm-2 col-form-label text-center">Unit</label>
                                                     <div class="col-4">
                                                         <input type="number" class="form-control" id="unit_komputer" name="unit_komputer` + z + `" placeholder="Masukkan Jumlah Unit" list="listJenis">
                                                         <datalist id="listJenis">
