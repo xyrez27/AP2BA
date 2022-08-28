@@ -8,7 +8,7 @@
         "php": "^7.4 || ^8.0",
         "codeigniter4/framework": "^4.0",
         "almasaeed2010/adminlte": "~3.2",
-        "phpoffice/phpword": "dev-master"
+        "phpoffice/phpword": "^0.18.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9",

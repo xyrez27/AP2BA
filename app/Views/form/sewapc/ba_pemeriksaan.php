@@ -65,7 +65,8 @@
                                                 </div>
                                             </div>
                                             <br>
-                                            <h2>Nama Karyawan</h2> <!-- KARYAWAN AP2 -->
+                                            <!-- KARYAWAN AP2 -->
+                                            <h2>Nama Karyawan</h2>
                                             <h4 class="col-2"><b>AP II</b></h4>
                                             <div id="show_karyawan_ap2">
                                                 <div class="row mb-3">
@@ -92,7 +93,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <h4 class="col-2"><b>APS</b></h4> <!-- KARYAWAN APS -->
+                                            <!-- KARYAWAN APS -->
+                                            <h4 class="col-2"><b>APS</b></h4>
                                             <div id="show_karyawan_aps">
                                                 <div class="row mb-3">
                                                     <label for="karyawan_aps" class="col-sm-2 col-form-label">Karyawan 1</label>
@@ -118,7 +120,8 @@
                                                     </div>
                                                 </div>
                                             </div><br><br>
-                                            <h6 class="col-2 text-left">Berdasarkan</h6> <!-- Berdasarkan -->
+                                            <!-- BERDASARKAN -->
+                                            <h4 class="col text-center">Berdasarkan</h4><br>
                                             <div id="show_berdasarkan">
                                                 <div class="row mb-3">
                                                     <label for="no_psm" class="col-sm-2 col-form-label">1. PSM NO.</label>
@@ -148,7 +151,8 @@
                                                         </div>
                                                     </div>
                                                 </div><br>
-                                                <h6 class="col text-left">Periode Pemakaian</h6>
+                                                <!-- BERDASARKAN -->
+                                                <h4 class="col text-center">Periode Pemakaian</h4><br>
                                                 <div class="row mb-3">
                                                     <label for="tanggal_pp_from" class="col-sm-2 col-form-label text-center">Dari</label>
                                                     <div class="col-3">

@@ -93,7 +93,7 @@
                                                     <div class="row mb-3">
                                                         <label for="harga_satuan1" class="col-sm-2 col-form-label">1. Harga Satuan</label>
                                                         <div class="col">
-                                                            <input type="text" class="form-control" id="harga_satuan1" name="harga_satuan1" placeholder="Masukkan Harga" value="" required>
+                                                            <input type="text" class="form-control" id="harga_satuan" name="harga_satuan[]" placeholder="Masukkan Harga" value="" required>
                                                             <div id="validationServer04Feedback" class="invalid-feedback">
                                                             </div>
                                                         </div>
