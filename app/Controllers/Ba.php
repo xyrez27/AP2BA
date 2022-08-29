@@ -149,11 +149,11 @@ class Ba extends BaseController
 
     public function phpword()
     {
-        // $data = [
-        //     'title' => 'Sewa PC | BA Angkasa Pura II',
-        //     'ba_pemeriksaan' => $this->BaPemeriksaanModel->getBaPemeriksaan(),
-        //     'ba_pembayaran' => $this->BaPembayaranModel->getBaPembayaran(),
-        // ];
+        $data = [
+            'title' => 'Sewa PC | BA Angkasa Pura II',
+            'ba_pemeriksaan' => $this->BaPemeriksaanModel->getBaPemeriksaan(),
+            'ba_pembayaran' => $this->BaPembayaranModel->getBaPembayaran(),
+        ];
 
         $template_pemeriksaan = dirname(__FILE__) . '/template_pemeriksaan.docx';
         $templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor($template_pemeriksaan);
@@ -171,6 +171,6 @@ class Ba extends BaseController
 
         readfile($pathToSave);
 
-        return redirect()->to('/pages/dashboard');
+        return view('/pages/dashboard');
     }
 }
