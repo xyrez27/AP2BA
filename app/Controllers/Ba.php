@@ -159,7 +159,7 @@ class Ba extends BaseController
         $templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor($template_pemeriksaan);
 
         $templateProcessor->setValues([
-            'judul_ba' => $data('judul_ba')
+            'judul_ba' => 'SEWA PC ALBANI KAUTSAR'
         ]);
 
         $pathToSave = 'result_pemeriksaan.docx';
