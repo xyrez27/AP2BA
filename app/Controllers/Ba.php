@@ -170,7 +170,5 @@ class Ba extends BaseController
         header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document');
 
         readfile($pathToSave);
-
-        return view('/pages/dashboard');
     }
 }
