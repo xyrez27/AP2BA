@@ -63,6 +63,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="public/js/sweetalert2.all.min.js"></script>
+    <script src="<?= base_url(); ?>/public/js/sweetalert2.all.min.js"></script>
+    <script src="<?= base_url(); ?>/public/js/myscript.js"></script>
     <script>
         $(document).ready(function() {
             var x = 1,

@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+require_once ROOTPATH . 'vendor/autoload.php';
+
 use App\Models\KaryawanAP2Model;
 use App\Models\KaryawanAPSModel;
 use App\Models\JabatanAP2Model;
@@ -141,6 +143,33 @@ class Ba extends BaseController
         ]);
 
         session()->setFlashdata('pesan', 'Data BA Pembayaran berhasil disimpan.');
+
+        return redirect()->to('/ba/phpword');
+    }
+
+    public function phpword()
+    {
+        $data = [
+            'title' => 'Sewa PC | BA Angkasa Pura II',
+            'ba_pemeriksaan' => $this->BaPemeriksaanModel->getBaPemeriksaan(),
+            'ba_pembayaran' => $this->BaPembayaranModel->getBaPembayaran(),
+        ];
+
+        $template_pemeriksaan = dirname(__FILE__) . '/template_pemeriksaan.docx';
+        $templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor($template_pemeriksaan);
+
+        $templateProcessor->setValues([
+            'judul_ba' => $data('judul_ba')
+        ]);
+
+        $pathToSave = 'result_pemeriksaan.docx';
+        $templateProcessor->saveAs($pathToSave);
+
+        header('Content-Description: File Transfer');
+        header('Content-Disposition: attachment; filename=result_pemeriksaan.docx');
+        header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+
+        readfile($pathToSave);
 
         return redirect()->to('/pages/dashboard');
     }
