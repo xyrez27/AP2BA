@@ -12,6 +12,7 @@ use App\Models\JudulBAModel;
 use App\Models\JenisKomputerModel;
 use App\Models\BaPemeriksaanModel;
 use App\Models\BaPembayaranModel;
+use CodeIgniter\Controller;
 use CodeIgniter\HTTP\Request;
 
 class Ba extends BaseController
@@ -159,7 +160,8 @@ class Ba extends BaseController
         $templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor($template_pemeriksaan);
 
         $templateProcessor->setValues([
-            'judul_ba' => 'SEWA PC ALBANI KAUTSAR'
+            'judul_ba' => 'SEWA PC BULAN AGUSTUS 2022',
+            'no_ma' => '2'
         ]);
 
         $pathToSave = 'result_pemeriksaan.docx';
@@ -170,5 +172,7 @@ class Ba extends BaseController
         header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document');
 
         readfile($pathToSave);
+
+        // return view('/pages/dashboard', $data);
     }
 }
