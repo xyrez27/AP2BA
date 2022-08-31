@@ -159,9 +159,16 @@ class Ba extends BaseController
         $template_pemeriksaan = dirname(__FILE__) . '/template_pemeriksaan.docx';
         $templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor($template_pemeriksaan);
 
+        $query = $this->BaPemeriksaanModel->getBaPemeriksaan();
+
         $templateProcessor->setValues([
-            'judul_ba' => 'SEWA PC BULAN AGUSTUS 2022',
-            'no_ma' => '2'
+            'judul_ba' => $query[0]['judul_ba'],
+            'no_ma' => $query[0]['no_ma'],
+            'tanggal_ba' => $query[0]['tanggal_ba'],
+            'rka_tahun' => $query[0]['rka_tahun'],
+            'lampiran' => $query[0]['lampiran'],
+            'karyawanap2' => $query[0]['karyawanap2'],
+            'jabatanap2' => $query[0]['jabatanap2']
         ]);
 
         $pathToSave = 'result_pemeriksaan.docx';
@@ -173,6 +180,6 @@ class Ba extends BaseController
 
         readfile($pathToSave);
 
-        // return view('/pages/dashboard', $data);
+        return view('/pages/dashboard', $data);
     }
 }

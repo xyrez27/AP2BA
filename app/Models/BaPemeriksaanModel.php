@@ -13,6 +13,12 @@ class BaPemeriksaanModel extends Model
         'karyawanap2', 'jabatanap2', 'karyawanaps', 'jabatanaps', 'no_psm', 'tanggal_psm',
         'no_bao', 'tanggal_bao', 'tanggal_pp_from', 'tanggal_pp_to', 'jenis_komputer', 'unit_komputer'
     ];
+    // protected $db;
+
+    // public function __construct() //inisialisasi koneksi ke database
+    // {
+    //     $this->db = db_connect();
+    // }
 
     public function getBaPemeriksaan($id_ba = false)
     {
@@ -22,4 +28,15 @@ class BaPemeriksaanModel extends Model
 
         return $this->where(['id_ba' => $id_ba])->first();
     }
+
+    // public function getData()
+    // {
+    //     $sql = "SELECT * FROM tx_ba_pemeriksaan"; //pembuatan query
+
+    //     $query = $this->db->query($sql); // eksekusi query sql
+
+    //     $data = $query->getResultArray(); // uraikan hasil query dalam bentuk array
+
+    //     return $data; //mengembalikan hasil query ke controller
+    // }
 }
