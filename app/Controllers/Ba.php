@@ -12,23 +12,27 @@ use App\Models\JudulBAModel;
 use App\Models\JenisKomputerModel;
 use App\Models\BaPemeriksaanModel;
 use App\Models\BaPembayaranModel;
+use App\Models\SewaPCModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\Request;
 
 class Ba extends BaseController
 {
+    protected $get_id_pemeriksaan;
+    protected $get_id_pembayaran;
     protected $KaryawanAP2Model;
 
     public function __construct()
     {
-        $this->KaryawanAP2Model = new KaryawanAP2Model();
-        $this->KaryawanAPSModel = new KaryawanAPSModel();
-        $this->JabatanAP2Model = new JabatanAP2Model();
-        $this->JabatanAPSModel = new JabatanAPSModel();
-        $this->JudulBAModel = new JudulBAModel();
+        $this->KaryawanAP2Model   = new KaryawanAP2Model();
+        $this->KaryawanAPSModel   = new KaryawanAPSModel();
+        $this->JabatanAP2Model    = new JabatanAP2Model();
+        $this->JabatanAPSModel    = new JabatanAPSModel();
+        $this->JudulBAModel       = new JudulBAModel();
         $this->JenisKomputerModel = new JenisKomputerModel();
         $this->BaPemeriksaanModel = new BaPemeriksaanModel();
-        $this->BaPembayaranModel = new BaPembayaranModel();
+        $this->BaPembayaranModel  = new BaPembayaranModel();
+        $this->SewaPCModel        = new SewaPCModel();
     }
 
     public function index()
@@ -43,12 +47,12 @@ class Ba extends BaseController
     public function sewaPC()
     {
         $data = [
-            'title' => 'Sewa PC | BA Angkasa Pura II',
-            'karyawan_ap2' => $this->KaryawanAP2Model->getKaryawanAP2(),
-            'karyawan_aps' => $this->KaryawanAPSModel->getKaryawanAPS(),
-            'jabatan_ap2' => $this->JabatanAP2Model->getJabatanAP2(),
-            'jabatan_aps' => $this->JabatanAPSModel->getJabatanAPS(),
-            'judul_ba' => $this->JudulBAModel->getJudulBA(),
+            'title'          => 'Sewa PC | BA Angkasa Pura II',
+            'karyawan_ap2'   => $this->KaryawanAP2Model->getKaryawanAP2(),
+            'karyawan_aps'   => $this->KaryawanAPSModel->getKaryawanAPS(),
+            'jabatan_ap2'    => $this->JabatanAP2Model->getJabatanAP2(),
+            'jabatan_aps'    => $this->JabatanAPSModel->getJabatanAPS(),
+            'judul_ba'       => $this->JudulBAModel->getJudulBA(),
             'jenis_komputer' => $this->JenisKomputerModel->getJenisKomputer()
         ];
 
@@ -76,12 +80,12 @@ class Ba extends BaseController
     public function BaPembayaran()
     {
         $data = [
-            'title' => 'BA Pembayaran | BA Angkasa Pura II',
-            'karyawan_ap2' => $this->KaryawanAP2Model->getKaryawanAP2(),
-            'karyawan_aps' => $this->KaryawanAPSModel->getKaryawanAPS(),
-            'jabatan_ap2' => $this->JabatanAP2Model->getJabatanAP2(),
-            'jabatan_aps' => $this->JabatanAPSModel->getJabatanAPS(),
-            'judul_ba' => $this->JudulBAModel->getJudulBA(),
+            'title'          => 'BA Pembayaran | BA Angkasa Pura II',
+            'karyawan_ap2'   => $this->KaryawanAP2Model->getKaryawanAP2(),
+            'karyawan_aps'   => $this->KaryawanAPSModel->getKaryawanAPS(),
+            'jabatan_ap2'    => $this->JabatanAP2Model->getJabatanAP2(),
+            'jabatan_aps'    => $this->JabatanAPSModel->getJabatanAPS(),
+            'judul_ba'       => $this->JudulBAModel->getJudulBA(),
             'jenis_komputer' => $this->JenisKomputerModel->getJenisKomputer()
         ];
 
@@ -91,33 +95,36 @@ class Ba extends BaseController
 
     public function save_form_pemeriksaan()
     {
-        $karyawanap2 = implode(', ', $this->request->getVar('karyawanap2[]'));
-        $jabatanap2 = implode(', ', $this->request->getVar('jabatanap2[]'));
-        $karyawanaps = implode(', ', $this->request->getVar('karyawanaps[]'));
-        $jabatanaps = implode(', ', $this->request->getVar('jabatanaps[]'));
+        $karyawanap2    = implode(', ', $this->request->getVar('karyawanap2[]'));
+        $jabatanap2     = implode(', ', $this->request->getVar('jabatanap2[]'));
+        $karyawanaps    = implode(', ', $this->request->getVar('karyawanaps[]'));
+        $jabatanaps     = implode(', ', $this->request->getVar('jabatanaps[]'));
         $jenis_komputer = implode(', ', $this->request->getVar('jenis_komputer[]'));
-        $unit_komputer = implode(', ', $this->request->getVar('unit_komputer[]'));
+        $unit_komputer  = implode(', ', $this->request->getVar('unit_komputer[]'));
 
         $this->BaPemeriksaanModel->save([
-            'judul_ba' => $this->request->getVar('judul_ba'),
-            'no_pemeriksaan' => $this->request->getVar('no_pemeriksaan'),
-            'tanggal_ba' => $this->request->getVar('tanggal_ba'),
-            'no_ma' => $this->request->getVar('no_ma'),
-            'rka_tahun' => $this->request->getVar('rka_tahun'),
-            'lampiran' => $this->request->getVar('lampiran'),
-            'karyawanap2' => $karyawanap2,
-            'jabatanap2' => $jabatanap2,
-            'karyawanaps' => $karyawanaps,
-            'jabatanaps' => $jabatanaps,
-            'no_psm' => $this->request->getVar('no_psm'),
-            'tanggal_psm' => $this->request->getVar('tanggal_psm'),
-            'no_bao' => $this->request->getVar('no_bao'),
-            'tanggal_bao' => $this->request->getVar('tanggal_bao'),
+            'judul_ba'        => $this->request->getVar('judul_ba'),
+            'no_pemeriksaan'  => $this->request->getVar('no_pemeriksaan'),
+            'tanggal_ba'      => $this->request->getVar('tanggal_ba'),
+            'no_ma'           => $this->request->getVar('no_ma'),
+            'rka_tahun'       => $this->request->getVar('rka_tahun'),
+            'lampiran'        => $this->request->getVar('lampiran'),
+            'karyawanap2'     => $karyawanap2,
+            'jabatanap2'      => $jabatanap2,
+            'karyawanaps'     => $karyawanaps,
+            'jabatanaps'      => $jabatanaps,
+            'no_psm'          => $this->request->getVar('no_psm'),
+            'tanggal_psm'     => $this->request->getVar('tanggal_psm'),
+            'no_bao'          => $this->request->getVar('no_bao'),
+            'tanggal_bao'     => $this->request->getVar('tanggal_bao'),
             'tanggal_pp_from' => $this->request->getVar('tanggal_pp_from'),
-            'tanggal_pp_to' => $this->request->getVar('tanggal_pp_to'),
-            'jenis_komputer' => $jenis_komputer,
-            'unit_komputer' => $unit_komputer,
+            'tanggal_pp_to'   => $this->request->getVar('tanggal_pp_to'),
+            'jenis_komputer'  => $jenis_komputer,
+            'unit_komputer'   => $unit_komputer,
         ]);
+
+        $this->get_id_pemeriksaan = $this->BaPemeriksaanModel->getInsertID();
+        // dd($this->get_id_pemeriksaan);
 
         session()->setFlashdata('pesan', 'Data BA Pemeriksaan berhasil disimpan.');
 
@@ -126,49 +133,89 @@ class Ba extends BaseController
 
     public function save_form_pembayaran()
     {
-        $karyawanap2 = implode(', ', $this->request->getVar('karyawanap2[]'));
-        $jabatanap2 = implode(', ', $this->request->getVar('jabatanap2[]'));
-        $karyawanaps = implode(', ', $this->request->getVar('karyawanaps[]'));
-        $jabatanaps = implode(', ', $this->request->getVar('jabatanaps[]'));
+        $karyawanap2  = implode(', ', $this->request->getVar('karyawanap2_pb[]'));
+        $jabatanap2   = implode(', ', $this->request->getVar('jabatanap2_pb[]'));
+        $karyawanaps  = implode(', ', $this->request->getVar('karyawanaps_pb[]'));
+        $jabatanaps   = implode(', ', $this->request->getVar('jabatanaps_pb[]'));
         $harga_satuan = implode(', ', $this->request->getVar('harga_satuan[]'));
 
         $this->BaPembayaranModel->save([
-            'karyawanap2' => $karyawanap2,
-            'jabatanap2' => $jabatanap2,
-            'karyawanaps' => $karyawanaps,
-            'jabatanaps' => $jabatanaps,
-            'no_ppn' => $this->request->getVar('no_ppn'),
-            'tanggal_ppn' => $this->request->getVar('tanggal_ppn'),
-            'harga_satuan' => $harga_satuan,
-            'tahap_ke' => $this->request->getVar('tahap_ke'),
+            'karyawanap2_pb' => $karyawanap2,
+            'jabatanap2_pb'  => $jabatanap2,
+            'karyawanaps_pb' => $karyawanaps,
+            'jabatanaps_pb'  => $jabatanaps,
+            'no_ppn'         => $this->request->getVar('no_ppn'),
+            'tanggal_ppn'    => $this->request->getVar('tanggal_ppn'),
+            'harga_satuan'   => $harga_satuan,
+            'tahap_ke'       => $this->request->getVar('tahap_ke')
+        ]);
+
+        $this->get_id_pembayaran = $this->BaPembayaranModel->getInsertID();
+        $getID = [
+            $this->get_id_pemeriksaan,
+            $this->get_id_pembayaran
+        ];
+
+        dd($getID);
+
+        // $getID = [
+        //     $this->BaPembayaranModel->getInsertID(),
+        //     $this->BaPemeriksaanModel->getInsertID()
+        // ];
+
+        $this->SewaPCModel->save([
+            'id_pemeriksaan' => $getID[0],
+            'id_pembayaran'  => $getID[1]
         ]);
 
         session()->setFlashdata('pesan', 'Data BA Pembayaran berhasil disimpan.');
 
-        return redirect()->to('/ba/phpword');
+        return redirect()->to('/pages/dashboard');
     }
 
-    public function phpword()
+    public function deleteBaPemeriksaan($id_ba)
+    {
+        return $this->BaPemeriksaanModel->delete($id_ba);
+
+        session()->setFlashdata('success', 'Data Berhasil Dihapus!!');
+
+        return redirect()->to('/ba');
+    }
+
+    public function daftarBA()
     {
         $data = [
-            'title' => 'Sewa PC | BA Angkasa Pura II',
+            'title'     => 'Daftar Berita Acara | BA Angkasa Pura II',
+            'ba_sewapc' => $this->SewaPCModel->getSewaPC()
+        ];
+
+        dd($this->SewaPCModel->getSewaPC());
+
+        return view('ba/daftarBA', $data);
+    }
+
+    public function phpword($id_ba)
+    {
+        $data = [
+            'title'          => 'Sewa PC | BA Angkasa Pura II',
             'ba_pemeriksaan' => $this->BaPemeriksaanModel->getBaPemeriksaan(),
-            'ba_pembayaran' => $this->BaPembayaranModel->getBaPembayaran(),
+            'ba_pembayaran'  => $this->BaPembayaranModel->getBaPembayaran(),
         ];
 
         $template_pemeriksaan = dirname(__FILE__) . '/template_pemeriksaan.docx';
-        $templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor($template_pemeriksaan);
+        $templateProcessor    = new \PhpOffice\PhpWord\TemplateProcessor($template_pemeriksaan);
 
         $query = $this->BaPemeriksaanModel->getBaPemeriksaan();
 
         $templateProcessor->setValues([
-            'judul_ba' => $query[0]['judul_ba'],
-            'no_ma' => $query[0]['no_ma'],
-            'tanggal_ba' => $query[0]['tanggal_ba'],
-            'rka_tahun' => $query[0]['rka_tahun'],
-            'lampiran' => $query[0]['lampiran'],
+            'judul_ba'    => $query[$id_ba]['judul_ba'],
+            'ba'          => $query[0]['no_pemeriksaan'],
+            'no_ma'       => $query[0]['no_ma'],
+            'tanggal_ba'  => $query[0]['tanggal_ba'],
+            'rka_tahun'   => $query[0]['rka_tahun'],
+            'lampiran'    => $query[0]['lampiran'],
             'karyawanap2' => $query[0]['karyawanap2'],
-            'jabatanap2' => $query[0]['jabatanap2']
+            'jabatanap2'  => $query[0]['jabatanap2']
         ]);
 
         $pathToSave = 'result_pemeriksaan.docx';

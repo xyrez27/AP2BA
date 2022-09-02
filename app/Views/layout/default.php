@@ -34,7 +34,7 @@
     <div class="template">
         <?= $this->include('layout/navbar'); ?>
         <div class="content">
-            <?= $this->renderSection('default'); ?>
+            <?= $this->renderSection('content'); ?>
         </div>
     </div>
 

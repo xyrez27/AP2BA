@@ -42,7 +42,10 @@ $routes->get('/ba/sewa-printer', 'Ba::sewaPrinter');
 $routes->get('/ba/tagihan-listrik', 'Ba::tagihanListrik');
 $routes->get('/login', 'Pages::login');
 
+$routes->delete('/ba/daftarBA/(:num)', 'Ba::deleteBaPemeriksaan/$1');
 $routes->get('/ba/phpword', 'Ba::phpword');
+$routes->get('/ba', 'Ba::daftarBA');
+
 
 
 /*

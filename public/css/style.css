@@ -55,3 +55,121 @@ input {
 p.a{
   margin-top: 2px;
 }
+
+.gg-details-more {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs,1));
+  width: 20px;
+  height: 14px;
+  border: 2px solid transparent
+ }
+ 
+ .gg-details-more::after,
+ .gg-details-more::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  height: 2px;
+  border-radius: 3px;
+  background: currentColor
+ }
+ 
+ .gg-details-more::before {
+  box-shadow: 0 4px 0 0;
+  top: 0;
+  width: 16px
+ }
+ 
+ .gg-details-more::after {
+  width: 10px;
+  bottom: 0
+ } 
+
+ .gg-software-download {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs,1));
+  width: 16px;
+  height: 6px;
+  border: 2px solid;
+  border-top: 0;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  margin-top: 8px
+}
+
+.gg-software-download::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  transform: rotate(-45deg);
+  left: 2px;
+  bottom: 4px
+}
+
+.gg-software-download::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 3px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+  left: 5px;
+  bottom: 5px
+}
+
+.gg-trash {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs,1));
+  width: 10px;
+  height: 12px;
+  border: 2px solid transparent;
+  box-shadow:
+      0 0 0 2px,
+      inset -2px 0 0,
+      inset 2px 0 0;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+  margin-top: 4px
+}
+
+.gg-trash::after,
+.gg-trash::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute
+}
+
+.gg-trash::after {
+    background: currentColor;
+    border-radius: 3px;
+    width: 16px;
+    height: 2px;
+    top: -4px;
+    left: -5px
+}
+
+.gg-trash::before {
+    width: 10px;
+    height: 4px;
+    border: 2px solid;
+    border-bottom: transparent;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    top: -7px;
+    left: -2px
+}
