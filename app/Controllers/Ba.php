@@ -18,8 +18,6 @@ use CodeIgniter\HTTP\Request;
 
 class Ba extends BaseController
 {
-    protected $get_id_pemeriksaan;
-    protected $get_id_pembayaran;
     protected $KaryawanAP2Model;
 
     public function __construct()
@@ -150,18 +148,12 @@ class Ba extends BaseController
             'tahap_ke'       => $this->request->getVar('tahap_ke')
         ]);
 
-        $this->get_id_pembayaran = $this->BaPembayaranModel->getInsertID();
         $getID = [
-            $this->get_id_pemeriksaan,
-            $this->get_id_pembayaran
+            $this->BaPemeriksaanModel->getInsertID(),
+            $this->BaPembayaranModel->getInsertID()
         ];
 
         dd($getID);
-
-        // $getID = [
-        //     $this->BaPembayaranModel->getInsertID(),
-        //     $this->BaPemeriksaanModel->getInsertID()
-        // ];
 
         $this->SewaPCModel->save([
             'id_pemeriksaan' => $getID[0],
