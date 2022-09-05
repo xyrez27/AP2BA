@@ -20,4 +20,13 @@ class SewaPCModel extends Model
             ->join('tx_ba_pembayaran', 'tx_ba_pembayaran.id_ba = tx_ba_sewapc.id_pembayaran')
             ->get()->getResultArray();
     }
+
+    public function getData($id_ba = false)
+    {
+        if ($id_ba == false) {
+            return $this->findAll();
+        }
+
+        return $this->where(['id_ba' => $id_ba])->first();
+    }
 }

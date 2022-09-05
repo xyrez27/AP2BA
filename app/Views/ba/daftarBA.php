@@ -28,15 +28,15 @@
                             <th scope="col"><?= $i++; ?></th>
                             <td scope="col"><?= $value['judul_ba']; ?></td>
                             <td scope="col"><?= $value['no_pemeriksaan']; ?></td>
-                            <td scope="col"><?= $value['tanggal_ba']; ?></td>
+                            <td scope="col"><?= date('d/m/Y', strtotime($value['tanggal_ba'])); ?></td>
                             <td scope="col"><?= $value['no_ppn']; ?></td>
                             <td>
                                 <a href="/ba/more" class="btn btn-info">
                                     <i class="gg-details-more"></i>
                                 </a>
-                                <a href="/ba/phpword/<?= $value['id_ba']; ?>" class="btn btn-warning">
+                                <a href="/ba/phpword/<?= $i - 2; ?>" class="btn btn-warning">
                                     <i class="gg-software-download"></i>
-                                </a>
+                                </a><br>
                                 <a href="<?= base_url('/ba/deleteBaPemeriksaan/' . $value['id_ba']) ?>" class="btn btn-danger">
                                     <i class="gg-trash"></i>
                                 </a>

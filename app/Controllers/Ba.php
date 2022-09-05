@@ -75,7 +75,7 @@ class Ba extends BaseController
         return view('ba/tagihanListrik', $data);
     }
 
-    public function BaPembayaran()
+    public function BaPembayaran($id)
     {
         $data = [
             'title'          => 'BA Pembayaran | BA Angkasa Pura II',
@@ -84,8 +84,11 @@ class Ba extends BaseController
             'jabatan_ap2'    => $this->JabatanAP2Model->getJabatanAP2(),
             'jabatan_aps'    => $this->JabatanAPSModel->getJabatanAPS(),
             'judul_ba'       => $this->JudulBAModel->getJudulBA(),
-            'jenis_komputer' => $this->JenisKomputerModel->getJenisKomputer()
+            'jenis_komputer' => $this->JenisKomputerModel->getJenisKomputer(),
+            'sewa_pc'        => $id
         ];
+
+        dd($id);
 
         return view('form/sewapc/ba_pembayaran', $data);
     }
@@ -121,15 +124,23 @@ class Ba extends BaseController
             'unit_komputer'   => $unit_komputer,
         ]);
 
-        $this->get_id_pemeriksaan = $this->BaPemeriksaanModel->getInsertID();
-        // dd($this->get_id_pemeriksaan);
+        $getID = $this->BaPemeriksaanModel->getInsertID();
+        // dd($getID);
+
+        $this->SewaPCModel->save([
+            'id_pemeriksaan' => $getID
+        ]);
+
+        $id = $this->SewaPCModel->getInsertID();
+
+        dd($id, $getID);
 
         session()->setFlashdata('pesan', 'Data BA Pemeriksaan berhasil disimpan.');
 
-        return redirect()->to('/ba/BaPembayaran');
+        return view('ba/baPembayaran', $id);
     }
 
-    public function save_form_pembayaran()
+    public function save_form_pembayaran($id)
     {
         $karyawanap2  = implode(', ', $this->request->getVar('karyawanap2_pb[]'));
         $jabatanap2   = implode(', ', $this->request->getVar('jabatanap2_pb[]'));
@@ -148,16 +159,13 @@ class Ba extends BaseController
             'tahap_ke'       => $this->request->getVar('tahap_ke')
         ]);
 
-        $getID = [
-            $this->BaPemeriksaanModel->getInsertID(),
-            $this->BaPembayaranModel->getInsertID()
-        ];
+        $getID = $this->BaPembayaranModel->getInsertID();
+        $getIDP = $this->SewaPCModel->getInsertID();
+        dd($getIDP);
+        // dd($getID);
 
-        dd($getID);
-
-        $this->SewaPCModel->save([
-            'id_pemeriksaan' => $getID[0],
-            'id_pembayaran'  => $getID[1]
+        $this->SewaPCModel->update([
+            'id_pembayaran'  => $getID
         ]);
 
         session()->setFlashdata('pesan', 'Data BA Pembayaran berhasil disimpan.');
@@ -181,33 +189,38 @@ class Ba extends BaseController
             'ba_sewapc' => $this->SewaPCModel->getSewaPC()
         ];
 
-        dd($this->SewaPCModel->getSewaPC());
+        // dd($this->SewaPCModel->getData());
+
+        // dd($this->SewaPCModel->getSewaPC());
 
         return view('ba/daftarBA', $data);
     }
 
-    public function phpword($id_ba)
+    public function phpword($no_ba)
     {
         $data = [
             'title'          => 'Sewa PC | BA Angkasa Pura II',
             'ba_pemeriksaan' => $this->BaPemeriksaanModel->getBaPemeriksaan(),
             'ba_pembayaran'  => $this->BaPembayaranModel->getBaPembayaran(),
+            'ba_sewa_pc'     => $this->SewaPCModel->getSewaPC()
         ];
 
         $template_pemeriksaan = dirname(__FILE__) . '/template_pemeriksaan.docx';
         $templateProcessor    = new \PhpOffice\PhpWord\TemplateProcessor($template_pemeriksaan);
 
-        $query = $this->BaPemeriksaanModel->getBaPemeriksaan();
+        // $query = $this->BaPemeriksaanModel->getBaPemeriksaan();
+        $sewapc = $this->SewaPCModel->getSewaPC();
+        // dd($sewapc);
 
         $templateProcessor->setValues([
-            'judul_ba'    => $query[$id_ba]['judul_ba'],
-            'ba'          => $query[0]['no_pemeriksaan'],
-            'no_ma'       => $query[0]['no_ma'],
-            'tanggal_ba'  => $query[0]['tanggal_ba'],
-            'rka_tahun'   => $query[0]['rka_tahun'],
-            'lampiran'    => $query[0]['lampiran'],
-            'karyawanap2' => $query[0]['karyawanap2'],
-            'jabatanap2'  => $query[0]['jabatanap2']
+            'judul_ba'    => $sewapc[$no_ba]['judul_ba'],
+            'ba'          => $sewapc[$no_ba]['no_pemeriksaan'],
+            'no_ma'       => $sewapc[$no_ba]['no_ma'],
+            'tanggal_ba'  => $sewapc[$no_ba]['tanggal_ba'],
+            'rka_tahun'   => $sewapc[$no_ba]['rka_tahun'],
+            'lampiran'    => $sewapc[$no_ba]['lampiran'],
+            'karyawanap2' => $sewapc[$no_ba]['karyawanap2'],
+            'jabatanap2'  => $sewapc[$no_ba]['jabatanap2']
         ]);
 
         $pathToSave = 'result_pemeriksaan.docx';

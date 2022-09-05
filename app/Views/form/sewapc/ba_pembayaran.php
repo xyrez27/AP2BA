@@ -16,7 +16,7 @@
                                                 <?= session()->getFlashdata('pesan'); ?>
                                             </div>
                                         <?php endif; ?>
-                                        <form action="/ba/save_form_pembayaran" method="POST" enctype="multipart/form-data">
+                                        <form action="/ba/save_form_pembayaran/" method="POST" enctype="multipart/form-data">
                                             <?= csrf_field(); ?>
                                             <h2>BERITA ACARA PEMBAYARAN</h2><br>
                                             <h2>Nama Karyawan</h2> <!-- KARYAWAN AP2 -->
