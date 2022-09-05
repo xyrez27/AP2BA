@@ -23,7 +23,7 @@
                 </thead>
                 <tbody>
                     <?php $i = 1; ?>
-                    <?php foreach ($ba_sewapc as $bp => $value) : ?>
+                    <?php foreach ($ba_sewapc as $value) : ?>
                         <tr class="text-center">
                             <th scope="col"><?= $i++; ?></th>
                             <td scope="col"><?= $value['judul_ba']; ?></td>
