@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col">
             <?php if (session()->getFlashdata('success')) : ?>
-                <div class="alert alert-success" role="alert">
+                <div class="alert alert-success mt-2" role="alert">
                     <?= session()->getFlashdata('success'); ?>
                 </div>
             <?php endif; ?>
@@ -23,7 +23,7 @@
                 </thead>
                 <tbody>
                     <?php $i = 1; ?>
-                    <?php foreach ($ba_sewapc as $value) : ?>
+                    <?php foreach ($ba_sewapc as $bp => $value) : ?>
                         <tr class="text-center">
                             <th scope="col"><?= $i++; ?></th>
                             <td scope="col"><?= $value['judul_ba']; ?></td>
@@ -36,8 +36,8 @@
                                 </a>
                                 <a href="/ba/phpword/<?= $i - 2; ?>" class="btn btn-warning">
                                     <i class="gg-software-download"></i>
-                                </a><br>
-                                <a href="<?= base_url('/ba/deleteBaPemeriksaan/' . $value['id_ba']) ?>" class="btn btn-danger">
+                                </a>
+                                <a href="<?= base_url('/ba/deleteBaPemeriksaan/' . $value['id'] . '/' . $value['id_pemeriksaan']) . '/' . $value['id_pembayaran'] ?>" class="btn btn-danger">
                                     <i class="gg-trash"></i>
                                 </a>
                             </td>

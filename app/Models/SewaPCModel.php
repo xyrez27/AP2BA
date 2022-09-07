@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class SewaPCModel extends Model
 {
     protected $table         = 'tx_ba_sewapc';
-    protected $primaryKey    = 'id_ba';
+    protected $primaryKey    = 'id';
     protected $useTimestamps = true;
     protected $allowedFields = [
         'id_pemeriksaan', 'id_pembayaran'
@@ -28,5 +28,14 @@ class SewaPCModel extends Model
         }
 
         return $this->where(['id_ba' => $id_ba])->first();
+    }
+
+    public function lastID()
+    {
+        $query = "SELECT MAX(id) FROM tx_ba_sewapc";
+
+        $query = $this->db->query($query);
+
+        return $query->getResultArray();
     }
 }

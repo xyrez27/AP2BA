@@ -75,7 +75,7 @@ class Ba extends BaseController
         return view('ba/tagihanListrik', $data);
     }
 
-    public function BaPembayaran($id)
+    public function BaPembayaran()
     {
         $data = [
             'title'          => 'BA Pembayaran | BA Angkasa Pura II',
@@ -84,11 +84,8 @@ class Ba extends BaseController
             'jabatan_ap2'    => $this->JabatanAP2Model->getJabatanAP2(),
             'jabatan_aps'    => $this->JabatanAPSModel->getJabatanAPS(),
             'judul_ba'       => $this->JudulBAModel->getJudulBA(),
-            'jenis_komputer' => $this->JenisKomputerModel->getJenisKomputer(),
-            'sewa_pc'        => $id
+            'jenis_komputer' => $this->JenisKomputerModel->getJenisKomputer()
         ];
-
-        dd($id);
 
         return view('form/sewapc/ba_pembayaran', $data);
     }
@@ -125,22 +122,17 @@ class Ba extends BaseController
         ]);
 
         $getID = $this->BaPemeriksaanModel->getInsertID();
-        // dd($getID);
 
         $this->SewaPCModel->save([
             'id_pemeriksaan' => $getID
         ]);
 
-        $id = $this->SewaPCModel->getInsertID();
-
-        dd($id, $getID);
-
         session()->setFlashdata('pesan', 'Data BA Pemeriksaan berhasil disimpan.');
 
-        return view('ba/baPembayaran', $id);
+        return redirect()->to('ba/baPembayaran');
     }
 
-    public function save_form_pembayaran($id)
+    public function save_form_pembayaran()
     {
         $karyawanap2  = implode(', ', $this->request->getVar('karyawanap2_pb[]'));
         $jabatanap2   = implode(', ', $this->request->getVar('jabatanap2_pb[]'));
@@ -160,22 +152,24 @@ class Ba extends BaseController
         ]);
 
         $getID = $this->BaPembayaranModel->getInsertID();
-        $getIDP = $this->SewaPCModel->getInsertID();
-        dd($getIDP);
-        // dd($getID);
+        $selectLastid = $this->SewaPCModel->lastID();
 
-        $this->SewaPCModel->update([
-            'id_pembayaran'  => $getID
-        ]);
+        $saveid = [
+            'id_pembayaran' => $getID
+        ];
+
+        $this->SewaPCModel->update($selectLastid[0], $saveid);
 
         session()->setFlashdata('pesan', 'Data BA Pembayaran berhasil disimpan.');
 
         return redirect()->to('/pages/dashboard');
     }
 
-    public function deleteBaPemeriksaan($id_ba)
+    public function deleteBaPemeriksaan($id_ba, $id_pemeriksaan, $id_pembayaran)
     {
-        return $this->BaPemeriksaanModel->delete($id_ba);
+        $this->SewaPCModel->delete(['id' => $id_ba]);
+        $this->BaPemeriksaanModel->delete(['id_ba' => $id_pemeriksaan]);
+        $this->BaPembayaranModel->delete(['id_ba' => $id_pembayaran]);
 
         session()->setFlashdata('success', 'Data Berhasil Dihapus!!');
 
@@ -188,10 +182,6 @@ class Ba extends BaseController
             'title'     => 'Daftar Berita Acara | BA Angkasa Pura II',
             'ba_sewapc' => $this->SewaPCModel->getSewaPC()
         ];
-
-        // dd($this->SewaPCModel->getData());
-
-        // dd($this->SewaPCModel->getSewaPC());
 
         return view('ba/daftarBA', $data);
     }
@@ -212,16 +202,35 @@ class Ba extends BaseController
         $sewapc = $this->SewaPCModel->getSewaPC();
         // dd($sewapc);
 
+        $karyawanap2 = $sewapc[$no_ba]['karyawanap2'];
+        $namakaryawan = explode(", ", $karyawanap2);
+
+        // dd($karyawanap2, $namakaryawan);
         $templateProcessor->setValues([
             'judul_ba'    => $sewapc[$no_ba]['judul_ba'],
             'ba'          => $sewapc[$no_ba]['no_pemeriksaan'],
             'no_ma'       => $sewapc[$no_ba]['no_ma'],
-            'tanggal_ba'  => $sewapc[$no_ba]['tanggal_ba'],
+            'tgl_ba'      => date('m/Y', strtotime($sewapc[$no_ba]['tanggal_ba'])),
+            'tgl_ba2'     => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_ba'])),
             'rka_tahun'   => $sewapc[$no_ba]['rka_tahun'],
             'lampiran'    => $sewapc[$no_ba]['lampiran'],
-            'karyawanap2' => $sewapc[$no_ba]['karyawanap2'],
-            'jabatanap2'  => $sewapc[$no_ba]['jabatanap2']
+            'jabatanap2'  => $sewapc[$no_ba]['jabatanap2'],
+            'no_psm'      => $sewapc[$no_ba]['no_psm'],
+            'tanggal_psm' => $sewapc[$no_ba]['tanggal_psm'],
+            'no_bao'      => $sewapc[$no_ba]['no_bao'],
+            'tanggal_bao' => $sewapc[$no_ba]['tanggal_bao'],
+            'tanggal_pp_from' => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_pp_from'])),
+            'tanggal_pp_to'   => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_pp_to'])),
+            'jenis_komputer'  => $sewapc[$no_ba]['jenis_komputer'],
+            'unit_komputer'   => $sewapc[$no_ba]['unit_komputer']
         ]);
+
+        foreach ($namakaryawan as $key) {
+            dd($key);
+            $templateProcessor->setValues([
+                'karyawanap2' => $key
+            ]);
+        }
 
         $pathToSave = 'result_pemeriksaan.docx';
         $templateProcessor->saveAs($pathToSave);

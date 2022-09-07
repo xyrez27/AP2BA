@@ -6,7 +6,8 @@ use CodeIgniter\Model;
 
 class BaPembayaranModel extends Model
 {
-    protected $table = 'tx_ba_pembayaran';
+    protected $table         = 'tx_ba_pembayaran';
+    protected $primaryKey    = 'id_ba';
     protected $useTimestamps = true;
     protected $allowedFields = [
         'id_ba', 'karyawanap2_pb', 'jabatanap2_pb', 'karyawanaps_pb', 'karyawanaps_pb', 'no_ppn', 'tanggal_ppn',
