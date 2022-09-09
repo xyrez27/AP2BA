@@ -206,31 +206,49 @@ class Ba extends BaseController
         $namakaryawan = explode(", ", $karyawanap2);
 
         // dd($karyawanap2, $namakaryawan);
-        $templateProcessor->setValues([
-            'judul_ba'    => $sewapc[$no_ba]['judul_ba'],
-            'ba'          => $sewapc[$no_ba]['no_pemeriksaan'],
-            'no_ma'       => $sewapc[$no_ba]['no_ma'],
-            'tgl_ba'      => date('m/Y', strtotime($sewapc[$no_ba]['tanggal_ba'])),
-            'tgl_ba2'     => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_ba'])),
-            'rka_tahun'   => $sewapc[$no_ba]['rka_tahun'],
-            'lampiran'    => $sewapc[$no_ba]['lampiran'],
-            'jabatanap2'  => $sewapc[$no_ba]['jabatanap2'],
-            'no_psm'      => $sewapc[$no_ba]['no_psm'],
-            'tanggal_psm' => $sewapc[$no_ba]['tanggal_psm'],
-            'no_bao'      => $sewapc[$no_ba]['no_bao'],
-            'tanggal_bao' => $sewapc[$no_ba]['tanggal_bao'],
-            'tanggal_pp_from' => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_pp_from'])),
-            'tanggal_pp_to'   => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_pp_to'])),
-            'jenis_komputer'  => $sewapc[$no_ba]['jenis_komputer'],
-            'unit_komputer'   => $sewapc[$no_ba]['unit_komputer']
-        ]);
+        // $templateProcessor->setValues([
+        //     'judul_ba'    => $sewapc[$no_ba]['judul_ba'],
+        //     'ba'          => $sewapc[$no_ba]['no_pemeriksaan'],
+        //     'no_ma'       => $sewapc[$no_ba]['no_ma'],
+        //     'tgl_ba'      => date('m/Y', strtotime($sewapc[$no_ba]['tanggal_ba'])),
+        //     'tgl_ba2'     => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_ba'])),
+        //     'rka_tahun'   => $sewapc[$no_ba]['rka_tahun'],
+        //     'lampiran'    => $sewapc[$no_ba]['lampiran'],
+        //     'jabatanap2'  => $sewapc[$no_ba]['jabatanap2'],
+        //     'no_psm'      => $sewapc[$no_ba]['no_psm'],
+        //     'tanggal_psm' => $sewapc[$no_ba]['tanggal_psm'],
+        //     'no_bao'      => $sewapc[$no_ba]['no_bao'],
+        //     'tanggal_bao' => $sewapc[$no_ba]['tanggal_bao'],
+        //     'tanggal_pp_from' => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_pp_from'])),
+        //     'tanggal_pp_to'   => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_pp_to'])),
+        //     'jenis_komputer'  => $sewapc[$no_ba]['jenis_komputer'],
+        //     'unit_komputer'   => $sewapc[$no_ba]['unit_komputer']
+        // ]);
 
-        foreach ($namakaryawan as $key) {
-            dd($key);
-            $templateProcessor->setValues([
-                'karyawanap2' => $key
-            ]);
+        foreach ($namakaryawan as $key => $value) {
+            $dataRows = [
+                ["title" => $key],
+            ];
         }
+
+        // array of titles
+        $allTitles = array_map(function ($data) {
+            return $data['title'];
+        }, $dataRows);
+
+        // array of content
+        $allContent = array_map(function ($data) {
+            return $data['content'];
+        }, $dataRows);
+
+        $templateProcessor->setValue('title', implode("\r\n", $allTitles));
+        $templateProcessor->setValue('content', implode("\r\n", $allContent));
+        // foreach ($namakaryawan as $key) {
+        //     dd($key);
+        //     $templateProcessor->setValues([
+        //         'karyawanap2' => $key
+        //     ]);
+        // }
 
         $pathToSave = 'result_pemeriksaan.docx';
         $templateProcessor->saveAs($pathToSave);
