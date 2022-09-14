@@ -284,6 +284,8 @@ class Ba extends BaseController
         $dompdf->loadHtml($html);
         $dompdf->setPaper('A4', 'potrait');
         $dompdf->render();
-        $dompdf->stream("ba-pemeriksaan", array("Attachment" => false));
+        $dompdf->stream("ba_pemeriksaan.pdf", array(
+            "Attachment" => false
+        ));
     }
 }
