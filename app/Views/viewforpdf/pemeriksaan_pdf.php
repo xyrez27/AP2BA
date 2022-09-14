@@ -11,6 +11,7 @@
         td,
         th {
             border: 1px solid;
+            border-collapse: collapse;
         }
     </style>
 </head>
@@ -25,7 +26,7 @@
                         <table class="table-pdf col" style="margin-top: 130px; font-size: 12.8px;">
                             <thead>
                                 <tr>
-                                    <th>&nbsp;no</th>
+                                    <th>&nbsp;nojj</th>
                                 </tr>
                             </thead>
                             <tbody>
