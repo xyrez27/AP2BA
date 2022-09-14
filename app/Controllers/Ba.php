@@ -13,6 +13,7 @@ use App\Models\JenisKomputerModel;
 use App\Models\BaPemeriksaanModel;
 use App\Models\BaPembayaranModel;
 use App\Models\SewaPCModel;
+use Dompdf\Dompdf;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\Request;
 
@@ -200,55 +201,41 @@ class Ba extends BaseController
 
         // $query = $this->BaPemeriksaanModel->getBaPemeriksaan();
         $sewapc = $this->SewaPCModel->getSewaPC();
+        dd($sewapc[$no_ba]);
         // dd($sewapc);
 
-        $karyawanap2 = $sewapc[$no_ba]['karyawanap2'];
-        $namakaryawan = explode(", ", $karyawanap2);
+        $karyawanap2  = $sewapc[$no_ba]['karyawanap2'];
+        $namakaryawan = explode(",", $karyawanap2);
+        $nk2          = implode("\n", $namakaryawan);
+        // $temp         = nl2br($namakaryawan);
+        // dd($karyawanap22);
+        // dd($namakaryawan, $nk2);
 
-        // dd($karyawanap2, $namakaryawan);
-        // $templateProcessor->setValues([
-        //     'judul_ba'    => $sewapc[$no_ba]['judul_ba'],
-        //     'ba'          => $sewapc[$no_ba]['no_pemeriksaan'],
-        //     'no_ma'       => $sewapc[$no_ba]['no_ma'],
-        //     'tgl_ba'      => date('m/Y', strtotime($sewapc[$no_ba]['tanggal_ba'])),
-        //     'tgl_ba2'     => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_ba'])),
-        //     'rka_tahun'   => $sewapc[$no_ba]['rka_tahun'],
-        //     'lampiran'    => $sewapc[$no_ba]['lampiran'],
-        //     'jabatanap2'  => $sewapc[$no_ba]['jabatanap2'],
-        //     'no_psm'      => $sewapc[$no_ba]['no_psm'],
-        //     'tanggal_psm' => $sewapc[$no_ba]['tanggal_psm'],
-        //     'no_bao'      => $sewapc[$no_ba]['no_bao'],
-        //     'tanggal_bao' => $sewapc[$no_ba]['tanggal_bao'],
-        //     'tanggal_pp_from' => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_pp_from'])),
-        //     'tanggal_pp_to'   => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_pp_to'])),
-        //     'jenis_komputer'  => $sewapc[$no_ba]['jenis_komputer'],
-        //     'unit_komputer'   => $sewapc[$no_ba]['unit_komputer']
-        // ]);
-
-        foreach ($namakaryawan as $key => $value) {
-            $dataRows = [
-                ["title" => $key],
-            ];
-        }
-
-        // array of titles
-        $allTitles = array_map(function ($data) {
-            return $data['title'];
-        }, $dataRows);
-
-        // array of content
-        $allContent = array_map(function ($data) {
-            return $data['content'];
-        }, $dataRows);
-
-        $templateProcessor->setValue('title', implode("\r\n", $allTitles));
-        $templateProcessor->setValue('content', implode("\r\n", $allContent));
         // foreach ($namakaryawan as $key) {
-        //     dd($key);
         //     $templateProcessor->setValues([
-        //         'karyawanap2' => $key
+        //         'karyawanap2' => $key . "<br>"
         //     ]);
         // }
+
+        $templateProcessor->setValues([
+            'judul_ba'    => $sewapc[$no_ba]['judul_ba'],
+            'ba'          => $sewapc[$no_ba]['no_pemeriksaan'],
+            'no_ma'       => $sewapc[$no_ba]['no_ma'],
+            'tgl_ba'      => date('m/Y', strtotime($sewapc[$no_ba]['tanggal_ba'])),
+            'tgl_ba2'     => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_ba'])),
+            'rka_tahun'   => $sewapc[$no_ba]['rka_tahun'],
+            'lampiran'    => $sewapc[$no_ba]['lampiran'],
+            // 'karyawanap2' => $nk2,
+            'jabatanap2'  => $sewapc[$no_ba]['jabatanap2'],
+            'no_psm'      => $sewapc[$no_ba]['no_psm'],
+            'tanggal_psm' => $sewapc[$no_ba]['tanggal_psm'],
+            'no_bao'      => $sewapc[$no_ba]['no_bao'],
+            'tanggal_bao' => $sewapc[$no_ba]['tanggal_bao'],
+            'tanggal_pp_from' => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_pp_from'])),
+            'tanggal_pp_to'   => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_pp_to'])),
+            'jenis_komputer'  => $sewapc[$no_ba]['jenis_komputer'],
+            'unit_komputer'   => $sewapc[$no_ba]['unit_komputer']
+        ]);
 
         $pathToSave = 'result_pemeriksaan.docx';
         $templateProcessor->saveAs($pathToSave);
@@ -260,5 +247,43 @@ class Ba extends BaseController
         readfile($pathToSave);
 
         return view('/pages/dashboard', $data);
+    }
+
+    public function viewforpdf($no_ba)
+    {
+        $sewapc = $this->SewaPCModel->getSewaPC();
+        $data = [
+            'title'  => 'BA Pembayaran | BA Angkasa Pura II',
+            'no_ba'  => $no_ba,
+            'sewapc' => $sewapc[$no_ba],
+            'karyawanap2' => explode(",", $sewapc[$no_ba]['karyawanap2']),
+            'jabatanap2'  => explode(",", $sewapc[$no_ba]['jabatanap2']),
+            'karyawanaps' => explode(",", $sewapc[$no_ba]['karyawanaps']),
+            'jabatanaps'  => explode(",", $sewapc[$no_ba]['jabatanaps'])
+        ];
+
+        return view('/viewforpdf/pemeriksaan_pdf', $data);
+    }
+
+    public function printpdf($no_ba)
+    {
+        $sewapc = $this->SewaPCModel->getSewaPC();
+        $data = [
+            'title'  => 'BA Pembayaran | BA Angkasa Pura II',
+            'no_ba'  => $no_ba,
+            'sewapc' => $sewapc[$no_ba],
+            'karyawanap2' => explode(",", $sewapc[$no_ba]['karyawanap2']),
+            'jabatanap2'  => explode(",", $sewapc[$no_ba]['jabatanap2']),
+            'karyawanaps' => explode(",", $sewapc[$no_ba]['karyawanaps']),
+            'jabatanaps'  => explode(",", $sewapc[$no_ba]['jabatanaps'])
+        ];
+
+        $html = view('/viewforpdf/pemeriksaan_pdf', $data);
+
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'potrait');
+        $dompdf->render();
+        $dompdf->stream("ba-pemeriksaan", array("Attachment" => false));
     }
 }

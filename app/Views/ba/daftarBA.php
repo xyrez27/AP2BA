@@ -34,10 +34,10 @@
                                 <a href="/ba/more" class="btn btn-info">
                                     <i class="gg-details-more"></i>
                                 </a>
-                                <a href="/ba/phpword/<?= $i - 2; ?>" class="btn btn-warning">
+                                <a href="/ba/viewforpdf/<?= $i - 2; ?>" class="btn btn-warning">
                                     <i class="gg-software-download"></i>
                                 </a>
-                                <a href="<?= base_url('/ba/deleteBaPemeriksaan/' . $value['id'] . '/' . $value['id_pemeriksaan']) . '/' . $value['id_pembayaran'] ?>" class="btn btn-danger">
+                                <a href="<?= base_url('/ba/deleteBaPemeriksaan/' . $value['id'] . '/' . $value['id_pemeriksaan'] . '/' . $value['id_pembayaran']) ?>" class="btn btn-danger">
                                     <i class="gg-trash"></i>
                                 </a>
                             </td>

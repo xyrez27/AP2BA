@@ -43,8 +43,8 @@
                                                 <label for="no_ma" class="col-sm-2 col-form-label">M.A No</label>
                                                 <div class="col-3">
                                                     <select id="no_ma" name="no_ma" class="form-control">
-                                                        <option value="eksploitasi">Eksploitasi</option>
-                                                        <option selected value="investasi">Investasi</option>
+                                                        <option value="Eksploitasi">Eksploitasi</option>
+                                                        <option selected value="Investasi">Investasi</option>
                                                     </select>
                                                 </div>
                                             </div>

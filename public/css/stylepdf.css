@@ -1,0 +1,46 @@
+body {
+    background: rgb(204,204,204); 
+  }
+  page {
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.1cm rgba(0,0,0,0.5);
+    font-family: Tahoma;
+    font-size: 14px;
+  }
+  page[size="A4"] {  
+    width: 21cm;
+    height: 29.7cm; 
+  }
+  page[size="A4"][layout="portrait"] {
+    width: 29.7cm;
+    height: 21cm;  
+  }
+
+table-pdf,
+th,
+td{
+  border: 1px solid #333;
+  padding: 2px 30px;
+}
+
+table{
+    /* width:500px;
+    height:200px; */
+    border-collapse: collapse;
+}
+
+p{
+  text-align: justify;
+}
+
+.margin{
+    margin-left: 100px;
+    margin-right: 80px;
+}
+
+.tab{
+  tab-size: 2px;
+}
