@@ -101,6 +101,12 @@ class Ba extends BaseController
         $jenis_komputer = implode(', ', $this->request->getVar('jenis_komputer[]'));
         $unit_komputer  = implode(', ', $this->request->getVar('unit_komputer[]'));
 
+        $jumlah_unit = 0;
+        foreach ($this->request->getVar('unit_komputer[]') as $key) {
+            $strtoint = (int)$key;
+            $jumlah_unit += $strtoint;
+        }
+
         $this->BaPemeriksaanModel->save([
             'judul_ba'        => $this->request->getVar('judul_ba'),
             'no_pemeriksaan'  => $this->request->getVar('no_pemeriksaan'),
@@ -119,7 +125,8 @@ class Ba extends BaseController
             'tanggal_pp_from' => $this->request->getVar('tanggal_pp_from'),
             'tanggal_pp_to'   => $this->request->getVar('tanggal_pp_to'),
             'jenis_komputer'  => $jenis_komputer,
-            'unit_komputer'   => $unit_komputer
+            'unit_komputer'   => $unit_komputer,
+            'jumlah_unit'     => $jumlah_unit
         ]);
 
         $getID = $this->BaPemeriksaanModel->getInsertID();
@@ -252,22 +259,18 @@ class Ba extends BaseController
     public function printpemeriksaan($no_ba)
     {
         $sewapc = $this->SewaPCModel->getSewaPC();
-        $unit_komputer = (int)$sewapc[$no_ba]['unit_komputer'];
-        $unit_ = explode(",", $sewapc[$no_ba]['unit_komputer']);
-        // dd($unit_komputer);
-        $jumlah_unit =
 
-            $data = [
-                'title'  => 'BA Pemeriksa Pekerjaan | BA Angkasa Pura II',
-                'no_ba'  => $no_ba,
-                'sewapc' => $sewapc[$no_ba],
-                'karyawanap2' => explode(",", $sewapc[$no_ba]['karyawanap2']),
-                'jabatanap2'  => explode(",", $sewapc[$no_ba]['jabatanap2']),
-                'karyawanaps' => explode(",", $sewapc[$no_ba]['karyawanaps']),
-                'jabatanaps'  => explode(",", $sewapc[$no_ba]['jabatanaps']),
-                'jenis_komputer' => explode(",", $sewapc[$no_ba]['jenis_komputer']),
-                'unit_komputer'  => $unit_komputer
-            ];
+        $data = [
+            'title'  => 'BA Pemeriksa Pekerjaan | BA Angkasa Pura II',
+            'no_ba'  => $no_ba,
+            'sewapc' => $sewapc[$no_ba],
+            'karyawanap2' => explode(",", $sewapc[$no_ba]['karyawanap2']),
+            'jabatanap2'  => explode(",", $sewapc[$no_ba]['jabatanap2']),
+            'karyawanaps' => explode(",", $sewapc[$no_ba]['karyawanaps']),
+            'jabatanaps'  => explode(",", $sewapc[$no_ba]['jabatanaps']),
+            'jenis_komputer' => explode(",", $sewapc[$no_ba]['jenis_komputer']),
+            'unit_komputer'  => explode(",", $sewapc[$no_ba]['unit_komputer'])
+        ];
 
         $html = view('/viewforpdf/pemeriksaan_pdf', $data);
 

@@ -90,7 +90,7 @@
                                 <?php endforeach; ?>
                                 <tr>
                                     <th colspan="2">TOTAL</th>
-                                    <td></td>
+                                    <td><?= $sewapc['jumlah_unit']; ?> Unit</td>
                                 </tr>
                             </tbody>
                         </table>
