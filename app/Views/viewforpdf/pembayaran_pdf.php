@@ -53,8 +53,8 @@
                             tentang <?= $sewapc['judul_ba']; ?>;</p>
                         <p>3. Berita Acara Pemeriksaan Pekerjaan BAC.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_pemeriksaan']; ?> tanggal <?= date('d m Y', strtotime($sewapc['tanggal_ba'])); ?>
                             tentang <?= $sewapc['judul_ba']; ?>;</p>
-                        <p>Maka pada PIHAK KEDUA dapat dilakukan pembayaran tahap <?= $sewapc['tahap_ke']; ?> untuk periode <?= $sewapc['tanggal_pp_from']; ?> s.d. <?= $sewapc['tanggal_pp_to']; ?></p><br /><br /><br /><br /><br /><br />
-                        <p class="text-right">Pembayaran………../2</p>
+                        <p>Maka pada PIHAK KEDUA dapat dilakukan pembayaran tahap <?= $sewapc['tahap_ke']; ?> untuk periode <?= $sewapc['tanggal_pp_from']; ?> s.d. <?= $sewapc['tanggal_pp_to']; ?></p><br /><br /><br><br>
+                        <p style="text-align: right;">Pembayaran………../2</p>
                         <p>Pembayaran dilakukan dengan rincian sebagai berikut : </p>
                         <p>Tahap <?= $sewapc['tahap_ke']; ?> (Periode <?= $sewapc['tanggal_pp_from']; ?> s.d <?= $sewapc['tanggal_pp_to']; ?>)</p>
                         <table>
@@ -71,7 +71,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-
+                                <tr></tr>
                             </tbody>
                         </table>
                     </div>
