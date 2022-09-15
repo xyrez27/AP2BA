@@ -60,9 +60,11 @@
                         </table>
                         <p>Berdasarkan :</p>
                         <p>1. Perjanjian Sewa Menyewa Nomor PJJ.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_psm']; ?> tanggal <?= date('d m Y', strtotime($sewapc['tanggal_psm'])); ?>
-                            tentang <?= $sewapc['judul_ba']; ?>;</p>
+                            tentang <?= $sewapc['judul_ba']; ?>;
+                        </p>
                         <p>2. Berita Acara Operasional Nomor BAC.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_bao']; ?> tanggal <?= date('d m Y', strtotime($sewapc['tanggal_bao'])); ?>
-                            tentang <?= $sewapc['judul_ba']; ?>;</p><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                            tentang <?= $sewapc['judul_ba']; ?>;
+                        </p><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                         <p style="text-align: right;">Telah………../2</p>
                     </div>
                     <div class="page2">
@@ -91,6 +93,45 @@
                                 <tr>
                                     <th colspan="2">TOTAL</th>
                                     <td><?= $sewapc['jumlah_unit']; ?> Unit</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Demikian Berita Acara Pemeriksaan Pekerjaan ini dibuat dalam rangkap 2 (dua) untuk dapat digunakan sebagaimana mestinya.</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th colspan="3" style="text-align: left;">PT ANGKASA PURA SOLUSI</th>
+                                    <th colspan="3" style="text-align: left;">PT ANGKASA PURA II</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1.</td>
+                                    <td><u>ANDY IHZA MAHENDRA</u></td>
+                                    <td>……………</td>
+                                    <td>1.</td>
+                                    <td><u>RIZKY ANDROMEDHA P</u></td>
+                                    <td>……………</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td colspan="2">EVP of APS Facility Services</td>
+                                    <td></td>
+                                    <td colspan="2">Assistant Manager of IT Non Public Service</td>
+                                </tr>
+                                <tr>
+                                    <td>2.</td>
+                                    <td><u>TONI RINALDY</u></td>
+                                    <td>……………</td>
+                                    <td>2.</td>
+                                    <td><u>DIMAS WAHYUDIN</u></td>
+                                    <td>……………</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td colspan="2">Staf Administrasi</td>
+                                    <td></td>
+                                    <td colspan="2">Back Office System Support Engineer</td>
                                 </tr>
                             </tbody>
                         </table>
