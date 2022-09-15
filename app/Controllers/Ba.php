@@ -252,15 +252,22 @@ class Ba extends BaseController
     public function printpemeriksaan($no_ba)
     {
         $sewapc = $this->SewaPCModel->getSewaPC();
-        $data = [
-            'title'  => 'BA Pemeriksa Pekerjaan | BA Angkasa Pura II',
-            'no_ba'  => $no_ba,
-            'sewapc' => $sewapc[$no_ba],
-            'karyawanap2' => explode(",", $sewapc[$no_ba]['karyawanap2']),
-            'jabatanap2'  => explode(",", $sewapc[$no_ba]['jabatanap2']),
-            'karyawanaps' => explode(",", $sewapc[$no_ba]['karyawanaps']),
-            'jabatanaps'  => explode(",", $sewapc[$no_ba]['jabatanaps'])
-        ];
+        $unit_komputer = (int)$sewapc[$no_ba]['unit_komputer'];
+        $uktoint = explode(",", $sewapc[$no_ba]['unit_komputer']);
+        dd($unit_komputer);
+        $jumlah_unit =
+
+            $data = [
+                'title'  => 'BA Pemeriksa Pekerjaan | BA Angkasa Pura II',
+                'no_ba'  => $no_ba,
+                'sewapc' => $sewapc[$no_ba],
+                'karyawanap2' => explode(",", $sewapc[$no_ba]['karyawanap2']),
+                'jabatanap2'  => explode(",", $sewapc[$no_ba]['jabatanap2']),
+                'karyawanaps' => explode(",", $sewapc[$no_ba]['karyawanaps']),
+                'jabatanaps'  => explode(",", $sewapc[$no_ba]['jabatanaps']),
+                'jenis_komputer' => explode(",", $sewapc[$no_ba]['jenis_komputer']),
+                'unit_komputer'  => $unit_komputer
+            ];
 
         $html = view('/viewforpdf/pemeriksaan_pdf', $data);
 

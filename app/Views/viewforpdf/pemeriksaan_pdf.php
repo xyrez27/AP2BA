@@ -70,6 +70,30 @@
                             untuk periode pemakaian <?= date('d m Y', strtotime($sewapc['tanggal_pp_from'])); ?> s.d. <?= date('d m Y', strtotime($sewapc['tanggal_pp_to'])); ?>
                             telah terlaksana dengan baik sesuai ketentuan dengan rincian perangkat terpasang sebagai berikut :
                         </p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>NO</th>
+                                    <th>JENIS KOMPUTER</th>
+                                    <th>JUMLAH</th>
+                                </tr>
+                            </thead>
+                            <tbody style="text-align: center;">
+                                <?php $k = 1; ?>
+                                <?php foreach ($jenis_komputer as $jk) : ?>
+                                    <tr>
+                                        <td><?= $k; ?></td>
+                                        <td style="text-align: left;"><?= $jk; ?></td>
+                                        <td><?= $unit_komputer[$k - 1]; ?> Unit</td>
+                                    </tr>
+                                    <?php $k++ ?>
+                                <?php endforeach; ?>
+                                <tr>
+                                    <th colspan="2">TOTAL</th>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
