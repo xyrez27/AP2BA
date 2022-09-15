@@ -1,14 +1,5 @@
 <?= $this->extend('layout/viewforpdf'); ?>
 <?= $this->section('content'); ?>
-<?php
-$pdf = false;
-if (strpos(current_url(), "printpdf")) {
-    $pdf = true;
-}
-if ($pdf == false) {
-?>
-    <input type="button" value="Print PDF" class="mt-2 btn btn-warning" onclick="window.open('<?= base_url('/ba/printpdf/' . $no_ba) ?>')" />
-<?php } ?>
 <page size="A4">
     <div class="margin">
         <div class="container">
@@ -77,7 +68,8 @@ if ($pdf == false) {
                     <div class="page2">
                         <p>Telah melakukan pemeriksaan pekerjaan dan menyatakan bahwa Pekerjaan <?= $sewapc['judul_ba']; ?>
                             untuk periode pemakaian <?= date('d m Y', strtotime($sewapc['tanggal_pp_from'])); ?> s.d. <?= date('d m Y', strtotime($sewapc['tanggal_pp_to'])); ?>
-                            telah terlaksana dengan baik sesuai ketentuan dengan rincian perangkat terpasang sebagai berikut :</p>
+                            telah terlaksana dengan baik sesuai ketentuan dengan rincian perangkat terpasang sebagai berikut :
+                        </p>
                     </div>
                 </div>
             </div>

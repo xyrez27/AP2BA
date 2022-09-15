@@ -249,23 +249,7 @@ class Ba extends BaseController
         return view('/pages/dashboard', $data);
     }
 
-    public function viewforpdf($no_ba)
-    {
-        $sewapc = $this->SewaPCModel->getSewaPC();
-        $data = [
-            'title'  => 'BA Pembayaran | BA Angkasa Pura II',
-            'no_ba'  => $no_ba,
-            'sewapc' => $sewapc[$no_ba],
-            'karyawanap2' => explode(",", $sewapc[$no_ba]['karyawanap2']),
-            'jabatanap2'  => explode(",", $sewapc[$no_ba]['jabatanap2']),
-            'karyawanaps' => explode(",", $sewapc[$no_ba]['karyawanaps']),
-            'jabatanaps'  => explode(",", $sewapc[$no_ba]['jabatanaps'])
-        ];
-
-        return view('/viewforpdf/pemeriksaan_pdf', $data);
-    }
-
-    public function printpdf($no_ba)
+    public function printpemeriksaan($no_ba)
     {
         $sewapc = $this->SewaPCModel->getSewaPC();
         $data = [
@@ -283,9 +267,32 @@ class Ba extends BaseController
         $dompdf = new Dompdf();
         $dompdf->loadHtml($html);
         $dompdf->setPaper('A4', 'potrait');
-        // $dompdf->setFo
         $dompdf->render();
         $dompdf->stream("ba_pemeriksaan.pdf", array(
+            "Attachment" => false
+        ));
+    }
+
+    public function printpembayaran($no_ba)
+    {
+        $sewapc = $this->SewaPCModel->getSewaPC();
+        $data = [
+            'title'  => 'BA Pemeriksa Pekerjaan | BA Angkasa Pura II',
+            'no_ba'  => $no_ba,
+            'sewapc' => $sewapc[$no_ba],
+            'karyawanap2' => explode(",", $sewapc[$no_ba]['karyawanap2']),
+            'jabatanap2'  => explode(",", $sewapc[$no_ba]['jabatanap2']),
+            'karyawanaps' => explode(",", $sewapc[$no_ba]['karyawanaps']),
+            'jabatanaps'  => explode(",", $sewapc[$no_ba]['jabatanaps'])
+        ];
+
+        $html = view('/viewforpdf/pembayaran_pdf', $data);
+
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'potrait');
+        $dompdf->render();
+        $dompdf->stream("ba_pembayaran.pdf", array(
             "Attachment" => false
         ));
     }
