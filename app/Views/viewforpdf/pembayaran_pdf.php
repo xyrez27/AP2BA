@@ -36,14 +36,14 @@
                         <p>Pada hari ini, <b>Senin</b> tanggal <b>Empat</b> Bulan <b>Juli</b> tahun <b>Dua Ribu Dua Puluh Dua</b> (<?= date('d-m-Y', strtotime($sewapc['tanggal_ba'])); ?>) kami yang bertanda tangan dibawah ini :</p><br>
                         <p><b>PT ANGKASA PURA II - KCU BANDARA SOEKARNO-HATTA :</b></p>
                         <?php $i = 1; ?>
-                        <?php foreach ($karyawanap2 as $kp) : ?>
-                            <p><?= $i; ?>. Nama : <?= $kp; ?> Jabatan : <?= $jabatanap2[$i - 1]; ?>;</p>
+                        <?php foreach ($karyawanap2_pb as $kp) : ?>
+                            <p><?= $i; ?>. Nama : <?= $kp; ?> Jabatan : <?= $jabatanap2_pb[$i - 1]; ?>;</p>
                             <?php $i++ ?>
                         <?php endforeach; ?><br>
                         <p><b>PT ANGKASA PURA SOLUSI :</b></p>
                         <?php $j = 1; ?>
-                        <?php foreach ($karyawanaps as $ks) : ?>
-                            <p><?= $j; ?>. Nama : <?= $ks; ?> Jabatan : <?= $jabatanaps[$j - 1]; ?>;</p>
+                        <?php foreach ($karyawanaps_pb as $ks) : ?>
+                            <p><?= $j; ?>. Nama : <?= $ks; ?> Jabatan : <?= $jabatanaps_pb[$j - 1]; ?>;</p>
                             <?php $j++ ?>
                         <?php endforeach; ?><br>
                         <p>Berdasarkan :</p>
@@ -61,6 +61,8 @@
                             <thead>
                                 <tr>
                                     <th colspan="5">DETAIL PEMBAYARAN TAHAP <?= $sewapc['tahap_ke']; ?></th>
+                                </tr>
+                                <tr>
                                     <th>NO</th>
                                     <th>ITEM</th>
                                     <th>QUANTITY</th>

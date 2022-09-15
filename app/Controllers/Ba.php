@@ -253,8 +253,8 @@ class Ba extends BaseController
     {
         $sewapc = $this->SewaPCModel->getSewaPC();
         $unit_komputer = (int)$sewapc[$no_ba]['unit_komputer'];
-        $uktoint = explode(",", $sewapc[$no_ba]['unit_komputer']);
-        dd($unit_komputer);
+        $unit_ = explode(",", $sewapc[$no_ba]['unit_komputer']);
+        // dd($unit_komputer);
         $jumlah_unit =
 
             $data = [
@@ -287,10 +287,10 @@ class Ba extends BaseController
             'title'  => 'BA Pemeriksa Pekerjaan | BA Angkasa Pura II',
             'no_ba'  => $no_ba,
             'sewapc' => $sewapc[$no_ba],
-            'karyawanap2' => explode(",", $sewapc[$no_ba]['karyawanap2']),
-            'jabatanap2'  => explode(",", $sewapc[$no_ba]['jabatanap2']),
-            'karyawanaps' => explode(",", $sewapc[$no_ba]['karyawanaps']),
-            'jabatanaps'  => explode(",", $sewapc[$no_ba]['jabatanaps'])
+            'karyawanap2_pb' => explode(",", $sewapc[$no_ba]['karyawanap2_pb']),
+            'jabatanap2_pb'  => explode(",", $sewapc[$no_ba]['jabatanap2_pb']),
+            'karyawanaps_pb' => explode(",", $sewapc[$no_ba]['karyawanaps_pb']),
+            'jabatanaps_pb'  => explode(",", $sewapc[$no_ba]['jabatanaps_pb'])
         ];
 
         $html = view('/viewforpdf/pembayaran_pdf', $data);
