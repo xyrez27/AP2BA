@@ -119,7 +119,7 @@ class Ba extends BaseController
             'tanggal_pp_from' => $this->request->getVar('tanggal_pp_from'),
             'tanggal_pp_to'   => $this->request->getVar('tanggal_pp_to'),
             'jenis_komputer'  => $jenis_komputer,
-            'unit_komputer'   => $unit_komputer,
+            'unit_komputer'   => $unit_komputer
         ]);
 
         $getID = $this->BaPemeriksaanModel->getInsertID();
@@ -225,7 +225,7 @@ class Ba extends BaseController
             'tgl_ba2'     => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_ba'])),
             'rka_tahun'   => $sewapc[$no_ba]['rka_tahun'],
             'lampiran'    => $sewapc[$no_ba]['lampiran'],
-            // 'karyawanap2' => $nk2,
+            'karyawanap2' => $sewapc[$no_ba]['karyawanap2'],
             'jabatanap2'  => $sewapc[$no_ba]['jabatanap2'],
             'no_psm'      => $sewapc[$no_ba]['no_psm'],
             'tanggal_psm' => $sewapc[$no_ba]['tanggal_psm'],
@@ -269,7 +269,7 @@ class Ba extends BaseController
     {
         $sewapc = $this->SewaPCModel->getSewaPC();
         $data = [
-            'title'  => 'BA Pembayaran | BA Angkasa Pura II',
+            'title'  => 'BA Pemeriksa Pekerjaan | BA Angkasa Pura II',
             'no_ba'  => $no_ba,
             'sewapc' => $sewapc[$no_ba],
             'karyawanap2' => explode(",", $sewapc[$no_ba]['karyawanap2']),
@@ -283,6 +283,7 @@ class Ba extends BaseController
         $dompdf = new Dompdf();
         $dompdf->loadHtml($html);
         $dompdf->setPaper('A4', 'potrait');
+        // $dompdf->setFo
         $dompdf->render();
         $dompdf->stream("ba_pemeriksaan.pdf", array(
             "Attachment" => false
