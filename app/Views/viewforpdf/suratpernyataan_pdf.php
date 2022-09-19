@@ -6,35 +6,8 @@
             <div class="row mt-4">
                 <div class="col">
                     <div class="page1">
-                        <table class="table" style="font-style: Tahoma; align-items: center; line-height: 1.6;">
-                            <tr>
-                                <th width="50%" scope="col">BERITA ACARA<br>PEMERIKSAAN PEKERJAAN</th>
-                                <td scope="col" colspan="4" class="tab text-left" style="border-right-style: none;">
-                                    &nbsp;Nomor <br>
-                                    &nbsp;Tanggal
-                                </td>
-                                <td scope="col" class="tab text-left">
-                                    &nbsp;: BAC.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_pemeriksaan']; ?> <br>
-                                    &nbsp;: <?= date('d m Y', strtotime($sewapc['tanggal_ba'])); ?>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <td scope="col" style="text-align: center;"><?= strtoupper($sewapc['judul_ba']); ?></td>
-                                <td scope="col" colspan="4" class="tab text-left" style="border-right-style: none;">
-                                    &nbsp;M.A No <br>
-                                    &nbsp;RKA.THN <br>
-                                    &nbsp;LAMPIRAN
-                                </td>
-                                <td scope="col" class="tab text-left">
-                                    &nbsp;: <?= $sewapc['no_ma']; ?><br>
-                                    &nbsp;: <?= $sewapc['rka_tahun']; ?><br>
-                                    &nbsp;: <?= $sewapc['lampiran']; ?> berkas
-                                </td>
-                            </tr>
-                        </table>
+                        <h2 style="text-align: center;"><b><u>SURAT PERNYATAAN PEMBAYARAN</u></b></h2>
                         <!-- Under Table -->
-                        <p>Pada hari ini, <b>Senin</b> tanggal <b>Empat</b> Bulan <b>Juli</b> tahun <b>Dua Ribu Dua Puluh Dua</b> (<?= date('d-m-Y', strtotime($sewapc['tanggal_ba'])); ?>) kami yang bertanda tangan dibawah ini :</p><br>
-                        <p><b>PT ANGKASA PURA II - KCU BANDARA SOEKARNO-HATTA :</b></p>
                         <?php $i = 1; ?>
                         <table style="border-style: none;">
                             <?php foreach ($karyawanap2 as $kp) : ?>

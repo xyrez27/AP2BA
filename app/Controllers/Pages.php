@@ -15,10 +15,29 @@ class Pages extends BaseController
 
     public function login()
     {
-        $data = [
-            'title' => 'Login | BA Angkasa Pura II'
-        ];
+        $session = \Config\Services::session();
+        return view('pages/login', ['error_message' => $session->getFlashdata('error_message')]);
+    }
 
-        return view('pages/login', $data);
+    public function prosesLogin()
+    {
+        $userid   = $this->request->getPost('userid');
+        $password = $this->request->getPost('password');
+
+        $password_sh1 = sha1($password);
+
+        $UsersModel = new \App\Models\UsersModel();
+
+        $user = $UsersModel->getUserLogin($userid, $password_sh1);
+
+        $session = \Config\Services::session();
+        if ($user) {
+            $session->set(['user' => $user]);
+
+            return redirect()->to('/pages/dashboard');
+        } else {
+            $session->setFlashdata(['error_message' => 'Id dan Password salah']);
+            return redirect()->to('pages/login');
+        }
     }
 }

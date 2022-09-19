@@ -15,8 +15,6 @@
 
     <!-- My CSS -->
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/style2.css">
-    <link rel="stylesheet" href="/css/style3.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
 
     <!-- Custom fonts for this template-->

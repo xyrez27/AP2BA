@@ -51,7 +51,7 @@
                                             <div class="row mb-3">
                                                 <label for="rka_tahun" class="col-sm-2 col-form-label">RKA Tahun</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="rka_tahun" name="rka_tahun" placeholder="Masukkan RKA Tahun..." value="" required>
+                                                    <input type="text" class="form-control" id="rka_tahun" name="rka_tahun" placeholder="Masukkan RKA Tahun..." value="">
                                                     <div id="validationServer04Feedback" class="invalid-feedback">
                                                     </div>
                                                 </div>

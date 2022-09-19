@@ -306,4 +306,56 @@ class Ba extends BaseController
             "Attachment" => false
         ));
     }
+
+    public function printformulir($no_ba)
+    {
+        $sewapc = $this->SewaPCModel->getSewaPC();
+        $data = [
+            'title'  => 'BA Pemeriksaan Pekerjaan | BA Angkasa Pura II',
+            'no_ba'  => $no_ba,
+            'sewapc' => $sewapc[$no_ba],
+            'karyawanap2' => explode(",", $sewapc[$no_ba]['karyawanap2']),
+            'jabatanap2'  => explode(",", $sewapc[$no_ba]['jabatanap2']),
+            'karyawanaps' => explode(",", $sewapc[$no_ba]['karyawanaps']),
+            'jabatanaps'  => explode(",", $sewapc[$no_ba]['jabatanaps']),
+            'jenis_komputer' => explode(",", $sewapc[$no_ba]['jenis_komputer']),
+            'unit_komputer'  => explode(",", $sewapc[$no_ba]['unit_komputer'])
+        ];
+
+        $html = view('/viewforpdf/formulir_pdf', $data);
+
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'potrait');
+        $dompdf->render();
+        $dompdf->stream("ba_formulir.pdf", array(
+            "Attachment" => false
+        ));
+    }
+
+    public function printsurat($no_ba)
+    {
+        $sewapc = $this->SewaPCModel->getSewaPC();
+        $data = [
+            'title'  => 'BA Pemeriksaan Pekerjaan | BA Angkasa Pura II',
+            'no_ba'  => $no_ba,
+            'sewapc' => $sewapc[$no_ba],
+            'karyawanap2' => explode(",", $sewapc[$no_ba]['karyawanap2']),
+            'jabatanap2'  => explode(",", $sewapc[$no_ba]['jabatanap2']),
+            'karyawanaps' => explode(",", $sewapc[$no_ba]['karyawanaps']),
+            'jabatanaps'  => explode(",", $sewapc[$no_ba]['jabatanaps']),
+            'jenis_komputer' => explode(",", $sewapc[$no_ba]['jenis_komputer']),
+            'unit_komputer'  => explode(",", $sewapc[$no_ba]['unit_komputer'])
+        ];
+
+        $html = view('/viewforpdf/suratpernyataan_pdf', $data);
+
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'potrait');
+        $dompdf->render();
+        $dompdf->stream("ba_suratpernyataan.pdf", array(
+            "Attachment" => false
+        ));
+    }
 }

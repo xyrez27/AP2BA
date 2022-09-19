@@ -10,7 +10,7 @@ class BaPembayaranModel extends Model
     protected $primaryKey    = 'id_ba';
     protected $useTimestamps = true;
     protected $allowedFields = [
-        'id_ba', 'karyawanap2_pb', 'jabatanap2_pb', 'karyawanaps_pb', 'karyawanaps_pb', 'no_ppn', 'tanggal_ppn',
+        'id_ba', 'karyawanap2_pb', 'jabatanap2_pb', 'karyawanaps_pb', 'jabatanaps_pb', 'no_ppn', 'tanggal_ppn',
         'harga_satuan', 'tahap_ke'
     ];
 
