@@ -34,9 +34,9 @@
                                 <a href="/ba/more" class="btn btn-info">
                                     <i class="gg-details-more"></i>
                                 </a>
-                                <a href="/ba/printpemeriksaan/<?= $i - 2; ?>" target="_blank" class="btn btn-warning" onclick="window.open('/ba/printpembayaran/<?= $i - 2; ?>'); window.open('/ba/printformulir/<?= $i - 2; ?>'); window.open('/ba/printsurat/<?= $i - 2; ?>');">
+                                <!-- <a href="/ba/printpemeriksaan/<?= $i - 2; ?>" target="_blank" class="btn btn-warning" onclick="window.open('/ba/printpembayaran/<?= $i - 2; ?>'); window.open('/ba/printformulir/<?= $i - 2; ?>'); window.open('/ba/printsurat/<?= $i - 2; ?>');">
                                     <i class="gg-software-download"></i>
-                                </a>
+                                </a> -->
                                 <a href="/ba/phpword/<?= $i - 2; ?>" target="_blank" class="btn btn-warning" onclick="">
                                     <i class="gg-software-download"></i>
                                 </a>
