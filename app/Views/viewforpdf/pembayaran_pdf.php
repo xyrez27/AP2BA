@@ -88,12 +88,12 @@
                         <p>Pembayaran dilakukan dengan rincian sebagai berikut : </p>
                         <p>Tahap <?= $sewapc['tahap_ke']; ?> (Periode <?= date('d F Y', strtotime($sewapc['tanggal_pp_from'])); ?> s.d. <?= date('d F Y', strtotime($sewapc['tanggal_pp_to'])); ?>)</p>
                         <table style="width: 100%;">
-                            <thead>
+                            <thead style="background-color: #e6e6e6;">
                                 <tr>
                                     <th colspan="5" style="text-align: left;">DETAIL PEMBAYARAN TAHAP <?= $sewapc['tahap_ke']; ?></th>
                                 </tr>
                                 <tr>
-                                    <th style="width: 5%;">NO</th>
+                                    <th style="width:  5%;">NO</th>
                                     <th style="width: 40%;">ITEM</th>
                                     <th style="width: 20%;">QUANTITY</th>
                                     <th style="width: 20%;">HARGA SATUAN</th>
@@ -106,16 +106,27 @@
                                     <tr>
                                         <td><?= $k; ?></td>
                                         <td style="text-align: left;"><?= $jk; ?></td>
-                                        <td><?= $unit_komputer[$k - 1]; ?> Unit</td>
+                                        <td><?= number_format($unit_komputer[$k - 1], 0, ".", "."); ?> Unit</td>
+                                        <td>Rp <?= number_format($harga_satuan[$k - 1], 0, ".", "."); ?></td>
+                                        <td>Rp <?= number_format($jumlah_harga[$k - 1], 0, ".", "."); ?></td>
                                     </tr>
                                     <?php $k++ ?>
                                 <?php endforeach; ?>
                                 <tr>
-                                    <th colspan="2">TOTAL</th>
-                                    <td><?= $sewapc['jumlah_unit']; ?> Unit</td>
+                                    <th colspan="4" style="text-align: right;"><b>Jumlah Sebelum Pajak</b></th>
+                                    <td><b>Rp <?= number_format($jumlah_sebelum_pajak, 0, ".", "."); ?></b></td>
+                                </tr>
+                                <tr>
+                                    <th colspan="4" style="text-align: right;"><b>PPn 11%</b></th>
+                                    <td><b>Rp <?= number_format($ppn, 0, ".", "."); ?></b></td>
+                                </tr>
+                                <tr>
+                                    <th colspan="4" style="text-align: right;"><b>Jumlah Setelah Pajak</b></th>
+                                    <td><b>Rp <?= number_format($jumlah_setelah_pajak, 0, ".", "."); ?></b></td>
                                 </tr>
                             </tbody>
-                        </table>
+                        </table><br>
+                        <p><b>Pembayaran yang telah dilakukan sebagai berikut:</b></p>
                     </div>
                 </div>
             </div>

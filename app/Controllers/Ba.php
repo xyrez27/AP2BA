@@ -156,7 +156,7 @@ class Ba extends BaseController
             'no_ppn'         => $this->request->getVar('no_ppn'),
             'tanggal_ppn'    => $this->request->getVar('tanggal_ppn'),
             'harga_satuan'   => $harga_satuan,
-            'tahap_ke'       => $this->request->getVar('tahap_ke')
+            'tahap_ke'       => $this->request->getVar('tahap_ke'),
         ]);
 
         $getID = $this->BaPembayaranModel->getInsertID();
@@ -289,12 +289,34 @@ class Ba extends BaseController
     public function printpembayaran($no_ba)
     {
         $sewapc = $this->SewaPCModel->getSewaPC();
+
+        $unit_komputer = explode(", ", $sewapc[$no_ba]['unit_komputer']);
+        $harga_satuan  = explode(", ", $sewapc[$no_ba]['harga_satuan']);
+
+        $i = 0;
+        $total = [];
+        $jumlah_sebelum_pajak = 0;
+        foreach ($unit_komputer as $key) {
+            $strtoint = (int)$key * (int)$harga_satuan[$i];
+            $total[$i++] = $strtoint;
+            $jumlah_sebelum_pajak += $strtoint;
+        }
+
+        $ppn = round($jumlah_sebelum_pajak * 0.11);
+        $jumlah_setelah_pajak = $jumlah_sebelum_pajak + $ppn;
+
+
         $data = [
             'title'  => 'BA Pembayaran Pekerjaan | BA Angkasa Pura II',
             'no_ba'  => $no_ba,
             'sewapc' => $sewapc[$no_ba],
-            'jenis_komputer' => explode(",", $sewapc[$no_ba]['jenis_komputer']),
-            'unit_komputer'  => explode(",", $sewapc[$no_ba]['unit_komputer']),
+            'jenis_komputer' => explode(", ", $sewapc[$no_ba]['jenis_komputer']),
+            'unit_komputer'  => explode(", ", $sewapc[$no_ba]['unit_komputer']),
+            'harga_satuan'   => explode(", ", $sewapc[$no_ba]['harga_satuan']),
+            'jumlah_harga'   => $total,
+            'jumlah_sebelum_pajak' => $jumlah_sebelum_pajak,
+            'ppn'                  => $ppn,
+            'jumlah_setelah_pajak' => $jumlah_setelah_pajak
         ];
 
         $html = view('/viewforpdf/pembayaran_pdf', $data);
