@@ -97,7 +97,6 @@
                                         <td><?= $k; ?></td>
                                         <td style="text-align: left;"><?= $jk; ?></td>
                                         <td><?= $unit_komputer[$k - 1]; ?> Unit</td>
-                                        <td><?= $sewapc['']; ?></td>
                                     </tr>
                                     <?php $k++ ?>
                                 <?php endforeach; ?>
