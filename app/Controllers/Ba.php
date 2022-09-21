@@ -310,7 +310,7 @@ class Ba extends BaseController
     {
         $sewapc = $this->SewaPCModel->getSewaPC();
         $data = [
-            'title'  => 'BA Pemeriksaan Pekerjaan | BA Angkasa Pura II',
+            'title'  => 'Permohonan Pembayaran | BA Angkasa Pura II',
             'no_ba'  => $no_ba,
             'sewapc' => $sewapc[$no_ba],
             'karyawanap2' => explode(",", $sewapc[$no_ba]['karyawanap2']),
@@ -336,7 +336,7 @@ class Ba extends BaseController
     {
         $sewapc = $this->SewaPCModel->getSewaPC();
         $data = [
-            'title'  => 'BA Pemeriksaan Pekerjaan | BA Angkasa Pura II',
+            'title'  => 'Surat Pernyataan Pembayaran | BA Angkasa Pura II',
             'no_ba'  => $no_ba,
             'sewapc' => $sewapc[$no_ba],
             'karyawanap2' => explode(",", $sewapc[$no_ba]['karyawanap2']),

@@ -34,7 +34,7 @@
                             <tr style="text-align:justify; vertical-align:top; border-style: none;">
                                 <td style="border-style: none;">PEMBAYARAN</td>
                                 <td style="border-style: none;">:</td>
-                                <td style="border-style: none;">Tahap XI (Sebelas) Rp347.030.389 <br>
+                                <td style="border-style: none;"> TAHAP <?= $sewapc['tahap_ke']; ?> Rp347.030.389 <br>
                                     <i>(tiga ratus empat puluh tujuh juta tiga puluh ribu tiga ratus delapan puluh sembilan rupiah</i>
                                 </td>
                             </tr>

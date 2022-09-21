@@ -22,7 +22,11 @@
                             </tr>
                             <tr style="text-align: left; vertical-align: top;">
                                 <td style="border-style: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;&nbsp;&nbsp;</td>
-                                <td style="text-align: justify; border-style: none;"></td>
+                                <td style="text-align: justify; border-style: none;">
+                                    Berdasarkan hal-hal tersebut diatas, kami berkesimpulan terhadap PT Angkasa Pura Solusi dapat dibayarkan pembayaran tahap <?= $sewapc['tahap_ke']; ?>
+                                    sebesar : Rp , sudah termasuk ppn (11%) sebagaimana diatur dalam Surat Perjanjian Pengadaan Jasa Nomor: PJJ.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_psm']; ?>
+                                    tanggal <?= date('d m Y', strtotime($sewapc['tanggal_psm'])); ?> dan Berita Acara Kesepakatan Penyesuaian Tarif Pajak Pertambahan Nilai (PPN) Nomor: BAC.06.02/01/<?= $sewapc['no_ppn']; ?> tanggal <?= date('d m Y', strtotime($sewapc['tanggal_ppn'])); ?>
+                                </td>
                             </tr>
                             <tr style="text-align: left; vertical-align: top;">
                                 <td style="border-style: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;&nbsp;&nbsp;</td>
