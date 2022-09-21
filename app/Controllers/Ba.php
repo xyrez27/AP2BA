@@ -211,21 +211,18 @@ class Ba extends BaseController
 
         // $query = $this->BaPemeriksaanModel->getBaPemeriksaan();
         $sewapc = $this->SewaPCModel->getSewaPC();
-        dd($sewapc[$no_ba]);
+        // dd($sewapc[$no_ba]);
         // dd($sewapc);
 
-        $karyawanap2  = $sewapc[$no_ba]['karyawanap2'];
-        $namakaryawan = explode(",", $karyawanap2);
-        $nk2          = implode("\n", $namakaryawan);
+        // $karyawanap2  = $sewapc[$no_ba]['karyawanap2'];
+        // $namakaryawan = explode(",", $karyawanap2);
+        // $jabatanap2  = $sewapc[$no_ba]['jabatanap2'];
+        // $jabatankaryawan = explode(",", $jabatanap2);
+        // $nk2          = implode("\n", $namakaryawan);
         // $temp         = nl2br($namakaryawan);
         // dd($karyawanap22);
         // dd($namakaryawan, $nk2);
 
-        // foreach ($namakaryawan as $key) {
-        //     $templateProcessor->setValues([
-        //         'karyawanap2' => $key . "<br>"
-        //     ]);
-        // }
 
         $templateProcessor->setValues([
             'judul_ba'    => $sewapc[$no_ba]['judul_ba'],
@@ -237,6 +234,8 @@ class Ba extends BaseController
             'lampiran'    => $sewapc[$no_ba]['lampiran'],
             'karyawanap2' => $sewapc[$no_ba]['karyawanap2'],
             'jabatanap2'  => $sewapc[$no_ba]['jabatanap2'],
+            'karyawanaps' => $sewapc[$no_ba]['karyawanaps'],
+            'jabatanaps' => $sewapc[$no_ba]['jabatanaps'],
             'no_psm'      => $sewapc[$no_ba]['no_psm'],
             'tanggal_psm' => $sewapc[$no_ba]['tanggal_psm'],
             'no_bao'      => $sewapc[$no_ba]['no_bao'],
@@ -246,6 +245,8 @@ class Ba extends BaseController
             'jenis_komputer'  => $sewapc[$no_ba]['jenis_komputer'],
             'unit_komputer'   => $sewapc[$no_ba]['unit_komputer']
         ]);
+
+        // dd($sewapc[$no_ba]['jabatanap2']);
 
         $pathToSave = 'result_pemeriksaan.docx';
         $templateProcessor->saveAs($pathToSave);

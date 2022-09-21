@@ -37,6 +37,9 @@
                                 <a href="/ba/printpemeriksaan/<?= $i - 2; ?>" target="_blank" class="btn btn-warning" onclick="window.open('/ba/printpembayaran/<?= $i - 2; ?>'); window.open('/ba/printformulir/<?= $i - 2; ?>'); window.open('/ba/printsurat/<?= $i - 2; ?>');">
                                     <i class="gg-software-download"></i>
                                 </a>
+                                <a href="/ba/phpword/<?= $i - 2; ?>" target="_blank" class="btn btn-warning" onclick="">
+                                    <i class="gg-software-download"></i>
+                                </a>
                                 <a href="<?= base_url('/ba/deleteBaPemeriksaan/' . $value['id'] . '/' . $value['id_pemeriksaan'] . '/' . $value['id_pembayaran']) ?>" class="btn btn-danger">
                                     <i class="gg-trash"></i>
                                 </a>
