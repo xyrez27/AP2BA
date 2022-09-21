@@ -59,12 +59,22 @@
                             <?php endforeach; ?><br>
                         </table>
                         <p>Berdasarkan :</p>
-                        <p>1. Perjanjian Sewa Menyewa Nomor PJJ.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_psm']; ?> tanggal <?= date('d m Y', strtotime($sewapc['tanggal_psm'])); ?>
-                            tentang <?= $sewapc['judul_ba']; ?>;
-                        </p>
-                        <p>2. Berita Acara Operasional Nomor BAC.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_bao']; ?> tanggal <?= date('d m Y', strtotime($sewapc['tanggal_bao'])); ?>
-                            tentang <?= $sewapc['judul_ba']; ?>;
-                        </p><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                        <table>
+                            <tr>
+                                <td style="vertical-align: top;">1.</td>
+                                <td style="padding-left: 10px; vertical-align: top;">
+                                    Perjanjian Sewa Menyewa Nomor PJJ.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_psm']; ?> tanggal <?= date('d m Y', strtotime($sewapc['tanggal_psm'])); ?>
+                                    tentang <?= $sewapc['judul_ba']; ?>;<br><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: top;">2.</td>
+                                <td style="padding-left: 10px; vertical-align: top;">
+                                    Berita Acara Operasional Nomor BAC.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_bao']; ?> tanggal <?= date('d m Y', strtotime($sewapc['tanggal_bao'])); ?>
+                                    tentang <?= $sewapc['judul_ba']; ?>; <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                                </td>
+                            </tr>
+                        </table>
                         <p style="text-align: right;">Telah………../2</p>
                     </div>
                     <div class="page2">
