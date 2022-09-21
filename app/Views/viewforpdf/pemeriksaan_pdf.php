@@ -15,7 +15,7 @@
                                 </td>
                                 <td scope="col" class="tab text-left">
                                     &nbsp;: BAC.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_pemeriksaan']; ?> <br>
-                                    &nbsp;: <?= date('d m Y', strtotime($sewapc['tanggal_ba'])); ?>
+                                    &nbsp;: <?= date('d F Y', strtotime($sewapc['tanggal_ba'])); ?>
                                 </td>
                             </tr>
                             <tr class="text-center">
@@ -63,14 +63,14 @@
                             <tr>
                                 <td style="vertical-align: top; border-style: none;">1.</td>
                                 <td style="padding-left: 10px; vertical-align: top; border-style: none;">
-                                    Perjanjian Sewa Menyewa Nomor PJJ.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_psm']; ?> tanggal <?= date('d m Y', strtotime($sewapc['tanggal_psm'])); ?>
+                                    Perjanjian Sewa Menyewa Nomor PJJ.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_psm']; ?> tanggal <?= date('d F Y', strtotime($sewapc['tanggal_psm'])); ?>
                                     tentang <?= $sewapc['judul_ba']; ?>;<br><br>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="vertical-align: top; border-style: none;">2.</td>
                                 <td style="padding-left: 10px; vertical-align: top; border-style: none;">
-                                    Berita Acara Operasional Nomor BAC.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_bao']; ?> tanggal <?= date('d m Y', strtotime($sewapc['tanggal_bao'])); ?>
+                                    Berita Acara Operasional Nomor BAC.06.02/01/<?= date('F/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_bao']; ?> tanggal <?= date('d F Y', strtotime($sewapc['tanggal_bao'])); ?>
                                     tentang <?= $sewapc['judul_ba']; ?>; <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                                 </td>
                             </tr>
@@ -79,7 +79,7 @@
                     </div>
                     <div class="page2">
                         <p>Telah melakukan pemeriksaan pekerjaan dan menyatakan bahwa Pekerjaan <?= $sewapc['judul_ba']; ?>
-                            untuk periode pemakaian <?= date('d m Y', strtotime($sewapc['tanggal_pp_from'])); ?> s.d. <?= date('d m Y', strtotime($sewapc['tanggal_pp_to'])); ?>
+                            untuk periode pemakaian <?= date('d F Y', strtotime($sewapc['tanggal_pp_from'])); ?> s.d. <?= date('d F Y', strtotime($sewapc['tanggal_pp_to'])); ?>
                             telah terlaksana dengan baik sesuai ketentuan dengan rincian perangkat terpasang sebagai berikut :
                         </p>
                         <table style="margin-left: auto; margin-right: auto; width: 90%;">
