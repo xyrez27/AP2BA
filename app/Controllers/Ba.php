@@ -293,6 +293,8 @@ class Ba extends BaseController
             'title'  => 'BA Pembayaran Pekerjaan | BA Angkasa Pura II',
             'no_ba'  => $no_ba,
             'sewapc' => $sewapc[$no_ba],
+            'jenis_komputer' => explode(",", $sewapc[$no_ba]['jenis_komputer']),
+            'unit_komputer'  => explode(",", $sewapc[$no_ba]['unit_komputer']),
         ];
 
         $html = view('/viewforpdf/pembayaran_pdf', $data);
