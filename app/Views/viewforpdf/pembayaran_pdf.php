@@ -96,8 +96,8 @@
                                     <th style="width:  5%;">NO</th>
                                     <th style="width: 40%;">ITEM</th>
                                     <th style="width: 20%;">QUANTITY</th>
-                                    <th style="width: 20%;">HARGA SATUAN</th>
-                                    <th style="width: 20%;">TOTAL</th>
+                                    <th style="width: 25%;">HARGA SATUAN</th>
+                                    <th style="width: 30%;">TOTAL</th>
                                 </tr>
                             </thead>
                             <tbody style="text-align: center;">
