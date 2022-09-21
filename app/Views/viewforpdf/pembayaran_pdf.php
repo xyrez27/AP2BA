@@ -61,19 +61,30 @@
                             </tr>
                         </table>
                         <p>Berdasarkan kepada :</p>
-                        <table>
+                        <table class="table-berd-pemb">
                             <tr>
-                                <td>
-                                    <p>1. Perjanjian Sewa Menyewa Nomor PJJ.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_psm']; ?> tanggal <?= date('d m Y', strtotime($sewapc['tanggal_psm'])); ?>
-                                        tentang <?= $sewapc['judul_ba']; ?>;</p>
+                                <td style="vertical-align: top; ">1.</td>
+                                <td style="padding-left: 5px; vertical-align: top;">
+                                    Perjanjian Sewa Menyewa Nomor PJJ.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_psm']; ?> tanggal <?= date('d m Y', strtotime($sewapc['tanggal_psm'])); ?>
+                                    tentang <?= $sewapc['judul_ba']; ?>;
                                 </td>
                             </tr>
-                            <p>2. Berita Acara Kesepakatan Peneyesuaian Tarif Pajak Pertambahan Nilai (PPN) BAC.06.02/01/<?= $sewapc['judul_ba']; ?> Nomor : BAC.06.02/01/<?= $sewapc['no_ppn']; ?> tanggal <?= date('d m Y', strtotime($sewapc['tanggal_ppn'])); ?>
-                                tentang <?= $sewapc['judul_ba']; ?>;</p>
-                            <p>3. Berita Acara Pemeriksaan Pekerjaan BAC.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_pemeriksaan']; ?> tanggal <?= date('d m Y', strtotime($sewapc['tanggal_ba'])); ?>
-                                tentang <?= $sewapc['judul_ba']; ?>;</p>
+                            <tr>
+                                <td style="vertical-align: top;">2.</td>
+                                <td tyle="padding-left: 5px; vertical-align: top;">
+                                    Berita Acara Kesepakatan Peneyesuaian Tarif Pajak Pertambahan Nilai (PPN) BAC.06.02/01/<?= $sewapc['judul_ba']; ?> Nomor : BAC.06.02/01/<?= $sewapc['no_ppn']; ?> tanggal <?= date('d m Y', strtotime($sewapc['tanggal_ppn'])); ?>
+                                    tentang <?= $sewapc['judul_ba']; ?>;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: top; ">3.</td>
+                                <td tyle="padding-left: 5px; vertical-align: top; ">
+                                    Berita Acara Pemeriksaan Pekerjaan BAC.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_pemeriksaan']; ?> tanggal <?= date('d m Y', strtotime($sewapc['tanggal_ba'])); ?>
+                                    tentang <?= $sewapc['judul_ba']; ?>;
+                                </td>
+                            </tr>
                         </table>
-                        <p>Maka pada PIHAK KEDUA dapat dilakukan pembayaran tahap <?= $sewapc['tahap_ke']; ?> untuk periode <?= $sewapc['tanggal_pp_from']; ?> s.d. <?= $sewapc['tanggal_pp_to']; ?></p><br /><br />
+                        <p>Maka pada PIHAK KEDUA dapat dilakukan pembayaran tahap <?= $sewapc['tahap_ke']; ?> untuk periode <?= $sewapc['tanggal_pp_from']; ?> s.d. <?= $sewapc['tanggal_pp_to']; ?></p><br /><br /><br><br><br>
                         <p style="text-align: right;">Pembayaran………../2</p>
                         <p>Pembayaran dilakukan dengan rincian sebagai berikut : </p>
                         <p>Tahap <?= $sewapc['tahap_ke']; ?> (Periode <?= $sewapc['tanggal_pp_from']; ?> s.d <?= $sewapc['tanggal_pp_to']; ?>)</p>
