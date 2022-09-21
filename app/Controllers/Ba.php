@@ -186,8 +186,11 @@ class Ba extends BaseController
 
     public function daftarBA()
     {
+        $getRow = $this->SewaPCModel->getRow();
+
         $data = [
             'title'     => 'Daftar Berita Acara | BA Angkasa Pura II',
+            'getRow'    => $getRow,
             'ba_sewapc' => $this->SewaPCModel->getSewaPC()
         ];
 
@@ -290,10 +293,6 @@ class Ba extends BaseController
             'title'  => 'BA Pembayaran Pekerjaan | BA Angkasa Pura II',
             'no_ba'  => $no_ba,
             'sewapc' => $sewapc[$no_ba],
-            'karyawanap2_pb' => explode(",", $sewapc[$no_ba]['karyawanap2_pb']),
-            'jabatanap2_pb'  => explode(",", $sewapc[$no_ba]['jabatanap2_pb']),
-            'karyawanaps_pb' => explode(",", $sewapc[$no_ba]['karyawanaps_pb']),
-            'jabatanaps_pb'  => explode(",", $sewapc[$no_ba]['jabatanaps_pb'])
         ];
 
         $html = view('/viewforpdf/pembayaran_pdf', $data);

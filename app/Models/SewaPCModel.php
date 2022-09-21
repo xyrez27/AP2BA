@@ -38,4 +38,9 @@ class SewaPCModel extends Model
 
         return $query->getResultArray();
     }
+
+    public function getRow()
+    {
+        return $this->countAllResults();
+    }
 }
