@@ -59,17 +59,17 @@
                             <?php endforeach; ?><br>
                         </table>
                         <p>Berdasarkan :</p>
-                        <table>
+                        <table style="border-style: none;">
                             <tr>
-                                <td style="vertical-align: top;">1.</td>
-                                <td style="padding-left: 10px; vertical-align: top;">
+                                <td style="vertical-align: top; border-style: none;">1.</td>
+                                <td style="padding-left: 10px; vertical-align: top; border-style: none;">
                                     Perjanjian Sewa Menyewa Nomor PJJ.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_psm']; ?> tanggal <?= date('d m Y', strtotime($sewapc['tanggal_psm'])); ?>
                                     tentang <?= $sewapc['judul_ba']; ?>;<br><br>
                                 </td>
                             </tr>
                             <tr>
-                                <td style="vertical-align: top;">2.</td>
-                                <td style="padding-left: 10px; vertical-align: top;">
+                                <td style="vertical-align: top; border-style: none;">2.</td>
+                                <td style="padding-left: 10px; vertical-align: top; border-style: none;">
                                     Berita Acara Operasional Nomor BAC.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_bao']; ?> tanggal <?= date('d m Y', strtotime($sewapc['tanggal_bao'])); ?>
                                     tentang <?= $sewapc['judul_ba']; ?>; <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                                 </td>
