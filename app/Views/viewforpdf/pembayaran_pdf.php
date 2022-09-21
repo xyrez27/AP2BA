@@ -16,7 +16,7 @@
                                 </td>
                                 <td scope="col" class="tab text-left">
                                     &nbsp;: BAC.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_pemeriksaan']; ?> <br>
-                                    &nbsp;: <?= date('d m Y', strtotime($sewapc['tanggal_ba'])); ?>
+                                    &nbsp;: <?= date('d F Y', strtotime($sewapc['tanggal_ba'])); ?>
                                 </td>
                             </tr>
                             <tr class="text-center">
@@ -88,16 +88,33 @@
                         <p>Pembayaran dilakukan dengan rincian sebagai berikut : </p>
                         <p>Tahap <?= $sewapc['tahap_ke']; ?> (Periode <?= date('d m Y', strtotime($sewapc['tanggal_pp_from'])); ?> s.d. <?= date('d m Y', strtotime($sewapc['tanggal_pp_to'])); ?>)</p>
                         <table style="width: 100%;">
-                            <tr>
-                                <th colspan="5" style="text-align: left;">DETAIL PEMBAYARAN TAHAP <?= $sewapc['tahap_ke']; ?></th>
-                            </tr>
-                            <tr>
-                                <th style="width: 5%;">NO</th>
-                                <th style="width: 40%;">ITEM</th>
-                                <th style="width: 20%;">QUANTITY</th>
-                                <th style="width: 20%;">HARGA SATUAN</th>
-                                <th style="width: 20%;">TOTAL</th>
-                            </tr>
+                            <thead>
+                                <tr>
+                                    <th colspan="5" style="text-align: left;">DETAIL PEMBAYARAN TAHAP <?= $sewapc['tahap_ke']; ?></th>
+                                </tr>
+                                <tr>
+                                    <th style="width: 5%;">NO</th>
+                                    <th style="width: 40%;">ITEM</th>
+                                    <th style="width: 20%;">QUANTITY</th>
+                                    <th style="width: 20%;">HARGA SATUAN</th>
+                                    <th style="width: 20%;">TOTAL</th>
+                                </tr>
+                            </thead>
+                            <tbody style="text-align: center;">
+                                <?php $k = 1; ?>
+                                <?php foreach ($jenis_komputer as $jk) : ?>
+                                    <tr>
+                                        <td><?= $k; ?></td>
+                                        <td style="text-align: left;"><?= $jk; ?></td>
+                                        <td><?= $unit_komputer[$k - 1]; ?> Unit</td>
+                                    </tr>
+                                    <?php $k++ ?>
+                                <?php endforeach; ?>
+                                <tr>
+                                    <th colspan="2">TOTAL</th>
+                                    <td><?= $sewapc['jumlah_unit']; ?> Unit</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
