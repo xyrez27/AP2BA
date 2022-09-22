@@ -1,65 +1,56 @@
-<?= $this->extend('layout/template'); ?>
-<?= $this->section('content'); ?>
+<!doctype html>
+<html>
 
-<div class="container">
-    <div class="row mt-2">
-        <div class="col-8">
-            <form action="/beritaacara/save" method="POST" enctype="multipart/form-data">
-                <?= csrf_field(); ?>
-                <h2>BERITA ACARA TAGIHAN LISTRIK</h2>
-                <div class="row mb-3">
-                    <label for="nama" class="col-sm-2 col-form-label" autofocus>Judul BA</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nama" name="nama" value="" autofocus required>
-                        <div id="validationServer04Feedback" class="invalid-feedback">
-                        </div>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label for="date" class="col-2 col-form-label">Tanggal</label>
-                    <div class="col">
-                        <div class="input-group date" id="datepicker">
-                            <input type="date" id="tanggal" name="tanggal">
-                            <!-- <input type="text" class="form-control">
-                            <span class="input-group-append">
-                                <span class="input-group-text bg-white">
-                                    <i class="fa fa-calendar"></i>
-                                </span>
-                            </span> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="inputState" class="col-sm-2 col-form-label">M.A No</label>
-                    <div class="col-3">
-                        <select id="inputState" class="form-control">
-                            <option selected disabled>Pilih...</option>
-                            <option value="eksploitasi">Eksploitasi</option>
-                            <option value="investasi">Investasi</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="nama" class="col-sm-2 col-form-label">RKA Tahun</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="RKA" name="RKA" autofocus value="">
-                        <div id="validationServer04Feedback" class="invalid-feedback">
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="nama" class="col-sm-2 col-form-label">Lampiran</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="lampiran" name="lampiran" autofocus value="">
-                        <div id="validationServer04Feedback" class="invalid-feedback">
-                        </div>
-                    </div>
-                </div>
-                <h2>Nama Karyawan</h2>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+<head>
+    <title>Site Maintenance</title>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            text-align: center;
+            padding: 20px;
+            font: 20px Helvetica, sans-serif;
+            color: #333;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding-top: 150px;
+            }
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        article {
+            display: block;
+            text-align: left;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        a {
+            color: #dc8100;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <h1>This Page is Under Maintenance!</h1>
+        <div>
+            <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="mailto:#">contact us</a>, otherwise we&rsquo;ll be back online shortly!</p>
+            <p>&mdash; <a href="/pages/dashboard">back to dashboard</a></p>
         </div>
-    </div>
-</div>
+    </article>
+</body>
 
-<?= $this->endSection(); ?>
+</html>
