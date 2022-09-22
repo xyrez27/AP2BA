@@ -16,7 +16,7 @@
 
         @media (min-width: 768px) {
             body {
-                padding-top: 150px;
+                padding-top: 100px;
             }
         }
 
