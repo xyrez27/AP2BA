@@ -4,8 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Log in (v2)</title>
-
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -14,6 +12,8 @@
     <link rel="stylesheet" href="AdminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="AdminLTE/dist/css/adminlte.min.css">
+
+    <title><?= $title; ?></title>
 </head>
 
 <body class="hold-transition login-page">
@@ -21,7 +21,7 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="AdminLTE/index2.html" class="h1"><b>Login</b>Page</a>
+                <a href="/" class="h1"><b>Login</b>Page</a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Berita Acara PT Angkasa Pura II</p>

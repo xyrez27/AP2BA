@@ -16,7 +16,13 @@ class Pages extends BaseController
     public function login()
     {
         $session = \Config\Services::session();
-        return view('pages/login', ['error_message' => $session->getFlashdata('error_message')]);
+
+        $data = [
+            'title' => 'Login Page | BA Angkasa Pura II',
+            'error_message' => $session->getFlashdata('error_message')
+        ];
+
+        return view('pages/login', $data);
     }
 
     public function prosesLogin()
