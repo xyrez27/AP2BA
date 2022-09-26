@@ -31,18 +31,46 @@
                             <td scope="col"><?= date('d/m/Y', strtotime($value['tanggal_ba'])); ?></td>
                             <td scope="col"><?= $value['no_ppn']; ?></td>
                             <td>
-                                <a href="/ba/more" class="btn btn-info">
-                                    <i class="gg-details-more"></i>
-                                </a>
-                                <a href="/ba/printpemeriksaan/<?= $i - 2; ?>" target="_blank" class="btn btn-success" onclick="window.open('/ba/printpembayaran/<?= $i - 2; ?>'); window.open('/ba/printformulir/<?= $i - 2; ?>'); window.open('/ba/printsurat/<?= $i - 2; ?>');">
-                                    <i class="gg-software-download"></i>
-                                </a>
-                                <a href="/ba/phpword/<?= $i - 2; ?>" target="_blank" class="btn btn-warning" onclick="">
-                                    <i class="gg-software-download"></i>
-                                </a>
-                                <a href="<?= base_url('/ba/deleteBaPemeriksaan/' . $value['id'] . '/' . $value['id_pemeriksaan'] . '/' . $value['id_pembayaran']) ?>" class="btn btn-danger">
-                                    <i class="gg-trash"></i>
-                                </a>
+                                <div class="d-inline">
+                                    <a class="btn btn-info" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                                        <i class="gg-details-more"></i>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a href="/ba/editPemeriksaan/<?= $i - 2; ?>" target="_blank" class="dropdown-item">
+                                            BA Pemeriksaan
+                                        </a>
+                                        <a href="/ba/editPembayaran/<?= $i - 2; ?>" target="_blank" class="dropdown-item">
+                                            BA Pembayaran
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="d-inline">
+                                    <a class="btn btn-warning" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                                        <i class="gg-software-download"></i>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a href="/ba/printpemeriksaan/<?= $i - 2; ?>" target="_blank" class="dropdown-item">
+                                            Pemeriksaan
+                                        </a>
+                                        <a href="/ba/printpembayaran/<?= $i - 2; ?>" target="_blank" class="dropdown-item">
+                                            Pembayaran
+                                        </a>
+                                        <a href="/ba/printformulir/<?= $i - 2; ?>" target="_blank" class="dropdown-item">
+                                            Formulir
+                                        </a>
+                                        <a href="/ba/printsurat/<?= $i - 2; ?>" target="_blank" class="dropdown-item">
+                                            Surat Pernyataan
+                                        </a>
+                                        <a href="/ba/printpemeriksaan/<?= $i - 2; ?>" target="_blank" class="dropdown-item" onclick="window.open('/ba/printpembayaran/<?= $i - 2; ?>'); window.open('/ba/printformulir/<?= $i - 2; ?>'); window.open('/ba/printsurat/<?= $i - 2; ?>');">
+                                            Print All
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="d-inline">
+                                    <a href="<?= base_url('/ba/deleteBaPemeriksaan/' . $value['id'] . '/' . $value['id_pemeriksaan'] . '/' . $value['id_pembayaran']) ?>" class="btn btn-danger">
+                                        <i class="gg-trash"></i>
+                                    </a>
+                                </div>
                             </td>
                         </tr>
                     <?php endforeach; ?>

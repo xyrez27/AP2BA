@@ -67,23 +67,23 @@ class Ba extends BaseController
         if ($nilai < 12) {
             $temp = " " . $huruf[$nilai];
         } else if ($nilai < 20) {
-            $temp = $this->penyebut($nilai - 10) . " belas";
+            $temp = $this->penyebut($nilai - 10) . " Belas";
         } else if ($nilai < 100) {
-            $temp = $this->penyebut($nilai / 10) . " puluh" . $this->penyebut($nilai % 10);
+            $temp = $this->penyebut($nilai / 10) . " Puluh" . $this->penyebut($nilai % 10);
         } else if ($nilai < 200) {
             $temp = " seratus" . $this->penyebut($nilai - 100);
         } else if ($nilai < 1000) {
-            $temp = $this->penyebut($nilai / 100) . " ratus" . $this->penyebut($nilai % 100);
+            $temp = $this->penyebut($nilai / 100) . " Ratus" . $this->penyebut($nilai % 100);
         } else if ($nilai < 2000) {
             $temp = " seribu" . $this->penyebut($nilai - 1000);
         } else if ($nilai < 1000000) {
-            $temp = $this->penyebut($nilai / 1000) . " ribu" . $this->penyebut($nilai % 1000);
+            $temp = $this->penyebut($nilai / 1000) . " Ribu" . $this->penyebut($nilai % 1000);
         } else if ($nilai < 1000000000) {
-            $temp = $this->penyebut($nilai / 1000000) . " juta" . $this->penyebut($nilai % 1000000);
+            $temp = $this->penyebut($nilai / 1000000) . " Juta" . $this->penyebut($nilai % 1000000);
         } else if ($nilai < 1000000000000) {
-            $temp = $this->penyebut($nilai / 1000000000) . " milyar" . $this->penyebut(fmod($nilai, 1000000000));
+            $temp = $this->penyebut($nilai / 1000000000) . " Milyar" . $this->penyebut(fmod($nilai, 1000000000));
         } else if ($nilai < 1000000000000000) {
-            $temp = $this->penyebut($nilai / 1000000000000) . " trilyun" . $this->penyebut(fmod($nilai, 1000000000000));
+            $temp = $this->penyebut($nilai / 1000000000000) . " Triliun" . $this->penyebut(fmod($nilai, 1000000000000));
         }
         dd($temp);
         return $temp;

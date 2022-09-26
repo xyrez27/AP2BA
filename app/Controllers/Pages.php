@@ -40,10 +40,10 @@ class Pages extends BaseController
         if ($user) {
             $session->set(['user' => $user]);
 
-            return redirect()->to('/pages/dashboard');
+            return redirect()->to(base_url('/pages/dashboard'));
         } else {
             $session->setFlashdata(['error_message' => 'Id dan Password salah']);
-            return redirect()->to('pages/login');
+            return redirect()->to(base_url('pages/login'));
         }
     }
 }
