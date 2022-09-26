@@ -15,7 +15,7 @@
                                 </td>
                                 <td scope="col" class="tab text-left">
                                     &nbsp;: BAC.06.02/01/<?= date('m/Y', strtotime($sewapc['tanggal_ba'])); ?>/<?= $sewapc['no_pemeriksaan']; ?> <br>
-                                    &nbsp;: <?= date('d m Y', strtotime($sewapc['tanggal_ba'])); ?>
+                                    &nbsp;: <?= date('d F Y', strtotime($sewapc['tanggal_ba'])); ?>
                                 </td>
                             </tr>
                             <tr class="text-center">
@@ -75,8 +75,8 @@
                                 </td>
                             </tr>
                         </table>
-                        <p style="text-align: right;">Telah………../2</p>
-                    </div>
+                        <div style="position: absolute; bottom: 0; right: 0;">Telah………../2</div>
+                    </div><br><br><br>
                     <div class="page2">
                         <p>Telah melakukan pemeriksaan pekerjaan dan menyatakan bahwa Pekerjaan <?= $sewapc['judul_ba']; ?>
                             untuk periode pemakaian <?= date('d m Y', strtotime($sewapc['tanggal_pp_from'])); ?> s.d. <?= date('d m Y', strtotime($sewapc['tanggal_pp_to'])); ?>

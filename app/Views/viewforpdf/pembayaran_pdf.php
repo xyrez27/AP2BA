@@ -84,7 +84,10 @@
                             </tr>
                         </table>
                         <p>Maka pada PIHAK KEDUA dapat dilakukan pembayaran tahap <?= $sewapc['tahap_ke']; ?> (dua belas) untuk periode <?= date('d F Y', strtotime($sewapc['tanggal_pp_from'])); ?> s.d. <?= date('d F Y', strtotime($sewapc['tanggal_pp_to'])); ?></p><br /><br /><br><br>
-                        <p style="text-align: right;">Pembayaran………../2</p>
+                        <div style="position: absolute; bottom: 0; right: 0;">Pembayaran………../2</div>
+                        <br><br>
+                    </div>
+                    <div class="page2">
                         <p>Pembayaran dilakukan dengan rincian sebagai berikut : </p>
                         <p>Tahap <?= $sewapc['tahap_ke']; ?> (Periode <?= date('d F Y', strtotime($sewapc['tanggal_pp_from'])); ?> s.d. <?= date('d F Y', strtotime($sewapc['tanggal_pp_to'])); ?>)</p>
                         <table style="width: 100%;">
@@ -108,28 +111,96 @@
                                         <td style="text-align: left;"><?= $jk; ?></td>
                                         <td><?= number_format($unit_komputer[$k - 1], 0, ".", "."); ?> Unit</td>
                                         <td>Rp <?= number_format($harga_satuan[$k - 1], 0, ".", "."); ?></td>
-                                        <td>Rp <?= number_format($jumlah_harga[$k - 1], 0, ".", "."); ?></td>
+                                        <td style="text-align: right; padding-right: 20px;">Rp &nbsp;&nbsp;&nbsp;&nbsp;<?= number_format($jumlah_harga[$k - 1], 0, ".", "."); ?></td>
                                     </tr>
                                     <?php $k++ ?>
                                 <?php endforeach; ?>
                                 <tr>
                                     <th colspan="4" style="text-align: right;"><b>Jumlah Sebelum Pajak</b></th>
-                                    <td><b>Rp <?= number_format($jumlah_sebelum_pajak, 0, ".", "."); ?></b></td>
+                                    <td style="text-align: right; padding-right: 20px;"><b>Rp <?= number_format($jumlah_sebelum_pajak, 0, ".", "."); ?></b></td>
                                 </tr>
                                 <tr>
                                     <th colspan="4" style="text-align: right;"><b>PPn 11%</b></th>
-                                    <td><b>Rp <?= number_format($ppn, 0, ".", "."); ?></b></td>
+                                    <td style="text-align: right; padding-right: 20px;"><b>Rp <?= number_format($ppn, 0, ".", "."); ?></b></td>
                                 </tr>
                                 <tr>
                                     <th colspan="4" style="text-align: right;"><b>Jumlah Setelah Pajak</b></th>
-                                    <td><b>Rp <?= number_format($jumlah_setelah_pajak, 0, ".", "."); ?></b></td>
+                                    <td style="text-align: right; padding-right: 20px;"><b>Rp <?= number_format($jumlah_setelah_pajak, 0, ".", "."); ?></b></td>
                                 </tr>
                             </tbody>
                         </table><br>
-                        <p><b>Pembayaran yang telah dilakukan sebagai berikut:</b></p>
+                        <table width="100%" style="border-style: none;">
+                            <tr style="line-height: 2;">
+                                <th colspan="5" style="text-align: left; border-style: none;">Pembayaran yang telah dilakukan sebagai berikut:</th>
+                            </tr>
+                            <tr style="line-height: 2;">
+                                <td width="15%" style="border-style: none;">Tahap <?= $sewapc['tahap_ke']; ?></td>
+                                <td width="55%" style="border-style: none;">(<?= date('d F Y', strtotime($sewapc['tanggal_pp_from'])); ?> s.d. <?= date('d F Y', strtotime($sewapc['tanggal_pp_to'])); ?>)</td>
+                                <td width="5%" style="border-style: none; text-align: center;">=</td>
+                                <td width="5%" style="border-style: none; padding-left: 10px;">Rp</td>
+                                <td width="20%" style="border-style: none; text-align: right;"><?= number_format($jumlah_setelah_pajak, 0, ".", "."); ?></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="border-style: none;"></td>
+                                <td colspan="2" style="border-style: none;"><b>_____________________</b></td>
+                            </tr>
+                            <tr>
+                                <th colspan="2" style="text-align: left; border-style: none;">Jumlah yang telah dibayarkan</th>
+                                <th style="text-align: left; border-style: none; text-align: center;">=</th>
+                                <th style="text-align: left; border-style: none; padding-left: 10px;">Rp</th>
+                                <th style="text-align: left; border-style: none; text-align: right;"><?= number_format($jumlah_setelah_pajak, 0, ".", "."); ?></th>
+                            </tr>
+                        </table><br>
+                        <p><b>Dengan Berita Acara ini dapat dibayarkan pembayaran tahap <?= $sewapc['tahap_ke']; ?> (sebelas) dengan rincian sebagai berikut:</b></p>
+                        <table width="100%" style="border-style: none;">
+                            <tr>
+                                <td width="15%" style="border-style: none;">Tahap <?= $sewapc['tahap_ke']; ?></td>
+                                <td width="55%" style="border-style: none;">(<?= date('d F Y', strtotime($sewapc['tanggal_pp_from'])); ?> s.d. <?= date('d F Y', strtotime($sewapc['tanggal_pp_to'])); ?>)</td>
+                                <td width="5%" style="border-style: none; text-align: center;">=</td>
+                                <td width="5%" style="border-style: none; padding-left: 10px;">Rp</td>
+                                <td width="20%" style="border-style: none; text-align: right;"><?= number_format($jumlah_setelah_pajak, 0, ".", "."); ?></td>
+                            </tr>
+                            <tr>
+                                <td style="border-style: none;"><br><br></td>
+                            </tr>
+                            <tr>
+                                <td style="border-style: none; vertical-align: top;">Terbilang :</td>
+                                <td colspan="4" style=" padding-left: 2px; border-style: none; vertical-align: top;">#tiga ratus empat puluh tujuh juta tiga puluh ribu tiga ratus delapan puluh sembilan rupiah#</td>
+                            </tr>
+                        </table><br>
+                        <div style="position: absolute; bottom: 0; right: 0;">Demikian…………/3</div>
+                    </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <div class="page3">
+                        <p style="text-align: justify; line-height: 1.6;">Demikian Berita Acara Pembayaran ini ditandatangani oleh PARA PIHAK di daerah hukum Tangerang dalam rangkap 2 (dua) untuk dapat dipergunakan sebagaimana mestinya.</p><br>
+                        <table width="100%" style="margin-left: auto; margin-right: auto; width: 100%; line-height: 1.6; border-style: none;">
+                            <tbody>
+                                <tr style="text-align: center;">
+                                    <td width="50%" style="border-style: none;">PIHAK KEDUA</td>
+                                    <td width="50%" style="border-style: none;">PIHAK PERTAMA</td>
+                                </tr>
+                                <tr style="text-align: center;">
+                                    <td style="border-style: none;">PT ANGKASA PURA SOLUSI</td>
+                                    <td style="border-style: none;">PT ANGKASA PURA II</td>
+                                </tr>
+                                <tr style="text-align: center;">
+                                    <td style="border-style: none;"><br><br><br><br></td>
+                                    <td style="border-style: none;"></td>
+                                </tr>
+                                <tr style="text-align: center;">
+                                    <td style="vertical-align: top; border-style: none;"><u><?= strtoupper($sewapc['karyawanaps_pb']); ?></u></td>
+                                    <td style="vertical-align: top; border-style: none;"><u><?= strtoupper($sewapc['karyawanap2_pb']); ?></u></td>
+                                </tr>
+                                <tr style="text-align: center;">
+                                    <td style="vertical-align: top; border-style: none;"><?= strtoupper($sewapc['jabatanaps_pb']); ?></td>
+                                    <td style="vertical-align: top; border-style: none;"><?= strtoupper($sewapc['jabatanap2_pb']); ?></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </page>
+
 <?= $this->endSection(); ?>

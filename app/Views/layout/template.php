@@ -77,7 +77,7 @@
                 $("#show_karyawan_ap2").append(`<div class="row mb-3">
                                                     <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan ` + x + `</label>
                                                     <div class="col-3">
-                                                        <select id="karyawan_ap2" name="karyawanap2[]" class="form-control">
+                                                        <select id="karyawan_ap2" name="karyawanap2[]" class="form-control" required>
                                                             <option selected disabled value="">Pilih...</option>
                                                             <?php foreach ($karyawan_ap2 as $ap2) : ?>
                                                                 <option value="<?= $ap2['nama_karyawan']; ?>"><?= $ap2['nama_karyawan']; ?></option>
@@ -86,7 +86,7 @@
                                                     </div>
                                                     <label for="jabatan_ap2" class="col-sm-2 col-form-label text-center">Jabatan ` + x + `</label>
                                                     <div class="col-4">
-                                                        <select id="jabatan_ap2" name="jabatanap2[]" class="form-control">
+                                                        <select id="jabatan_ap2" name="jabatanap2[]" class="form-control" required>
                                                             <option selected disabled value="">Pilih...</option>
                                                             <?php foreach ($jabatan_ap2 as $ap2) : ?>
                                                                 <option value="<?= $ap2['nama_jabatan']; ?>"><?= $ap2['nama_jabatan']; ?></option>
@@ -104,7 +104,7 @@
                 $("#show_karyawan_aps").append(`<div class="row mb-3">
                                                     <label for="karyawan_aps" class="col-sm-2 col-form-label">Karyawan ` + y + `</label>
                                                     <div class="col-3">
-                                                        <select id="karyawan_aps" name="karyawanaps[]" class="form-control">
+                                                        <select id="karyawan_aps" name="karyawanaps[]" class="form-control" required>
                                                             <option selected disabled value="">Pilih...</option>
                                                             <?php foreach ($karyawan_aps as $aps) : ?>
                                                                 <option value="<?= $aps['nama_karyawan']; ?>"><?= $aps['nama_karyawan']; ?></option>
@@ -113,7 +113,7 @@
                                                     </div>
                                                     <label for="jabatan_aps" class="col-sm-2 col-form-label text-center">Jabatan ` + y + `</label>
                                                     <div class="col-4">
-                                                        <select id="jabatan_aps" name="jabatanaps[]" class="form-control">
+                                                        <select id="jabatan_aps" name="jabatanaps[]" class="form-control" required>
                                                             <option selected disabled value="">Pilih...</option>
                                                             <?php foreach ($jabatan_aps as $aps) : ?>
                                                                 <option value="<?= $aps['nama_jabatan']; ?>"><?= $aps['nama_jabatan']; ?></option>
@@ -131,7 +131,7 @@
                 $("#show_jenis_komputer").append(`<div class="row mb-3">
                                                     <label for="jenis_komputer" class="col-sm-2 col-form-label">Jenis Komputer ` + z + `</label>
                                                     <div class="col-3">
-                                                        <select id="jenis_komputer" name="jenis_komputer[]" class="form-control">
+                                                        <select id="jenis_komputer" name="jenis_komputer[]" class="form-control" required>
                                                             <option selected disabled value="">Pilih...</option>
                                                             <?php foreach ($jenis_komputer as $pc) : ?>
                                                                 <option value="<?= $pc['nama_jenis_komputer']; ?>"><?= $pc['nama_jenis_komputer']; ?></option>
@@ -140,7 +140,7 @@
                                                     </div>
                                                     <label for="unit_komputer" class="col-sm-2 col-form-label text-center">Unit</label>
                                                     <div class="col-4">
-                                                        <input type="number" class="form-control" id="unit_komputer" name="unit_komputer[]" placeholder="Masukkan Jumlah Unit" list="listJenis">
+                                                        <input type="number" class="form-control" id="unit_komputer" name="unit_komputer[]" placeholder="Masukkan Jumlah Unit" list="listJenis" required>
                                                         <datalist id="listJenis">
                                                             <?php foreach ($jenis_komputer as $unit) : ?>
                                                                 <option value="<?= $unit['jumlah_jenis_komputer']; ?>"><?= $unit['jumlah_jenis_komputer']; ?></option>
