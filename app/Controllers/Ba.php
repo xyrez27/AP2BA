@@ -210,6 +210,8 @@ class Ba extends BaseController
 
     public function edit_pemeriksaan($id)
     {
+        $sewapc = $this->SewaPCModel->getSewaPC();
+
         $data = [
             'title'          => 'Sewa PC | BA Angkasa Pura II',
             'karyawan_ap2'   => $this->KaryawanAP2Model->getKaryawanAP2(),
@@ -218,9 +220,22 @@ class Ba extends BaseController
             'jabatan_aps'    => $this->JabatanAPSModel->getJabatanAPS(),
             'judul_ba'       => $this->JudulBAModel->getJudulBA(),
             'jenis_komputer' => $this->JenisKomputerModel->getJenisKomputer(),
-            'sewapc'         => $this->SewaPCModel->getSewaPC(),
+            'karyawanap2'    => explode(",", $sewapc[$id]['karyawanap2']),
+            'jabatanap2'     => explode(",", $sewapc[$id]['jabatanap2']),
+            'karyawanaps'    => explode(",", $sewapc[$id]['karyawanaps']),
+            'jabatanaps'     => explode(",", $sewapc[$id]['jabatanaps']),
+            'jeniskomputer'  => explode(",", $sewapc[$id]['jenis_komputer']),
+            'unitkomputer'   => explode(",", $sewapc[$id]['unit_komputer']),
+            'sewapc'         => $sewapc[$id],
             'validation'     => \Config\Services::validation() //belum dipakai
         ];
+
+        return view('/form/sewapc/edit_pemeriksaan', $data);
+    }
+
+    public function update_pemeriksaan($id)
+    {
+        dd($this->request->getVar());
     }
 
     public function deleteBaSewaPC($id_ba, $id_pemeriksaan, $id_pembayaran)
@@ -245,69 +260,6 @@ class Ba extends BaseController
         ];
 
         return view('ba/daftarBA', $data);
-    }
-
-    public function phpword($no_ba)
-    {
-        $data = [
-            'title'          => 'Sewa PC | BA Angkasa Pura II',
-            'ba_pemeriksaan' => $this->BaPemeriksaanModel->getBaPemeriksaan(),
-            'ba_pembayaran'  => $this->BaPembayaranModel->getBaPembayaran(),
-            'ba_sewa_pc'     => $this->SewaPCModel->getSewaPC()
-        ];
-
-        // $template_pemeriksaan = dirname(__FILE__) . '/template_pemeriksaan.docx';
-        // $templateProcessor    = new \PhpOffice\PhpWord\TemplateProcessor($template_pemeriksaan);
-
-        // $query = $this->BaPemeriksaanModel->getBaPemeriksaan();
-        // $sewapc = $this->SewaPCModel->getSewaPC();
-        // dd($sewapc[$no_ba]);
-        // dd($sewapc);
-
-        // $karyawanap2  = $sewapc[$no_ba]['karyawanap2'];
-        // $namakaryawan = explode(",", $karyawanap2);
-        // $jabatanap2  = $sewapc[$no_ba]['jabatanap2'];
-        // $jabatankaryawan = explode(",", $jabatanap2);
-        // $nk2          = implode("\n", $namakaryawan);
-        // $temp         = nl2br($namakaryawan);
-        // dd($karyawanap22);
-        // dd($namakaryawan, $nk2);
-
-
-        // $templateProcessor->setValues([
-        //     'judul_ba'    => $sewapc[$no_ba]['judul_ba'],
-        //     'ba'          => $sewapc[$no_ba]['no_pemeriksaan'],
-        //     'no_ma'       => $sewapc[$no_ba]['no_ma'],
-        //     'tgl_ba'      => date('m/Y', strtotime($sewapc[$no_ba]['tanggal_ba'])),
-        //     'tgl_ba2'     => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_ba'])),
-        //     'rka_tahun'   => $sewapc[$no_ba]['rka_tahun'],
-        //     'lampiran'    => $sewapc[$no_ba]['lampiran'],
-        //     'karyawanap2' => $sewapc[$no_ba]['karyawanap2'],
-        //     'jabatanap2'  => $sewapc[$no_ba]['jabatanap2'],
-        //     'karyawanaps' => $sewapc[$no_ba]['karyawanaps'],
-        //     'jabatanaps' => $sewapc[$no_ba]['jabatanaps'],
-        //     'no_psm'      => $sewapc[$no_ba]['no_psm'],
-        //     'tanggal_psm' => $sewapc[$no_ba]['tanggal_psm'],
-        //     'no_bao'      => $sewapc[$no_ba]['no_bao'],
-        //     'tanggal_bao' => $sewapc[$no_ba]['tanggal_bao'],
-        //     'tanggal_pp_from' => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_pp_from'])),
-        //     'tanggal_pp_to'   => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_pp_to'])),
-        //     'jenis_komputer'  => $sewapc[$no_ba]['jenis_komputer'],
-        //     'unit_komputer'   => $sewapc[$no_ba]['unit_komputer']
-        // ]);
-
-        // // dd($sewapc[$no_ba]['jabatanap2']);
-
-        // $pathToSave = 'result_pemeriksaan.docx';
-        // $templateProcessor->saveAs($pathToSave);
-
-        // header('Content-Description: File Transfer');
-        // header('Content-Disposition: attachment; filename=result_pemeriksaan.docx');
-        // header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document');
-
-        // readfile($pathToSave);
-
-        return view('/pages/dashboard', $data);
     }
 
     public function printpemeriksaan($no_ba)
@@ -432,4 +384,67 @@ class Ba extends BaseController
             "Attachment" => false
         ));
     }
+
+    // public function phpword($no_ba)
+    // {
+    //     $data = [
+    //         'title'          => 'Sewa PC | BA Angkasa Pura II',
+    //         'ba_pemeriksaan' => $this->BaPemeriksaanModel->getBaPemeriksaan(),
+    //         'ba_pembayaran'  => $this->BaPembayaranModel->getBaPembayaran(),
+    //         'ba_sewapc'      => $this->SewaPCModel->getSewaPC()
+    //     ];
+
+    // $template_pemeriksaan = dirname(__FILE__) . '/template_pemeriksaan.docx';
+    // $templateProcessor    = new \PhpOffice\PhpWord\TemplateProcessor($template_pemeriksaan);
+
+    // $query = $this->BaPemeriksaanModel->getBaPemeriksaan();
+    // $sewapc = $this->SewaPCModel->getSewaPC();
+    // dd($sewapc[$no_ba]);
+    // dd($sewapc);
+
+    // $karyawanap2  = $sewapc[$no_ba]['karyawanap2'];
+    // $namakaryawan = explode(",", $karyawanap2);
+    // $jabatanap2  = $sewapc[$no_ba]['jabatanap2'];
+    // $jabatankaryawan = explode(",", $jabatanap2);
+    // $nk2          = implode("\n", $namakaryawan);
+    // $temp         = nl2br($namakaryawan);
+    // dd($karyawanap22);
+    // dd($namakaryawan, $nk2);
+
+
+    // $templateProcessor->setValues([
+    //     'judul_ba'    => $sewapc[$no_ba]['judul_ba'],
+    //     'ba'          => $sewapc[$no_ba]['no_pemeriksaan'],
+    //     'no_ma'       => $sewapc[$no_ba]['no_ma'],
+    //     'tgl_ba'      => date('m/Y', strtotime($sewapc[$no_ba]['tanggal_ba'])),
+    //     'tgl_ba2'     => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_ba'])),
+    //     'rka_tahun'   => $sewapc[$no_ba]['rka_tahun'],
+    //     'lampiran'    => $sewapc[$no_ba]['lampiran'],
+    //     'karyawanap2' => $sewapc[$no_ba]['karyawanap2'],
+    //     'jabatanap2'  => $sewapc[$no_ba]['jabatanap2'],
+    //     'karyawanaps' => $sewapc[$no_ba]['karyawanaps'],
+    //     'jabatanaps' => $sewapc[$no_ba]['jabatanaps'],
+    //     'no_psm'      => $sewapc[$no_ba]['no_psm'],
+    //     'tanggal_psm' => $sewapc[$no_ba]['tanggal_psm'],
+    //     'no_bao'      => $sewapc[$no_ba]['no_bao'],
+    //     'tanggal_bao' => $sewapc[$no_ba]['tanggal_bao'],
+    //     'tanggal_pp_from' => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_pp_from'])),
+    //     'tanggal_pp_to'   => date('d-m-Y', strtotime($sewapc[$no_ba]['tanggal_pp_to'])),
+    //     'jenis_komputer'  => $sewapc[$no_ba]['jenis_komputer'],
+    //     'unit_komputer'   => $sewapc[$no_ba]['unit_komputer']
+    // ]);
+
+    // // dd($sewapc[$no_ba]['jabatanap2']);
+
+    // $pathToSave = 'result_pemeriksaan.docx';
+    // $templateProcessor->saveAs($pathToSave);
+
+    // header('Content-Description: File Transfer');
+    // header('Content-Disposition: attachment; filename=result_pemeriksaan.docx');
+    // header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+
+    // readfile($pathToSave);
+
+    //     return view('/pages/dashboard', $data);
+    // }
 }

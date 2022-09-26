@@ -26,7 +26,7 @@
                                             <div class="row mb-3">
                                                 <label for="no_pemeriksaan" class="col-sm-2 col-form-label">No Pemeriksaan</label>
                                                 <div class="col">
-                                                    <input type="text" class="form-control" id="no_pemeriksaan" name="no_pemeriksaan" placeholder="Masukkan Nomer BA Pemeriksaan..." value="" required>
+                                                    <input type="text" class="form-control" id="no_pemeriksaan" name="no_pemeriksaan" placeholder="Masukkan Nomor BA Pemeriksaan..." value="" required>
                                                     <div id="validationServer04Feedback" class="invalid-feedback">
                                                     </div>
                                                 </div>
