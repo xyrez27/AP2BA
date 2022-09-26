@@ -13,10 +13,6 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="AdminLTE/dist/css/adminlte.min.css">
     <!-- Required meta tags -->
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-    <!-- Custom styles for this template-->
     <title><?= $title; ?></title>
 </head>
 
@@ -25,7 +21,7 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="/" class="h1"><b>Login</b>Page</a>
+                <a href="/login" class="h1"><b>Login</b>Page</a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Berita Acara PT Angkasa Pura II</p>
@@ -38,7 +34,7 @@
 
                 <form action="/auth" method="post">
                     <div class="input-group mb-3">
-                        <input type="input" name="userid" class="form-control" placeholder="Username">
+                        <input type="input" name="userid" class="form-control" placeholder="Username" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -46,7 +42,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" name="password" class="form-control" placeholder="Password">
+                        <input type="password" name="password" class="form-control" placeholder="Password" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -69,22 +65,8 @@
                         <!-- /.col -->
                     </div>
                 </form>
-
-                <!-- <div class="social-auth-links text-center mt-2 mb-3">
-                    <a href="#" class="btn btn-block btn-primary">
-                        <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-                    </a>
-                    <a href="#" class="btn btn-block btn-danger">
-                        <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-                    </a>
-                </div> -->
-                <!-- /.social-auth-links -->
-
                 <p class="mt-3 mb-1 text-center">
                     <a href="forgot-password.html">Forgot password?</a>
-                </p>
-                <p class="mb-0 text-center">
-                    <a href="register.html" class="text-center">Sign Up</a>
                 </p>
             </div>
             <!-- /.card-body -->

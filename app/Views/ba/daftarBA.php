@@ -36,10 +36,10 @@
                                         <i class="gg-details-more"></i>
                                     </a>
                                     <div class="dropdown-menu">
-                                        <a href="/ba/editPemeriksaan/<?= $i - 2; ?>" target="_blank" class="dropdown-item">
+                                        <a href="/ba/edit_pemeriksaan/<?= $i - 2; ?>" target="_blank" class="dropdown-item">
                                             BA Pemeriksaan
                                         </a>
-                                        <a href="/ba/editPembayaran/<?= $i - 2; ?>" target="_blank" class="dropdown-item">
+                                        <a href="/ba/edit_pembayaran/<?= $i - 2; ?>" target="_blank" class="dropdown-item">
                                             BA Pembayaran
                                         </a>
                                     </div>
@@ -67,7 +67,7 @@
                                     </div>
                                 </div>
                                 <div class="d-inline">
-                                    <a href="<?= base_url('/ba/deleteBaPemeriksaan/' . $value['id'] . '/' . $value['id_pemeriksaan'] . '/' . $value['id_pembayaran']) ?>" class="btn btn-danger">
+                                    <a href="<?= base_url('/ba/deleteBaSewaPC/' . $value['id'] . '/' . $value['id_pemeriksaan'] . '/' . $value['id_pembayaran']) ?>" class="btn btn-danger">
                                         <i class="gg-trash"></i>
                                     </a>
                                 </div>

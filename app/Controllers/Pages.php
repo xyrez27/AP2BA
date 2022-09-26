@@ -42,8 +42,8 @@ class Pages extends BaseController
 
             return redirect()->to(base_url('/pages/dashboard'));
         } else {
-            $session->setFlashdata(['error_message' => 'Id dan Password salah']);
-            return redirect()->to(base_url('pages/login'));
+            $session->setFlashdata(['error_message' => 'Username atau password salah']);
+            return redirect()->to(base_url('/login'));
         }
     }
 }
