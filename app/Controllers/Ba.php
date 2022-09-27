@@ -233,9 +233,70 @@ class Ba extends BaseController
         return view('/form/sewapc/edit_pemeriksaan', $data);
     }
 
+    public function edit_pembayaran($id)
+    {
+        $sewapc = $this->SewaPCModel->getSewaPC();
+
+        $data = [
+            'title'          => 'Sewa PC | BA Angkasa Pura II',
+            'karyawan_ap2'   => $this->KaryawanAP2Model->getKaryawanAP2(),
+            'karyawan_aps'   => $this->KaryawanAPSModel->getKaryawanAPS(),
+            'jabatan_ap2'    => $this->JabatanAP2Model->getJabatanAP2(),
+            'jabatan_aps'    => $this->JabatanAPSModel->getJabatanAPS(),
+            'judul_ba'       => $this->JudulBAModel->getJudulBA(),
+            'jenis_komputer' => $this->JenisKomputerModel->getJenisKomputer(),
+            'karyawanap2'    => explode(",", $sewapc[$id]['karyawanap2']),
+            'jabatanap2'     => explode(",", $sewapc[$id]['jabatanap2']),
+            'karyawanaps'    => explode(",", $sewapc[$id]['karyawanaps']),
+            'jabatanaps'     => explode(",", $sewapc[$id]['jabatanaps']),
+            'jeniskomputer'  => explode(",", $sewapc[$id]['jenis_komputer']),
+            'unitkomputer'   => explode(",", $sewapc[$id]['unit_komputer']),
+            'sewapc'         => $sewapc[$id],
+            'validation'     => \Config\Services::validation() //belum dipakai
+        ];
+
+        return view('/form/sewapc/edit_pemeriksaan', $data);
+    }
+
     public function update_pemeriksaan($id)
     {
-        dd($this->request->getVar());
+        $karyawanap2    = implode(', ', $this->request->getVar('karyawanap2[]'));
+        $jabatanap2     = implode(', ', $this->request->getVar('jabatanap2[]'));
+        $karyawanaps    = implode(', ', $this->request->getVar('karyawanaps[]'));
+        $jabatanaps     = implode(', ', $this->request->getVar('jabatanaps[]'));
+        $jenis_komputer = implode(', ', $this->request->getVar('jenis_komputer[]'));
+        $unit_komputer  = implode(', ', $this->request->getVar('unit_komputer[]'));
+
+        $jumlah_unit = 0;
+        foreach ($this->request->getVar('unit_komputer[]') as $key) {
+            $strtoint = (int)$key;
+            $jumlah_unit += $strtoint;
+        }
+
+        $this->BaPemeriksaanModel->save([
+            'id_ba'           => $id,
+            'judul_ba'        => $this->request->getVar('judul_ba'),
+            'no_pemeriksaan'  => $this->request->getVar('no_pemeriksaan'),
+            'tanggal_ba'      => $this->request->getVar('tanggal_ba'),
+            'no_ma'           => $this->request->getVar('no_ma'),
+            'rka_tahun'       => $this->request->getVar('rka_tahun'),
+            'lampiran'        => $this->request->getVar('lampiran'),
+            'karyawanap2'     => $karyawanap2,
+            'jabatanap2'      => $jabatanap2,
+            'karyawanaps'     => $karyawanaps,
+            'jabatanaps'      => $jabatanaps,
+            'no_psm'          => $this->request->getVar('no_psm'),
+            'tanggal_psm'     => $this->request->getVar('tanggal_psm'),
+            'no_bao'          => $this->request->getVar('no_bao'),
+            'tanggal_bao'     => $this->request->getVar('tanggal_bao'),
+            'tanggal_pp_from' => $this->request->getVar('tanggal_pp_from'),
+            'tanggal_pp_to'   => $this->request->getVar('tanggal_pp_to'),
+            'jenis_komputer'  => $jenis_komputer,
+            'unit_komputer'   => $unit_komputer,
+            'jumlah_unit'     => $jumlah_unit
+        ]);
+
+        return redirect()->to('/ba/daftarBA');
     }
 
     public function deleteBaSewaPC($id_ba, $id_pemeriksaan, $id_pembayaran)

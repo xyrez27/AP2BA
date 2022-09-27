@@ -72,13 +72,12 @@
                                             <h4 class="col-2"><b>AP II</b></h4>
                                             <div id="show_karyawanap2">
                                                 <?php $i = 1; ?>
-                                                <?php $j = 0; ?>
                                                 <?php foreach ($karyawanap2 as $kp) : ?>
                                                     <div class="row mb-3">
                                                         <label for="karyawan_ap2" class="col-sm-2 col-form-label">Karyawan <?= $i; ?></label>
                                                         <div class="col-3">
                                                             <select id="karyawan_ap2" name="karyawanap2[]" class="form-control" required>
-                                                                <option selected disabled value="<?= $kp; ?>"><?= $kp; ?></option>
+                                                                <option selected value="<?= $kp; ?>"><?= $kp; ?></option>
                                                                 <?php foreach ($karyawan_ap2 as $ap2) : ?>
                                                                     <option value="<?= $ap2['nama_karyawan']; ?>"><?= $ap2['nama_karyawan']; ?></option>
                                                                 <?php endforeach; ?>
@@ -87,7 +86,7 @@
                                                         <label for="jabatan_ap2" class="col-sm-2 col-form-label text-center">Jabatan <?= $i; ?></label>
                                                         <div class="col-4">
                                                             <select id="jabatan_ap2" name="jabatanap2[]" class="form-control" required>
-                                                                <option selected disabled value="<?= $jabatanap2[$i - 1]; ?>"><?= $jabatanap2[$i - 1]; ?></option>
+                                                                <option selected value="<?= $jabatanap2[$i - 1]; ?>"><?= $jabatanap2[$i - 1]; ?></option>
                                                                 <?php foreach ($jabatan_ap2 as $ap2) : ?>
                                                                     <option value="<?= $ap2['nama_jabatan']; ?>"><?= $ap2['nama_jabatan']; ?></option>
                                                                 <?php endforeach; ?>
@@ -104,13 +103,12 @@
                                             <h4 class="col-2"><b>APS</b></h4>
                                             <div id="show_karyawanaps">
                                                 <?php $k = 1; ?>
-                                                <?php $l = 0; ?>
                                                 <?php foreach ($karyawanaps as $ks) : ?>
                                                     <div class="row mb-3">
                                                         <label for="karyawan_aps" class="col-sm-2 col-form-label">Karyawan <?= $k; ?></label>
                                                         <div class="col-3">
                                                             <select id="karyawan_aps" name="karyawanaps[]" class="form-control" required>
-                                                                <option selected disabled value="<?= $ks; ?>"><?= $ks; ?></option>
+                                                                <option selected value="<?= $ks; ?>"><?= $ks; ?></option>
                                                                 <?php foreach ($karyawan_aps as $aps) : ?>
                                                                     <option value="<?= $aps['nama_karyawan']; ?>"><?= $aps['nama_karyawan']; ?></option>
                                                                 <?php endforeach; ?>
@@ -119,7 +117,7 @@
                                                         <label for="jabatan_aps" class="col-sm-2 col-form-label text-center">Jabatan <?= $k; ?></label>
                                                         <div class="col-4">
                                                             <select id="jabatan_aps" name="jabatanaps[]" class="form-control" required>
-                                                                <option selected disabled value="<?= $jabatanaps[$k - 1]; ?>"><?= $jabatanaps[$k - 1]; ?></option>
+                                                                <option selected value="<?= $jabatanaps[$k - 1]; ?>"><?= $jabatanaps[$k - 1]; ?></option>
                                                                 <?php foreach ($jabatan_aps as $aps) : ?>
                                                                     <option value="<?= $aps['nama_jabatan']; ?>"><?= $aps['nama_jabatan']; ?></option>
                                                                 <?php endforeach; ?>
@@ -183,13 +181,12 @@
                                             <h4 class="col text-center">Rincian Perangkat</h4><br>
                                             <div id="show_jeniskomputer">
                                                 <?php $m = 1; ?>
-                                                <?php $n = 0; ?>
                                                 <?php foreach ($jeniskomputer as $jk) : ?>
                                                     <div class="row mb-3">
                                                         <label for="jenis_komputer" class="col-sm-2 col-form-label">Jenis Komputer <?= $m; ?></label>
                                                         <div class="col-3">
                                                             <select id="jenis_komputer" name="jenis_komputer[]" class="form-control" required>
-                                                                <option selected disabled value="<?= $jk; ?>"><?= $jk; ?></option>
+                                                                <option selected value="<?= $jk; ?>"><?= $jk; ?></option>
                                                                 <?php foreach ($jenis_komputer as $pc) : ?>
                                                                     <option value="<?= $pc['nama_jenis_komputer']; ?>"><?= $pc['nama_jenis_komputer']; ?></option>
                                                                 <?php endforeach; ?>
