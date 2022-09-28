@@ -23,7 +23,11 @@
                         <a class="dropdown-item" href="/ba/daftarBA">Daftar Berita Acara</a>
                     </div>
                 </li>
+
             </ul>
+            <a class="nav-link navbar-right btn btn-danger" href="/logout" role="button">
+                Logout <span class="fa fa-user" aria-hidden="true"></span>
+            </a>
         </div>
     </div>
 </nav>

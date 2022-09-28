@@ -46,9 +46,10 @@ $routes->get('/ba/edit_pembayaran/(:segment)', 'Ba::edit_pembayaran/$1');
 
 $routes->get('/login', 'Pages::login');
 $routes->post('/auth', 'Pages::prosesLogin');
+$routes->get('/logout', 'Pages::logout');
 
 $routes->delete('/ba/daftarBA/(:num)', 'Ba::deleteBaPemeriksaan/$1');
-$routes->get('/ba', 'Ba::daftarBA');
+// $routes->get('/ba', 'Ba::daftarBA');
 
 
 

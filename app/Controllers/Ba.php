@@ -172,7 +172,7 @@ class Ba extends BaseController
 
         session()->setFlashdata('pesan', 'Data BA Pemeriksaan berhasil disimpan.');
 
-        return redirect()->to('ba/baPembayaran');
+        return redirect()->to(base_url('ba/baPembayaran'));
     }
 
     public function save_form_pembayaran()
@@ -205,7 +205,7 @@ class Ba extends BaseController
 
         session()->setFlashdata('pesan', 'Data BA Pembayaran berhasil disimpan.');
 
-        return redirect()->to('/pages/dashboard');
+        return redirect()->to(base_url('/pages/dashboard'));
     }
 
     public function edit_pemeriksaan($id)
@@ -297,7 +297,7 @@ class Ba extends BaseController
             'jumlah_unit'     => $jumlah_unit
         ]);
 
-        return redirect()->to('/ba/daftarBA');
+        return redirect()->to(base_url('/ba/daftarBA'));
     }
 
     public function update_pembayaran($id)
@@ -320,7 +320,7 @@ class Ba extends BaseController
             'tahap_ke'       => $this->request->getVar('tahap_ke'),
         ]);
 
-        return redirect()->to('/ba/daftarBA');
+        return redirect()->to(base_url('/ba/daftarBA'));
     }
 
     public function deleteBaSewaPC($id_ba, $id_pemeriksaan, $id_pembayaran)
@@ -331,7 +331,7 @@ class Ba extends BaseController
 
         session()->setFlashdata('success', 'Data Berhasil Dihapus!!');
 
-        return redirect()->to('/ba');
+        return redirect()->to(base_url('/ba/daftarBA'));
     }
 
     public function daftarBA()

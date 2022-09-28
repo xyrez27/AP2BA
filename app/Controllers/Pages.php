@@ -6,11 +6,17 @@ class Pages extends BaseController
 {
     public function dashboard()
     {
+        $session = \Config\Services::session();
+
         $data = [
             'title' => 'Dashboard | BA Angkasa Pura II'
         ];
 
-        return view('pages/dashboard', $data);
+        if ($session->get('user') == NULL) {
+            return redirect()->to(base_url('/login'));
+        } else {
+            return view('pages/dashboard', $data);
+        }
     }
 
     public function login()
@@ -22,13 +28,17 @@ class Pages extends BaseController
             'error_message' => $session->getFlashdata('error_message')
         ];
 
-        return view('pages/login', $data);
+        if ($session->get('user') == NULL) {
+            return view('pages/login', $data);
+        } else {
+            return view('pages/dashboard', $data);
+        }
     }
 
     public function prosesLogin()
     {
-        $userid   = $this->request->getPost('userid');
-        $password = $this->request->getPost('password');
+        $userid   = $this->request->getVar('userid');
+        $password = $this->request->getVar('password');
 
         $password_sh1 = sha1($password);
 
@@ -45,5 +55,14 @@ class Pages extends BaseController
             $session->setFlashdata(['error_message' => 'Username atau password salah']);
             return redirect()->to(base_url('/login'));
         }
+    }
+
+    public function logout()
+    {
+        $session = \Config\Services::session();
+
+        $session->destroy();
+
+        return redirect()->to(base_url('/login'));
     }
 }
