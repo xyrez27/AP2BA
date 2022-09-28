@@ -245,17 +245,18 @@ class Ba extends BaseController
             'jabatan_aps'    => $this->JabatanAPSModel->getJabatanAPS(),
             'judul_ba'       => $this->JudulBAModel->getJudulBA(),
             'jenis_komputer' => $this->JenisKomputerModel->getJenisKomputer(),
-            'karyawanap2'    => explode(",", $sewapc[$id]['karyawanap2']),
-            'jabatanap2'     => explode(",", $sewapc[$id]['jabatanap2']),
-            'karyawanaps'    => explode(",", $sewapc[$id]['karyawanaps']),
-            'jabatanaps'     => explode(",", $sewapc[$id]['jabatanaps']),
+            'karyawanap2_pb' => explode(",", $sewapc[$id]['karyawanap2_pb']),
+            'jabatanap2_pb'  => explode(",", $sewapc[$id]['jabatanap2_pb']),
+            'karyawanaps_pb' => explode(",", $sewapc[$id]['karyawanaps_pb']),
+            'jabatanaps_pb'  => explode(",", $sewapc[$id]['jabatanaps_pb']),
             'jeniskomputer'  => explode(",", $sewapc[$id]['jenis_komputer']),
             'unitkomputer'   => explode(",", $sewapc[$id]['unit_komputer']),
+            'hargasatuan'    => explode(",", $sewapc[$id]['harga_satuan']),
             'sewapc'         => $sewapc[$id],
             'validation'     => \Config\Services::validation() //belum dipakai
         ];
 
-        return view('/form/sewapc/edit_pemeriksaan', $data);
+        return view('/form/sewapc/edit_pembayaran', $data);
     }
 
     public function update_pemeriksaan($id)
@@ -294,6 +295,29 @@ class Ba extends BaseController
             'jenis_komputer'  => $jenis_komputer,
             'unit_komputer'   => $unit_komputer,
             'jumlah_unit'     => $jumlah_unit
+        ]);
+
+        return redirect()->to('/ba/daftarBA');
+    }
+
+    public function update_pembayaran($id)
+    {
+        $karyawanap2  = implode(', ', $this->request->getVar('karyawanap2_pb[]'));
+        $jabatanap2   = implode(', ', $this->request->getVar('jabatanap2_pb[]'));
+        $karyawanaps  = implode(', ', $this->request->getVar('karyawanaps_pb[]'));
+        $jabatanaps   = implode(', ', $this->request->getVar('jabatanaps_pb[]'));
+        $harga_satuan = implode(', ', $this->request->getVar('harga_satuan[]'));
+
+        $this->BaPembayaranModel->save([
+            'id_ba'          => $id,
+            'karyawanap2_pb' => $karyawanap2,
+            'jabatanap2_pb'  => $jabatanap2,
+            'karyawanaps_pb' => $karyawanaps,
+            'jabatanaps_pb'  => $jabatanaps,
+            'no_ppn'         => $this->request->getVar('no_ppn'),
+            'tanggal_ppn'    => $this->request->getVar('tanggal_ppn'),
+            'harga_satuan'   => $harga_satuan,
+            'tahap_ke'       => $this->request->getVar('tahap_ke'),
         ]);
 
         return redirect()->to('/ba/daftarBA');
