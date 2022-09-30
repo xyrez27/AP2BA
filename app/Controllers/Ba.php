@@ -184,9 +184,9 @@ class Ba extends BaseController
         $jabatanaps   = implode(', ', $this->request->getVar('jabatanaps_pb[]'));
         $harga_satuan = implode(', ', $this->request->getVar('harga_satuan[]'));
 
-        $ba_pemeriksaan = $this->BaPemeriksaanModel->getBaPemeriksaan();
+        $ba_pemeriksaan = $this->BaPemeriksaanModel->getBaPemeriksaan($id);
 
-        $unit_komputer = explode(", ", $ba_pemeriksaan[$id]['unit_komputer']);
+        $unit_komputer = explode(", ", $ba_pemeriksaan['unit_komputer']);
 
         $i = 0;
         $total = [];
