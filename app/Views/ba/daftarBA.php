@@ -15,9 +15,9 @@
                     <tr class="text-center">
                         <th scope="col">NO</th>
                         <th scope="col">Judul Berita Acara</th>
-                        <th scope="col">No Pemeriksaan</th>
                         <th scope="col">Tanggal BA</th>
-                        <th scope="col">No PPN</th>
+                        <th scope="col">Jumlah</th>
+                        <th scope="col">Created</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -27,9 +27,9 @@
                         <tr class="text-center">
                             <th scope="col"><?= $i++; ?></th>
                             <td scope="col"><?= $value['judul_ba']; ?></td>
-                            <td scope="col"><?= $value['no_pemeriksaan']; ?></td>
-                            <td scope="col"><?= date('d/m/Y', strtotime($value['tanggal_ba'])); ?></td>
-                            <td scope="col"><?= $value['no_ppn']; ?></td>
+                            <td scope="col"><?= date('d-m-Y', strtotime($value['tanggal_ba'])); ?></td>
+                            <td scope="col"><?= $value['jumlah_setelah_pajak']; ?></td>
+                            <td scope="col"><?= date('d-m-Y H:i', strtotime($value['created_at'])); ?></td>
                             <td>
                                 <div class="d-inline">
                                     <a class="btn btn-info" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
