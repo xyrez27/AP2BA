@@ -450,7 +450,8 @@ class Ba extends BaseController
             'karyawanaps' => explode(",", $sewapc[$no_ba]['karyawanaps']),
             'jabatanaps'  => explode(",", $sewapc[$no_ba]['jabatanaps']),
             'jenis_komputer' => explode(",", $sewapc[$no_ba]['jenis_komputer']),
-            'unit_komputer'  => explode(",", $sewapc[$no_ba]['unit_komputer'])
+            'unit_komputer'  => explode(",", $sewapc[$no_ba]['unit_komputer']),
+            'exclude_ppn' => (int)$sewapc[$no_ba]['exclude_ppn']
         ];
 
         $html = view('/viewforpdf/formulir_pdf', $data);

@@ -24,7 +24,7 @@
                             <tr style="text-align:justify; vertical-align:top; border-style: none;">
                                 <td style="border-style: none;">NILAI (exc. PPN)</td>
                                 <td style="border-style: none;">:</td>
-                                <td style="border-style: none;"><b>Rp 3.751.680.000</b></td>
+                                <td style="border-style: none;"><b><?= number_format($exclude_ppn, 0, ".", "."); ?></b></td>
                             </tr>
                             <tr style="text-align:justify; vertical-align:top; border-style: none;">
                                 <td style="border-style: none;">NOMOR KONTRAK</td>

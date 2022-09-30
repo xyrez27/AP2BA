@@ -110,6 +110,15 @@
                                                         <div id="validationServer04Feedback" class="invalid-feedback">
                                                         </div>
                                                     </div>
+                                                </div><br>
+                                                <h6 class="col text-left">Exclude PPN</h6>
+                                                <div class="row mb-3">
+                                                    <label for="exclude_ppn" class="col-sm-2 col-form-label">Exclude PPN</label>
+                                                    <div class="col-4">
+                                                        <input type="text" class="form-control" id="exclude_ppn" name="exclude_ppn" placeholder="Masukkan total sebelum PPN" value="" required>
+                                                        <div id="validationServer04Feedback" class="invalid-feedback">
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div><br><br>
                                             <button type="submit" class="btn btn-primary">Next</button>
