@@ -11,7 +11,7 @@ class BaPembayaranModel extends Model
     protected $useTimestamps = true;
     protected $allowedFields = [
         'id_ba', 'karyawanap2_pb', 'jabatanap2_pb', 'karyawanaps_pb', 'jabatanaps_pb', 'no_ppn', 'tanggal_ppn',
-        'harga_satuan', 'tahap_ke'
+        'harga_satuan', 'jumlah_sebelum_pajak', 'jumlah_setelah_pajak', 'tahap_ke', 'exclude_ppn'
     ];
 
     public function getBaPembayaran($id_ba = false)

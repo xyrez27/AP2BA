@@ -93,8 +93,8 @@ class Ba extends BaseController
     public function sewaPrinter()
     {
         $data = [
-            'title' => 'Sewa Printer | BA Angkasa Pura II',
-            'validation'     => \Config\Services::validation() //belum dipakai
+            'title'      => 'Sewa Printer | BA Angkasa Pura II',
+            'validation' => \Config\Services::validation() //belum dipakai
         ];
 
         return view('ba/sewaPrinter', $data);
@@ -103,8 +103,8 @@ class Ba extends BaseController
     public function tagihanListrik()
     {
         $data = [
-            'title' => 'Tagihan Listrik | BA Angkasa Pura II',
-            'validation'     => \Config\Services::validation() //belum dipakai
+            'title'      => 'Tagihan Listrik | BA Angkasa Pura II',
+            'validation' => \Config\Services::validation() //belum dipakai
         ];
 
         return view('ba/tagihanListrik', $data);
