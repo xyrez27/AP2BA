@@ -206,6 +206,3 @@
         </div>
     </div>
 </div>
-<script>
-    alert("Welcome to Halaman Berita Acara Pemeriksaan");
-</script>

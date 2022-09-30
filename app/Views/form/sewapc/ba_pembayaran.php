@@ -133,7 +133,4 @@
         </div>
     </div>
 </div>
-<script>
-    alert("Welcome to Halaman Berita Acara Pembayaran");
-</script>
 <?= $this->endSection(); ?>
