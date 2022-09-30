@@ -320,13 +320,29 @@ class Ba extends BaseController
         return redirect()->to(base_url('/ba/daftarBA'));
     }
 
-    public function update_pembayaran($id)
+    public function update_pembayaran($id, $id_pemeriksaan)
     {
         $karyawanap2  = implode(', ', $this->request->getVar('karyawanap2_pb[]'));
         $jabatanap2   = implode(', ', $this->request->getVar('jabatanap2_pb[]'));
         $karyawanaps  = implode(', ', $this->request->getVar('karyawanaps_pb[]'));
         $jabatanaps   = implode(', ', $this->request->getVar('jabatanaps_pb[]'));
         $harga_satuan = implode(', ', $this->request->getVar('harga_satuan[]'));
+
+        $ba_pemeriksaan = $this->BaPemeriksaanModel->getBaPemeriksaan($id_pemeriksaan);
+
+        $unit_komputer = explode(", ", $ba_pemeriksaan['unit_komputer']);
+
+        $i = 0;
+        $total = [];
+        $jumlah_sebelum_pajak = 0;
+        foreach ($unit_komputer as $key) {
+            $strtoint = (int)$key * (int)$harga_satuan[$i];
+            $total[$i++] = $strtoint;
+            $jumlah_sebelum_pajak += $strtoint;
+        }
+
+        $ppn = round($jumlah_sebelum_pajak * 0.11);
+        $jumlah_setelah_pajak = $jumlah_sebelum_pajak + $ppn;
 
         $this->BaPembayaranModel->save([
             'id_ba'          => $id,
@@ -337,7 +353,10 @@ class Ba extends BaseController
             'no_ppn'         => $this->request->getVar('no_ppn'),
             'tanggal_ppn'    => $this->request->getVar('tanggal_ppn'),
             'harga_satuan'   => $harga_satuan,
+            'jumlah_sebelum_pajak' => $jumlah_sebelum_pajak,
+            'jumlah_setelah_pajak' => $jumlah_setelah_pajak,
             'tahap_ke'       => $this->request->getVar('tahap_ke'),
+            'exclude_ppn'    => $this->request->getVar('exclude_ppn')
         ]);
 
         return redirect()->to(base_url('/ba/daftarBA'));
