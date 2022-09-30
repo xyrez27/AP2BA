@@ -65,4 +65,9 @@ class Pages extends BaseController
 
         return redirect()->to(base_url('/login'));
     }
+
+    public function contact_admin()
+    {
+        return view('pages/contact_admin');
+    }
 }

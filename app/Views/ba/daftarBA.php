@@ -8,7 +8,7 @@
                     <?= session()->getFlashdata('success'); ?>
                 </div>
             <?php endif; ?>
-            <a href="/ba/sewa-pc" class="btn btn-info mt-3">Tambah Data Berita Acara</a>
+            <a href="<?php echo base_url('/ba/sewa-pc'); ?>" class="btn btn-info mt-3">Tambah Data Berita Acara</a>
             <h1 class="mt-2">Daftar Berita Acara</h1>
             <table class="table">
                 <thead>
@@ -36,10 +36,10 @@
                                         <i class="gg-details-more"></i>
                                     </a>
                                     <div class="dropdown-menu">
-                                        <a href="/ba/edit_pemeriksaan/<?= $i - 2; ?>" target="_blank" class="dropdown-item">
+                                        <a href="<?php echo base_url('/ba/edit_pemeriksaan/' . ($i - 2)); ?>" target="_blank" class="dropdown-item">
                                             BA Pemeriksaan
                                         </a>
-                                        <a href="/ba/edit_pembayaran/<?= $i - 2; ?>" target="_blank" class="dropdown-item">
+                                        <a href="<?php echo base_url('/ba/edit_pembayaran/' . ($i - 2)); ?>" target="_blank" class="dropdown-item">
                                             BA Pembayaran
                                         </a>
                                     </div>
@@ -49,25 +49,25 @@
                                         <i class="gg-software-download"></i>
                                     </a>
                                     <div class="dropdown-menu">
-                                        <a href="/ba/printpemeriksaan/<?= $i - 2; ?>" target="_blank" class="dropdown-item">
+                                        <a href="<?php echo base_url('/ba/printpemeriksaan/' . ($i - 2)); ?>" target="_blank" class="dropdown-item">
                                             Pemeriksaan
                                         </a>
-                                        <a href="/ba/printpembayaran/<?= $i - 2; ?>" target="_blank" class="dropdown-item">
+                                        <a href="<?php echo base_url('/ba/printpembayaran/' . ($i - 2)); ?>" target="_blank" class="dropdown-item">
                                             Pembayaran
                                         </a>
-                                        <a href="/ba/printformulir/<?= $i - 2; ?>" target="_blank" class="dropdown-item">
+                                        <a href="<?php echo base_url('/ba/printformulir/' . ($i - 2)); ?>" target="_blank" class="dropdown-item">
                                             Formulir
                                         </a>
-                                        <a href="/ba/printsurat/<?= $i - 2; ?>" target="_blank" class="dropdown-item">
+                                        <a href="<?php echo base_url('/ba/printsurat/' . ($i - 2)); ?>" target="_blank" class="dropdown-item">
                                             Surat Pernyataan
                                         </a>
-                                        <a href="/ba/printpemeriksaan/<?= $i - 2; ?>" target="_blank" class="dropdown-item" onclick="window.open('/ba/printpembayaran/<?= $i - 2; ?>'); window.open('/ba/printformulir/<?= $i - 2; ?>'); window.open('/ba/printsurat/<?= $i - 2; ?>');">
+                                        <a href="<?php echo base_url('/ba/printpemeriksaan/' . ($i - 2)); ?>" target="_blank" class="dropdown-item" onclick="window.open('<?php echo base_url('/ba/printpembayaran/' . ($i - 2)); ?>'); window.open('<?php echo base_url('/ba/printformulir/' . ($i - 2)); ?>'); window.open('<?php echo base_url('/ba/printsurat/' . ($i - 2)); ?>');">
                                             Print All
                                         </a>
                                     </div>
                                 </div>
                                 <div class="d-inline">
-                                    <a href="<?= base_url('/ba/deleteBaSewaPC/' . $value['id'] . '/' . $value['id_pemeriksaan'] . '/' . $value['id_pembayaran']) ?>" class="btn btn-danger">
+                                    <a href="<?php echo base_url('/ba/deleteBaSewaPC/' . $value['id'] . '/' . $value['id_pemeriksaan'] . '/' . $value['id_pembayaran']) ?>" class="btn btn-danger">
                                         <i class="gg-trash"></i>
                                     </a>
                                 </div>

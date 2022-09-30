@@ -11,7 +11,7 @@
                             <div class="col">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <form action="/ba/update_pembayaran/<?= $sewapc['id_pembayaran']; ?>" method="POST" enctype="multipart/form-data">
+                                        <form action="<?php echo base_url('/ba/update_pembayaran/' . $sewapc['id_pembayaran']); ?>'); ?>" method="POST" enctype="multipart/form-data">
                                             <?= csrf_field(); ?>
                                             <h2>BERITA ACARA PEMBAYARAN</h2><br>
                                             <h2>Nama Karyawan</h2> <!-- KARYAWAN AP2 -->

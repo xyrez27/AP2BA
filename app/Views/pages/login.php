@@ -21,7 +21,7 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="/login" class="h1"><b>Login</b>Page</a>
+                <a href="login" class="h1"><b>Login</b>Page</a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Berita Acara PT Angkasa Pura II</p>
@@ -32,7 +32,7 @@
                     </div>
                 <?php endif; ?>
 
-                <form action="/auth" method="post">
+                <form action="auth" method="post">
                     <div class="input-group mb-3">
                         <input type="input" name="userid" class="form-control" placeholder="Username" required>
                         <div class="input-group-append">
@@ -66,7 +66,7 @@
                     </div>
                 </form>
                 <p class="mt-3 mb-1 text-center">
-                    <a href="forgot-password.html">Forgot password?</a>
+                    <a href="pages/contact_admin">Forgot password?</a>
                 </p>
             </div>
             <!-- /.card-body -->

@@ -9,7 +9,7 @@
                             <div class="col">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <form action="/ba/save_form_pemeriksaan" method="POST" enctype="multipart/form-data">
+                                        <form action="<?php echo base_url('/ba/save_form_pemeriksaan'); ?>" method="POST" enctype="multipart/form-data">
                                             <?= csrf_field(); ?>
                                             <h2>BERITA ACARA PEMERIKSAAN</h2><br>
                                             <div class="row mb-3">

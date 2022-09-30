@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Site Maintenance</title>
+    <title>Contact Admin</title>
     <meta charset="utf-8" />
     <meta name="robots" content="noindex" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,10 +45,9 @@
 
 <body>
     <article>
-        <h1>This Page is Under Maintenance!</h1>
+        <h1>Please Contact Admin!</h1>
         <div>
-            <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="mailto:#">contact us</a>, otherwise we&rsquo;ll be back online shortly!</p>
-            <p>&mdash; <a href="<?php echo base_url('/pages/dashboard'); ?>">back to dashboard</a></p>
+            <p>&mdash; <a href="<?php echo base_url('/login'); ?>">back to login page</a></p>
         </div>
     </article>
 </body>

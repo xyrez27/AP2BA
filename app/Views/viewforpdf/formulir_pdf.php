@@ -35,7 +35,7 @@
                                 <td style="border-style: none;">PEMBAYARAN</td>
                                 <td style="border-style: none;">:</td>
                                 <td style="border-style: none;"> TAHAP <?= $sewapc['tahap_ke']; ?> Rp347.030.389 <br>
-                                    <i>(tiga ratus empat puluh tujuh juta tiga puluh ribu tiga ratus delapan puluh sembilan rupiah</i>
+                                    <i>(tiga ratus empat puluh tujuh juta tiga puluh ribu tiga ratus delapan puluh sembilan rupiah)</i>
                                 </td>
                             </tr>
                         </table><br>
